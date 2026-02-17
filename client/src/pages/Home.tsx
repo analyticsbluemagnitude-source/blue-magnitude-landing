@@ -93,6 +93,17 @@ export default function Home() {
     };
   }, [carouselApi]);
 
+  // Auto-play carousel
+  useEffect(() => {
+    if (!carouselApi) return;
+
+    const autoplay = setInterval(() => {
+      carouselApi.scrollNext();
+    }, 5000); // 5 seconds
+
+    return () => clearInterval(autoplay);
+  }, [carouselApi]);
+
   // Intersection Observer for scroll animations
   useEffect(() => {
     const observerOptions = {
