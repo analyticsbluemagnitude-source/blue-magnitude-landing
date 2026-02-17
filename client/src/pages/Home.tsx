@@ -275,8 +275,8 @@ export default function Home() {
             <div className="relative hidden lg:block">
               <div className="absolute inset-0 bg-gradient-to-br from-[#3ac6ff]/20 to-[#d7e028]/20 rounded-3xl blur-3xl animate-pulse-glow"></div>
               <img 
-                src="https://private-us-east-1.manuscdn.com/sessionFile/q5sviWRou2JGIIHcxzxwoX/sandbox/EwlI46E21FiSAhws1TmOi1-img-2_1771360499000_na1fn_c29sYXItaW5zdGFsbGF0aW9uLW1vZGVybg.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcTVzdmlXUm91MkpHSUlIY3h6eHdvWC9zYW5kYm94L0V3bEk0NkUyMUZpU0Fod3MxVG1PaTEtaW1nLTJfMTc3MTM2MDQ5OTAwMF9uYTFmbl9jMjlzWVhJdGFXNXpkR0ZzYkdGMGFXOXVMVzF2WkdWeWJnLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=WciA9cJOSyuW1LUqkIyg1oV39wR8pFjUVcsBSOKgEkp977eVhLXLQtPSiTV0EDU1ldQk7WXFeZv5LB7425r1N3aT5d-KWU-igBjOfPlH3l2-OOlmF-yHG6vINQw0vcAZKPbwYQ88DtwtoQlLsUpUn6DyXsYjUEN3LHkc8sxeAZuuIUZmwf~7JuuSYw72DbFz8GQ44cTlrBPU20k5skrLYimhsRku7C4gDhxn45WH1FKuuc18G4OiIkG1jCeKbt80UUKtFf9Zv0a3saOieGJBhuOp0uhxIPO7RsSLG3Jbf6cnPVVd1-qsx78~nvVZpn-9cp5Yq8~~tdnnu1K~gOEUEQ__"
-                alt="Instalação Solar Moderna"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/WVgFGcHSCvZpgfeD.jpg"
+                alt="Instalação de Painéis Solares Blue Magnitude"
                 className="relative rounded-3xl shadow-2xl animate-float"
               />
             </div>
