@@ -49,17 +49,17 @@ export default function Home() {
   };
 
   const stats = [
-    { value: "15+", label: "Anos de Experiência", icon: Award },
-    { value: "5.000+", label: "Instalações Realizadas", icon: CheckCircle2 },
-    { value: "95%", label: "Poupança Média", icon: TrendingDown },
-    { value: "25", label: "Anos de Garantia", icon: Shield }
+    { value: "2", label: "Anos no Mercado", icon: Award },
+    { value: "+300", label: "Instalações Realizadas", icon: CheckCircle2 },
+    { value: "80%", label: "Poupança na Fatura", icon: TrendingDown },
+    { value: "DGEG", label: "Certificado", icon: Shield }
   ];
 
   const benefits = [
     {
       icon: DollarSign,
       title: "Poupança Imediata",
-      description: "Reduza a sua fatura de eletricidade em até 95% desde o primeiro mês de instalação."
+      description: "Reduza a sua fatura de eletricidade em até 80% desde o primeiro mês de instalação."
     },
     {
       icon: Leaf,
@@ -207,7 +207,7 @@ export default function Home() {
                 {" "}em Poupança Real
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Reduza a sua fatura de energia em até <strong className="text-[#d7e028]">95%</strong> com painéis solares de última geração. 
+                Reduza a sua fatura de energia em até <strong className="text-[#d7e028]">80%</strong> com painéis solares de última geração. 
                 Investimento inteligente com retorno garantido e sustentabilidade para a sua família.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -323,11 +323,11 @@ export default function Home() {
             </div>
             <div className="space-y-8">
               <h2 className="text-4xl lg:text-5xl font-bold">
-                Mais de 5.000 Famílias Já Poupam Connosco
+                Mais de 300 Famílias Já Poupam Connosco
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Junte-se aos milhares de portugueses que já transformaram as suas casas em centrais de energia limpa 
-                e estão a poupar milhares de euros todos os meses.
+                Junte-se às centenas de portugueses que já transformaram as suas casas em centrais de energia limpa 
+                e estão a poupar na fatura de eletricidade todos os meses. Empresa certificada pela DGEG.
               </p>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -560,7 +560,7 @@ export default function Home() {
                 className="h-12 w-auto brightness-0 invert"
               />
               <p className="text-sm opacity-80">
-                A transformar luz solar em poupança e sustentabilidade desde 2009.
+                A transformar luz solar em poupança e sustentabilidade. Certificados pela DGEG.
               </p>
             </div>
             <div>
