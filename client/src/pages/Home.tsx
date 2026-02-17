@@ -176,7 +176,7 @@ export default function Home() {
               <img 
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/giWuxHpzJpBsYoQy.png" 
                 alt="Blue Magnitude" 
-                className="h-16 w-auto"
+                className="h-20 w-auto py-2"
               />
             </div>
             <nav className="hidden md:flex items-center gap-8">
