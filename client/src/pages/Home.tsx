@@ -438,9 +438,9 @@ export default function Home() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-6 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
-                    <Zap className="w-10 h-10 mb-3" />
-                    <h3 className="text-xl font-bold">Autoconsumo</h3>
+                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
+                    <Zap className="w-8 h-8 mb-2" />
+                    <h3 className="text-lg font-bold">Autoconsumo</h3>
                   </Card>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">
@@ -450,9 +450,9 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-6 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
-                    <Battery className="w-10 h-10 mb-3" />
-                    <h3 className="text-xl font-bold">Autoconsumo Com Baterias</h3>
+                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
+                    <Battery className="w-8 h-8 mb-2" />
+                    <h3 className="text-lg font-bold">Autoconsumo Com Baterias</h3>
                   </Card>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">
@@ -462,9 +462,9 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-6 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
-                    <Wind className="w-10 h-10 mb-3" />
-                    <h3 className="text-xl font-bold">AVAC E Climatização</h3>
+                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
+                    <Wind className="w-8 h-8 mb-2" />
+                    <h3 className="text-lg font-bold">AVAC E Climatização</h3>
                   </Card>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">
@@ -474,9 +474,9 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-6 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
-                    <Wrench className="w-10 h-10 mb-3" />
-                    <h3 className="text-xl font-bold">Manutenção</h3>
+                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
+                    <Wrench className="w-8 h-8 mb-2" />
+                    <h3 className="text-lg font-bold">Manutenção</h3>
                   </Card>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">
@@ -486,9 +486,9 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-6 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
-                    <PowerOff className="w-10 h-10 mb-3" />
-                    <h3 className="text-xl font-bold">Sistemas OFF-Grid</h3>
+                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
+                    <PowerOff className="w-8 h-8 mb-2" />
+                    <h3 className="text-lg font-bold">Sistemas OFF-Grid</h3>
                   </Card>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">
@@ -498,9 +498,9 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-6 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
-                    <FileText className="w-10 h-10 mb-3" />
-                    <h3 className="text-xl font-bold">Consultoria</h3>
+                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
+                    <FileText className="w-8 h-8 mb-2" />
+                    <h3 className="text-lg font-bold">Consultoria</h3>
                   </Card>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">
