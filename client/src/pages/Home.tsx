@@ -413,49 +413,48 @@ export default function Home() {
       {/* Video Section */}
       <section className="py-24 bg-gradient-to-br from-[#243fad]/10 to-[#6cca7d]/10">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <h2 className="text-4xl lg:text-5xl font-bold">
-                Veja Como Instalamos
-              </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Acompanhe o processo completo de instalação dos nossos sistemas fotovoltaicos. 
-                Da avaliação inicial à ativação final, cada etapa é executada com precisão e profissionalismo.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#3ac6ff] flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-bold mb-1">Equipa Certificada</h4>
-                    <p className="text-muted-foreground">Técnicos especializados e certificados pela DGEG</p>
-                  </div>
+          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
+            <h2 className="text-4xl lg:text-5xl font-bold">
+              Veja Como Instalamos
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Acompanhe o processo completo de instalação dos nossos sistemas fotovoltaicos.
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-3 gap-12 items-start">
+            <div className="lg:col-span-1 space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-[#3ac6ff] flex items-center justify-center flex-shrink-0">
+                  <CheckCircle2 className="w-6 h-6 text-white" />
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#6cca7d] flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-bold mb-1">Equipamentos Premium</h4>
-                    <p className="text-muted-foreground">Painéis e inversores de marcas líderes mundiais</p>
-                  </div>
+                <div>
+                  <h4 className="text-lg font-bold mb-1">Equipa Certificada</h4>
+                  <p className="text-muted-foreground">Técnicos especializados e certificados pela DGEG</p>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#d7e028] flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-bold mb-1">Instalação Rápida</h4>
-                    <p className="text-muted-foreground">Sistema completo operacional em até 3 dias</p>
-                  </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-[#6cca7d] flex items-center justify-center flex-shrink-0">
+                  <CheckCircle2 className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold mb-1">Equipamentos Premium</h4>
+                  <p className="text-muted-foreground">Painéis e inversores de marcas líderes mundiais</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-[#d7e028] flex items-center justify-center flex-shrink-0">
+                  <CheckCircle2 className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold mb-1">Instalação Rápida</h4>
+                  <p className="text-muted-foreground">Sistema completo operacional em até 3 dias</p>
                 </div>
               </div>
             </div>
-            <div className="relative">
-              <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl kinetic-card">
+            <div className="lg:col-span-2 relative">
+              <div className="rounded-2xl overflow-hidden shadow-2xl kinetic-card bg-black">
                 <video
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto max-h-[700px]"
                   controls
                   preload="metadata"
                   poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/wzfZTzfswIpbfnoS.jpg"
