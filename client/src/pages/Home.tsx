@@ -363,6 +363,100 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section className="py-24 bg-background">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <h2 className="text-4xl lg:text-5xl font-bold">
+              Os Nossos Projetos
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Conheça algumas das mais de 300 instalações solares que já realizamos em Portugal.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
+              <img 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/nRQQocBjPHfBXzBK.jpg"
+                alt="Instalação Residencial 1"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-xl font-bold mb-2">Instalação Residencial</h3>
+                  <p className="text-sm opacity-90">Sistema fotovoltaico completo em moradia</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
+              <img 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/pZMWQDZJITuXHChH.webp"
+                alt="Instalação Residencial 2"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-xl font-bold mb-2">Telhado Inclinado</h3>
+                  <p className="text-sm opacity-90">Painéis de alta eficiência em telhado cerâmico</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
+              <img 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/QzqozSuGrHScRqpu.jpg"
+                alt="Instalação em Progresso"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-xl font-bold mb-2">Instalação Profissional</h3>
+                  <p className="text-sm opacity-90">Equipa especializada em ação</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
+              <img 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/JBfLRaTDPyOmSYTB.jpg"
+                alt="Sistema Residencial Completo"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-xl font-bold mb-2">Telhado Metálico</h3>
+                  <p className="text-sm opacity-90">Adaptação para diversos tipos de cobertura</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
+              <img 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/mjIFhCQRvUScOGio.jpg"
+                alt="Instalação Comercial"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-xl font-bold mb-2">Projeto Comercial</h3>
+                  <p className="text-sm opacity-90">Soluções para empresas e indústrias</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
+              <img 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/bJReAHxZrjozkZKi.jpg"
+                alt="Sistema de Grande Porte"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-xl font-bold mb-2">Grande Porte</h3>
+                  <p className="text-sm opacity-90">Sistemas de alta capacidade para grandes consumos</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section id="depoimentos" className="py-24 bg-background">
         <div className="container">
