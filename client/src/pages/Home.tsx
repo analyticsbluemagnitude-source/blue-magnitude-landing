@@ -318,7 +318,7 @@ export default function Home() {
             <section 
               className="relative h-[70vh] flex items-center pt-20 overflow-hidden"
               style={{
-                backgroundImage: `url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/JpemZjbcbABCEYXK.png')`,
+                backgroundImage: `url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/kLqSkJQspwvNxSOz.jpg')`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
