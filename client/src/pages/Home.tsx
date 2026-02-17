@@ -468,36 +468,67 @@ export default function Home() {
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="text-4xl lg:text-5xl font-bold">
-              Os Nossos Projetos
+              Projetos de Clientes
             </h2>
             <p className="text-xl text-muted-foreground">
               Conheça algumas das mais de 300 instalações solares que já realizamos em Portugal.
             </p>
           </div>
+          {/* Featured Project Summary */}
+          <Card className="p-8 mb-12 bg-gradient-to-br from-[#243fad]/10 to-[#3ac6ff]/10 border-2 border-[#3ac6ff]">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-3xl font-bold mb-4">Projeto Mata Mourisca</h3>
+                <div className="space-y-3 text-lg">
+                  <p className="text-muted-foreground">
+                    <strong className="text-foreground">Sistema:</strong> 7 painéis solares Aiko 450W com inversor híbrido Solplanet ASW4000H
+                  </p>
+                  <p className="text-muted-foreground">
+                    <strong className="text-foreground">Armazenamento:</strong> Bateria Sunwoda Monawall 5,12 kW
+                  </p>
+                  <p className="text-muted-foreground">
+                    <strong className="text-foreground">Resultado:</strong> Energia renovável consistente com autonomia total, mesmo durante a noite
+                  </p>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <img 
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/wzfZTzfswIpbfnoS.jpg"
+                  alt="Projeto Mata Mourisca - Vista 1"
+                  className="rounded-xl shadow-lg w-full h-48 object-cover"
+                />
+                <img 
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/runBWVaITLbvTBCm.jpg"
+                  alt="Projeto Mata Mourisca - Vista 2"
+                  className="rounded-xl shadow-lg w-full h-48 object-cover"
+                />
+              </div>
+            </div>
+          </Card>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
               <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/nRQQocBjPHfBXzBK.jpg"
-                alt="Instalação Residencial 1"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/wzfZTzfswIpbfnoS.jpg"
+                alt="Mata Mourisca - Painéis Instalados"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-bold mb-2">Instalação Residencial</h3>
-                  <p className="text-sm opacity-90">Sistema fotovoltaico completo em moradia</p>
+                  <h3 className="text-xl font-bold mb-2">Mata Mourisca</h3>
+                  <p className="text-sm opacity-90">Sistema com 7 painéis Aiko 450W</p>
                 </div>
               </div>
             </div>
             <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
               <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/pZMWQDZJITuXHChH.webp"
-                alt="Instalação Residencial 2"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/runBWVaITLbvTBCm.jpg"
+                alt="Mata Mourisca - Instalação"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-bold mb-2">Telhado Inclinado</h3>
-                  <p className="text-sm opacity-90">Painéis de alta eficiência em telhado cerâmico</p>
+                  <h3 className="text-xl font-bold mb-2">Instalação Profissional</h3>
+                  <p className="text-sm opacity-90">Equipa especializada em ação</p>
                 </div>
               </div>
             </div>
