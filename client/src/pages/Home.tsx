@@ -258,7 +258,7 @@ export default function Home() {
       </header>
 
       {/* Hero Carousel Section */}
-      <Carousel className="w-full" opts={{ loop: true }} setApi={setCarouselApi}>
+      <Carousel className="w-full relative" opts={{ loop: true }} setApi={setCarouselApi}>
         <CarouselContent>
           {/* Slide 1: Energia Solar Para Empresas */}
           <CarouselItem>
