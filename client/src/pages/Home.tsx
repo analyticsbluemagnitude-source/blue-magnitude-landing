@@ -421,10 +421,10 @@ export default function Home() {
       <section className="py-16 bg-gradient-to-br from-[#243fad]/5 to-[#3ac6ff]/5">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-on-scroll">
-            <h2 className="text-4xl lg:text-5xl font-bold">
+            <h2 className="text-3xl lg:text-4xl font-bold">
               Os Nossos Serviços
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               Soluções completas em energia solar para todas as suas necessidades.
             </p>
           </div>
@@ -510,10 +510,10 @@ export default function Home() {
       <section id="beneficios" className="py-16 bg-muted/30">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-on-scroll">
-            <h2 className="text-4xl lg:text-5xl font-bold">
+            <h2 className="text-3xl lg:text-4xl font-bold">
               Porquê Escolher Energia Solar?
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               Invista no futuro com tecnologia sustentável que traz poupança real e valorização do seu património.
             </p>
           </div>
@@ -525,7 +525,7 @@ export default function Home() {
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#3ac6ff] to-[#6cca7d] flex items-center justify-center mb-6">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">{benefit.title}</h3>
+                  <h3 className="text-xl font-bold mb-4">{benefit.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
                 </Card>
               );
@@ -538,10 +538,10 @@ export default function Home() {
       <section className="py-16 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-on-scroll">
-            <h2 className="text-4xl lg:text-5xl font-bold">
+            <h2 className="text-3xl lg:text-4xl font-bold">
               Calcule a Sua Poupança
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               Descubra quanto pode poupar por mês e por ano com energia solar.
             </p>
           </div>
@@ -644,10 +644,10 @@ export default function Home() {
       <section id="como-funciona" className="py-16 bg-background animate-fade-in">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-4xl lg:text-5xl font-bold">
+            <h2 className="text-3xl lg:text-4xl font-bold">
               Como Funciona o Processo
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               Do primeiro contato até a ativação do sistema, cuidamos de tudo para você.
             </p>
           </div>
@@ -674,10 +674,10 @@ export default function Home() {
       <section className="py-16 bg-gradient-to-br from-[#243fad]/10 to-[#6cca7d]/10">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-            <h2 className="text-4xl lg:text-5xl font-bold">
+            <h2 className="text-3xl lg:text-4xl font-bold">
               Veja Como Instalamos
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               Acompanhe o processo completo de instalação dos nossos sistemas fotovoltaicos.
             </p>
           </div>
@@ -742,10 +742,10 @@ export default function Home() {
               />
             </div>
             <div className="space-y-8">
-              <h2 className="text-4xl lg:text-5xl font-bold">
+              <h2 className="text-3xl lg:text-4xl font-bold">
                 Mais de 300 Famílias Já Poupam Connosco
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 Junte-se às centenas de portugueses que já transformaram as suas casas em centrais de energia limpa 
                 e estão a poupar na fatura de eletricidade todos os meses. Empresa certificada pela DGEG.
               </p>
@@ -787,10 +787,10 @@ export default function Home() {
       <section className="py-16 bg-background">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-on-scroll">
-            <h2 className="text-4xl lg:text-5xl font-bold">
+            <h2 className="text-3xl lg:text-4xl font-bold">
               Projetos de Clientes
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               Conheça algumas das mais de 300 instalações solares que já realizamos em Portugal.
             </p>
           </div>
@@ -798,8 +798,8 @@ export default function Home() {
           <Card className="p-8 mb-12 bg-gradient-to-br from-[#243fad]/10 to-[#3ac6ff]/10 border-2 border-[#3ac6ff] animate-slide-left">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-3xl font-bold mb-4">Projeto Mata Mourisca</h3>
-                <div className="space-y-3 text-lg">
+                <h3 className="text-2xl font-bold mb-4">Projeto Mata Mourisca</h3>
+                <div className="space-y-3 text-base">
                   <p className="text-muted-foreground">
                     <strong className="text-foreground">Sistema:</strong> 7 painéis solares Aiko 450W com inversor híbrido Solplanet ASW4000H
                   </p>
@@ -842,8 +842,8 @@ export default function Home() {
                 />
               </div>
               <div>
-                <h3 className="text-3xl font-bold mb-4">Projeto Autoconsumo de Alto Desempenho</h3>
-                <div className="space-y-3 text-lg">
+                <h3 className="text-2xl font-bold mb-4">Projeto Autoconsumo de Alto Desempenho</h3>
+                <div className="space-y-3 text-base">
                   <p className="text-muted-foreground">
                     <strong className="text-foreground">Sistema:</strong> 20 painéis solares Aiko 605W com inversor Fox ESS H3-Pro 20.0
                   </p>
@@ -906,10 +906,10 @@ export default function Home() {
       <section id="depoimentos" className="py-16 bg-background">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-4xl lg:text-5xl font-bold">
+            <h2 className="text-3xl lg:text-4xl font-bold">
               O Que os Nossos Clientes Dizem
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               Testemunhos reais de quem já está a poupar com energia solar.
             </p>
           </div>
@@ -936,10 +936,10 @@ export default function Home() {
       <section className="py-16 bg-muted/30">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-4xl lg:text-5xl font-bold">
+            <h2 className="text-3xl lg:text-4xl font-bold">
               Perguntas Frequentes
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               Tire suas dúvidas sobre energia solar.
             </p>
           </div>
@@ -959,10 +959,10 @@ export default function Home() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 space-y-4">
-              <h2 className="text-4xl lg:text-5xl font-bold">
+              <h2 className="text-3xl lg:text-4xl font-bold">
                 Solicite o Seu Orçamento Gratuito
               </h2>
-              <p className="text-xl opacity-90">
+              <p className="text-lg opacity-90">
                 Preencha o formulário e receba uma proposta personalizada em até 24 horas.
               </p>
             </div>
@@ -1034,10 +1034,10 @@ export default function Home() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-8">
-              <h2 className="text-4xl lg:text-5xl font-bold">
+              <h2 className="text-3xl lg:text-4xl font-bold">
                 Entre em Contacto
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 A nossa equipa está pronta para esclarecer as suas dúvidas e ajudá-lo a dar o primeiro passo 
                 rumo à independência energética.
               </p>
