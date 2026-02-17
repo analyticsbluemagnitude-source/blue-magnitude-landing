@@ -710,6 +710,39 @@ export default function Home() {
               </div>
             </div>
           </Card>
+          
+          {/* Second Featured Project */}
+          <Card className="p-8 mb-12 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10 border-2 border-[#6cca7d] animate-slide-right">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div className="space-y-4">
+                <img 
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/WVgFGcHSCvZpgfeD.jpg"
+                  alt="Projeto Autoconsumo - Instalação"
+                  className="rounded-xl shadow-lg w-full h-auto object-cover"
+                />
+                <img 
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/aKenSoiHHZUobuqN.jpg"
+                  alt="Projeto Autoconsumo - Painéis Completos"
+                  className="rounded-xl shadow-lg w-full h-auto object-cover"
+                />
+              </div>
+              <div>
+                <h3 className="text-3xl font-bold mb-4">Projeto Autoconsumo de Alto Desempenho</h3>
+                <div className="space-y-3 text-lg">
+                  <p className="text-muted-foreground">
+                    <strong className="text-foreground">Sistema:</strong> 20 painéis solares Aiko 605W com inversor Fox ESS H3-Pro 20.0
+                  </p>
+                  <p className="text-muted-foreground">
+                    <strong className="text-foreground">Armazenamento:</strong> Baterias Fox ESS Energy Cube 2900 (11,6 kW total)
+                  </p>
+                  <p className="text-muted-foreground">
+                    <strong className="text-foreground">Resultado:</strong> Autonomia energética maximizada com fornecimento contínuo e estável
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Card>
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
               <img 
