@@ -355,12 +355,9 @@ export default function Home() {
                   <p className="text-base lg:text-lg leading-relaxed">
                     Na Blue Magnitude, criamos soluções de energia solar feitas à medida para o teu negócio. Reduz a tua fatura de eletricidade e junta-te às inúmeras empresas que já se conectaram ao sol com as nossas soluções sustentáveis.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div>
                     <Button size="lg" className="bg-[#6cca7d] hover:bg-[#5bb96d] text-white text-base h-12 px-6">
                       Pedir Proposta
-                    </Button>
-                    <Button size="lg" variant="outline" className="text-base h-12 px-6 bg-white/10 hover:bg-white/20 text-white border-white">
-                      Os Nossos Projetos
                     </Button>
                   </div>
                 </div>
@@ -390,12 +387,9 @@ export default function Home() {
                   <p className="text-base lg:text-lg leading-relaxed">
                     Descobre as nossas soluções completas para autoconsumo com painéis solares fotovoltaicos. Reduz a tua conta de eletricidade até 70%. Vamos começar o teu projeto?
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div>
                     <Button size="lg" className="bg-[#6cca7d] hover:bg-[#5bb96d] text-white text-base h-12 px-6">
-                      Saber Mais
-                    </Button>
-                    <Button size="lg" variant="outline" className="text-base h-12 px-6 bg-white/10 hover:bg-white/20 text-white border-white">
-                      Contacte-nos
+                      Pedir Proposta
                     </Button>
                   </div>
                 </div>
