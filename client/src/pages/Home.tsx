@@ -252,12 +252,12 @@ export default function Home() {
       {/* Header/Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container">
-          <div className="flex items-center justify-between h-24">
+          <div className="flex items-center justify-between h-18">
             <div className="flex items-center gap-2">
               <img 
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/giWuxHpzJpBsYoQy.png" 
                 alt="Blue Magnitude" 
-                className="h-24 w-auto py-2"
+                className="h-16 w-auto py-2"
               />
             </div>
             
