@@ -746,45 +746,6 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
               <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/wzfZTzfswIpbfnoS.jpg"
-                alt="Mata Mourisca - Painéis Instalados"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-bold mb-2">Mata Mourisca</h3>
-                  <p className="text-sm opacity-90">Sistema com 7 painéis Aiko 450W</p>
-                </div>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
-              <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/runBWVaITLbvTBCm.jpg"
-                alt="Mata Mourisca - Instalação"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-bold mb-2">Instalação Profissional</h3>
-                  <p className="text-sm opacity-90">Equipa especializada em ação</p>
-                </div>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
-              <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/QzqozSuGrHScRqpu.jpg"
-                alt="Instalação em Progresso"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-bold mb-2">Instalação Profissional</h3>
-                  <p className="text-sm opacity-90">Equipa especializada em ação</p>
-                </div>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
-              <img 
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/JBfLRaTDPyOmSYTB.jpg"
                 alt="Sistema Residencial Completo"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
