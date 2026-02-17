@@ -336,7 +336,7 @@ export default function Home() {
           {/* Slide 1: Energia Solar Para Empresas */}
           <CarouselItem>
             <section 
-              className="relative h-[70vh] flex items-center pt-20 overflow-hidden"
+              className="relative h-[60vh] flex items-center pt-20 overflow-hidden"
               style={{
                 backgroundImage: `url('https://private-us-east-1.manuscdn.com/sessionFile/q5sviWRou2JGIIHcxzxwoX/sandbox/REFC4GPOzcnFnppBcZZ4PK-img-1_1771368547000_na1fn_aGVyby1zbGlkZS1lbXByZXNhcw.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcTVzdmlXUm91MkpHSUlIY3h6eHdvWC9zYW5kYm94L1JFRkM0R1BPemNuRm5wcEJjWlo0UEstaW1nLTFfMTc3MTM2ODU0NzAwMF9uYTFmbl9hR1Z5YnkxemJHbGtaUzFsYlhCeVpYTmhjdy5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=kqFYNL84SMuooRgeCk5pOajXXRXeItwClRA8Gzs4zDclE8ckZI3Q1C5Bk7XXFYMOpgHOBxbczWR3VT~Sgmq1uCyNUeiB4Hmw3K0a~9cNr2RbPST0Os3sWk2NMPYUC-SUW7awmyUHjgGdVEGMvdHYRTgrrOY7w9r1TTgEmXdlfWbRT~-hQsc6lNkCKIISmoXAhbIVe3kgluv3rbiHgyFb4CzpSdqEkpgzkx07bRfWum5su3iz416ZA2ty~KB2AjzyE6Nv4wpT7oR4mGVOtaxosxwAiySieR1k9qiSI8ZdSD-q7F25-JG19kefT1lyxktqKA2qAfPNm4d9-zefIPS~lg__')`,
                 backgroundSize: '120%',
@@ -368,7 +368,7 @@ export default function Home() {
           {/* Slide 2: Autoconsumo Residencial */}
           <CarouselItem>
             <section 
-              className="relative h-[70vh] flex items-center pt-20 overflow-hidden"
+              className="relative h-[60vh] flex items-center pt-20 overflow-hidden"
               style={{
                 backgroundImage: `url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/kLqSkJQspwvNxSOz.jpg')`,
                 backgroundSize: '130%',
