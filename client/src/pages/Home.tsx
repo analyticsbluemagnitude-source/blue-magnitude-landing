@@ -252,12 +252,12 @@ export default function Home() {
       {/* Header/Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-24">
             <div className="flex items-center gap-2">
               <img 
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/giWuxHpzJpBsYoQy.png" 
                 alt="Blue Magnitude" 
-                className="h-20 w-auto py-2"
+                className="h-24 w-auto py-2"
               />
             </div>
             
@@ -418,13 +418,22 @@ export default function Home() {
         </div>
         
         {/* Scroll Down Indicator */}
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+        <button 
+          onClick={() => {
+            const servicesSection = document.querySelector('#servicos');
+            if (servicesSection) {
+              servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }}
+          className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer hover:scale-110 transition-transform"
+          aria-label="Rolar para baixo"
+        >
           <ChevronDown className="w-8 h-8 text-white/80" />
-        </div>
+        </button>
       </Carousel>
 
       {/* Services Section */}
-      <section className="py-16 bg-gradient-to-br from-[#243fad]/5 to-[#3ac6ff]/5">
+      <section id="servicos" className="py-16 bg-gradient-to-br from-[#243fad]/5 to-[#3ac6ff]/5">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12 space-y-4 animate-on-scroll">
             <h2 className="text-2xl lg:text-3xl font-bold">
