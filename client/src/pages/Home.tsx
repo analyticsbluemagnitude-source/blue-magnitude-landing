@@ -275,7 +275,7 @@ export default function Home() {
             <div className="relative hidden lg:block">
               <div className="absolute inset-0 bg-gradient-to-br from-[#3ac6ff]/20 to-[#d7e028]/20 rounded-3xl blur-3xl animate-pulse-glow"></div>
               <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/WVgFGcHSCvZpgfeD.jpg"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/ljHmCIWPhExIPVDw.png"
                 alt="Instalação de Painéis Solares Blue Magnitude"
                 className="relative rounded-3xl shadow-2xl animate-float"
               />
