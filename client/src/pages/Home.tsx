@@ -51,6 +51,7 @@ export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -95,14 +96,14 @@ export default function Home() {
 
   // Auto-play carousel
   useEffect(() => {
-    if (!carouselApi) return;
+    if (!carouselApi || isPaused) return;
 
     const autoplay = setInterval(() => {
       carouselApi.scrollNext();
     }, 5000); // 5 seconds
 
     return () => clearInterval(autoplay);
-  }, [carouselApi]);
+  }, [carouselApi, isPaused]);
 
   // Intersection Observer for scroll animations
   useEffect(() => {
@@ -269,7 +270,13 @@ export default function Home() {
       </header>
 
       {/* Hero Carousel Section */}
-      <Carousel className="w-full relative" opts={{ loop: true }} setApi={setCarouselApi}>
+      <Carousel 
+        className="w-full relative" 
+        opts={{ loop: true }} 
+        setApi={setCarouselApi}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         <CarouselContent>
           {/* Slide 1: Energia Solar Para Empresas */}
           <CarouselItem>
