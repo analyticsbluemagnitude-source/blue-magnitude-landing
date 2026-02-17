@@ -9,6 +9,13 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { 
   Sun, 
   Zap, 
@@ -41,6 +48,7 @@ import { toast } from "sonner";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -231,58 +239,82 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section 
-        className="relative min-h-screen flex items-center pt-20 overflow-hidden"
-        style={{
-          backgroundImage: `url('https://private-us-east-1.manuscdn.com/sessionFile/q5sviWRou2JGIIHcxzxwoX/sandbox/EwlI46E21FiSAhws1TmOi1-img-1_1771360505000_na1fn_aGVyby1iYWNrZ3JvdW5k.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcTVzdmlXUm91MkpHSUlIY3h6eHdvWC9zYW5kYm94L0V3bEk0NkUyMUZpU0Fod3MxVG1PaTEtaW1nLTFfMTc3MTM2MDUwNTAwMF9uYTFmbl9hR1Z5YnkxaVlXTnJaM0p2ZFc1ay5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=tlJXo8wTzGOHL1f8qnOUHuTCMobe8bsD6ypKIOQZ11wv~6oEZf2Caa-PNDIhqPKyy0I62As0O3hGdaGFaY2Qd7gswr25vkFsAEMqFYZGGGnelgIXd8Kbkel7E0avWWM3uLaJd9eQBzSQ~lr6QSOTOXF78Xya6q21CDKwgWJNBvEqhBwDqS87Q0OtHyXE3sTj-ZWhgDY~ECah76I2HaL857t2FokKxAhYNjOA0JMFqtBqstztm6y-~3FBDRwnWsGaWepeIVzgzgyvhKGjiKGuegkitL9nUAl-T7fLKMT8DO0Jitn8sHjKowiIRxJr9YGKcfrInEaiHYGkB-6VLMkq4Q__')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          transform: `translateY(${scrollY * 0.5}px)`
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/80 to-transparent"></div>
-        <div className="container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-                <Sun className="w-4 h-4 text-primary animate-pulse-glow" />
-                <span className="text-sm font-semibold text-primary">Energia Limpa e Renovável</span>
+      {/* Hero Carousel Section */}
+      <Carousel className="w-full" opts={{ loop: true }}>
+        <CarouselContent>
+          {/* Slide 1: Energia Solar Para Empresas */}
+          <CarouselItem>
+            <section 
+              className="relative min-h-screen flex items-center pt-20 overflow-hidden"
+              style={{
+                backgroundImage: `url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/EqaFrrBvquYemMWH.png')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            >
+              <div className="absolute inset-0 bg-black/60"></div>
+              <div className="container relative z-10">
+                <div className="max-w-3xl space-y-8 text-white">
+                  <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+                    Energia Solar Para{" "}
+                    <span className="text-[#6cca7d] underline decoration-4 underline-offset-8">
+                      Empresas
+                    </span>
+                  </h1>
+                  <p className="text-xl lg:text-2xl leading-relaxed">
+                    Na Blue Magnitude, criamos soluções de energia solar feitas à medida para o teu negócio. Reduz a tua fatura de eletricidade e junta-te às inúmeras empresas que já se conectaram ao sol com as nossas soluções sustentáveis.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button size="lg" className="bg-[#6cca7d] hover:bg-[#5bb96d] text-white text-lg h-14 px-8">
+                      Pedir Proposta
+                    </Button>
+                    <Button size="lg" variant="outline" className="text-lg h-14 px-8 bg-white/10 hover:bg-white/20 text-white border-white">
+                      Os Nossos Projetos
+                    </Button>
+                  </div>
+                </div>
               </div>
-              <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                Transforme{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3ac6ff] via-[#6cca7d] to-[#d7e028]">
-                  Luz Solar
-                </span>
-                {" "}em Poupança Real
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Reduza a sua fatura de energia em até <strong className="text-[#d7e028]">80%</strong> com painéis solares de última geração. 
-                Investimento inteligente com retorno garantido e sustentabilidade para a sua família.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" asChild className="energy-glow text-lg h-14 px-8">
-                  <a href="#orcamento">
-                    Quero Poupar Agora
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </a>
-                </Button>
-                <Button size="lg" variant="outline" asChild className="text-lg h-14 px-8">
-                  <a href="#como-funciona">Como Funciona</a>
-                </Button>
+            </section>
+          </CarouselItem>
+
+          {/* Slide 2: Autoconsumo Residencial */}
+          <CarouselItem>
+            <section 
+              className="relative min-h-screen flex items-center pt-20 overflow-hidden"
+              style={{
+                backgroundImage: `url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/JpemZjbcbABCEYXK.png')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            >
+              <div className="absolute inset-0 bg-black/60"></div>
+              <div className="container relative z-10">
+                <div className="max-w-3xl space-y-8 text-white">
+                  <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+                    Autoconsumo{" "}
+                    <span className="text-[#6cca7d] underline decoration-4 underline-offset-8">
+                      Residencial
+                    </span>
+                  </h1>
+                  <p className="text-xl lg:text-2xl leading-relaxed">
+                    Descobre as nossas soluções completas para autoconsumo com painéis solares fotovoltaicos. Reduz a tua conta de eletricidade até 70%. Vamos começar o teu projeto?
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button size="lg" className="bg-[#6cca7d] hover:bg-[#5bb96d] text-white text-lg h-14 px-8">
+                      Saber Mais
+                    </Button>
+                    <Button size="lg" variant="outline" className="text-lg h-14 px-8 bg-white/10 hover:bg-white/20 text-white border-white">
+                      Contacte-nos
+                    </Button>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="relative hidden lg:block">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#3ac6ff]/20 to-[#d7e028]/20 rounded-3xl blur-3xl animate-pulse-glow"></div>
-              <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/ljHmCIWPhExIPVDw.png"
-                alt="Instalação de Painéis Solares Blue Magnitude"
-                className="relative rounded-3xl shadow-2xl animate-float"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
+          </CarouselItem>
+        </CarouselContent>
+        <CarouselPrevious className="left-4 bg-white/20 hover:bg-white/30 text-white border-white" />
+        <CarouselNext className="right-4 bg-white/20 hover:bg-white/30 text-white border-white" />
+      </Carousel>
 
       {/* Stats Section */}
       <section className="py-20 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white diagonal-section diagonal-top">
