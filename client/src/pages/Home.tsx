@@ -420,7 +420,7 @@ export default function Home() {
       {/* Services Section */}
       <section className="py-16 bg-gradient-to-br from-[#243fad]/5 to-[#3ac6ff]/5">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-on-scroll">
+          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4 animate-on-scroll">
             <h2 className="text-2xl lg:text-3xl font-bold">
               Os Nossos Serviços
             </h2>
@@ -509,7 +509,7 @@ export default function Home() {
       {/* Benefits Section */}
       <section id="beneficios" className="py-16 bg-muted/30">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-on-scroll">
+          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4 animate-on-scroll">
             <h2 className="text-2xl lg:text-3xl font-bold">
               Porquê Escolher Energia Solar?
             </h2>
@@ -537,7 +537,7 @@ export default function Home() {
       {/* Calculator Section */}
       <section className="py-16 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-on-scroll">
+          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4 animate-on-scroll">
             <h2 className="text-2xl lg:text-3xl font-bold">
               Calcule a Sua Poupança
             </h2>
@@ -643,7 +643,7 @@ export default function Home() {
       {/* How It Works Section */}
       <section id="como-funciona" className="py-16 bg-background animate-fade-in">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
             <h2 className="text-2xl lg:text-3xl font-bold">
               Como Funciona o Processo
             </h2>
@@ -786,7 +786,7 @@ export default function Home() {
       {/* Gallery Section */}
       <section className="py-16 bg-background">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-on-scroll">
+          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4 animate-on-scroll">
             <h2 className="text-2xl lg:text-3xl font-bold">
               Projetos de Clientes
             </h2>
@@ -905,7 +905,7 @@ export default function Home() {
       {/* Testimonials Section */}
       <section id="depoimentos" className="py-16 bg-background">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
             <h2 className="text-2xl lg:text-3xl font-bold">
               O Que os Nossos Clientes Dizem
             </h2>
@@ -935,7 +935,7 @@ export default function Home() {
       {/* FAQ Section */}
       <section className="py-16 bg-muted/30">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
             <h2 className="text-2xl lg:text-3xl font-bold">
               Perguntas Frequentes
             </h2>
