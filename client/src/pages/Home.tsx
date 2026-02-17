@@ -696,16 +696,16 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4">
                 <img 
                   src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/wzfZTzfswIpbfnoS.jpg"
-                  alt="Projeto Mata Mourisca - Vista 1"
-                  className="rounded-xl shadow-lg w-full h-48 object-cover"
+                  alt="Projeto Mata Mourisca - Instalação"
+                  className="rounded-xl shadow-lg w-full h-auto object-cover"
                 />
                 <img 
                   src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/runBWVaITLbvTBCm.jpg"
-                  alt="Projeto Mata Mourisca - Vista 2"
-                  className="rounded-xl shadow-lg w-full h-48 object-cover"
+                  alt="Projeto Mata Mourisca - Painéis Completos"
+                  className="rounded-xl shadow-lg w-full h-auto object-cover"
                 />
               </div>
             </div>
