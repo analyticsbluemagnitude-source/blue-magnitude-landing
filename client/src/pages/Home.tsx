@@ -22,8 +22,19 @@ import {
   ArrowRight,
   Leaf,
   DollarSign,
-  BarChart3
+  BarChart3,
+  Battery,
+  Wind,
+  Wrench,
+  PowerOff,
+  FileText
 } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 
@@ -249,6 +260,95 @@ export default function Home() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-24 bg-gradient-to-br from-[#243fad]/5 to-[#3ac6ff]/5">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <h2 className="text-4xl lg:text-5xl font-bold">
+              Os Nossos Serviços
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Soluções completas em energia solar para todas as suas necessidades.
+            </p>
+          </div>
+          <TooltipProvider>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105">
+                    <Zap className="w-12 h-12 mb-4" />
+                    <h3 className="text-2xl font-bold">Autoconsumo</h3>
+                  </Card>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="max-w-xs p-4">
+                  <p>Sistemas fotovoltaicos para consumo próprio, reduzindo a dependência da rede elétrica e a fatura de eletricidade.</p>
+                </TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105">
+                    <Battery className="w-12 h-12 mb-4" />
+                    <h3 className="text-2xl font-bold">Autoconsumo Com Baterias</h3>
+                  </Card>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="max-w-xs p-4">
+                  <p>Sistemas com armazenamento de energia para uso noturno ou em períodos sem sol, garantindo autonomia total.</p>
+                </TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105">
+                    <Wind className="w-12 h-12 mb-4" />
+                    <h3 className="text-2xl font-bold">AVAC E Climatização</h3>
+                  </Card>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="max-w-xs p-4">
+                  <p>Integração de sistemas de aquecimento, ventilação e ar condicionado alimentados por energia solar.</p>
+                </TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105">
+                    <Wrench className="w-12 h-12 mb-4" />
+                    <h3 className="text-2xl font-bold">Manutenção</h3>
+                  </Card>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="max-w-xs p-4">
+                  <p>Serviços de manutenção preventiva e corretiva para garantir máxima eficiência do sistema solar.</p>
+                </TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105">
+                    <PowerOff className="w-12 h-12 mb-4" />
+                    <h3 className="text-2xl font-bold">Sistemas OFF-Grid</h3>
+                  </Card>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="max-w-xs p-4">
+                  <p>Soluções autónomas para locais sem acesso à rede elétrica, com baterias de grande capacidade.</p>
+                </TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105">
+                    <FileText className="w-12 h-12 mb-4" />
+                    <h3 className="text-2xl font-bold">Consultoria</h3>
+                  </Card>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="max-w-xs p-4">
+                  <p>Análise técnica e económica personalizada para identificar a melhor solução solar para o seu caso.</p>
+                </TooltipContent>
+              </Tooltip>
+            </div>
+          </TooltipProvider>
         </div>
       </section>
 
