@@ -410,6 +410,65 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="py-24 bg-gradient-to-br from-[#243fad]/10 to-[#6cca7d]/10">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <h2 className="text-4xl lg:text-5xl font-bold">
+                Veja Como Instalamos
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Acompanhe o processo completo de instalação dos nossos sistemas fotovoltaicos. 
+                Da avaliação inicial à ativação final, cada etapa é executada com precisão e profissionalismo.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#3ac6ff] flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold mb-1">Equipa Certificada</h4>
+                    <p className="text-muted-foreground">Técnicos especializados e certificados pela DGEG</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#6cca7d] flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold mb-1">Equipamentos Premium</h4>
+                    <p className="text-muted-foreground">Painéis e inversores de marcas líderes mundiais</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#d7e028] flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold mb-1">Instalação Rápida</h4>
+                    <p className="text-muted-foreground">Sistema completo operacional em até 3 dias</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl kinetic-card">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/YKLvWV2KqvM"
+                  title="Processo de Instalação de Painéis Solares"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-[#3ac6ff] to-[#d7e028] rounded-full opacity-20 blur-3xl"></div>
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-[#6cca7d] to-[#243fad] rounded-full opacity-20 blur-3xl"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Social Proof Section */}
       <section className="py-24 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10">
         <div className="container">
