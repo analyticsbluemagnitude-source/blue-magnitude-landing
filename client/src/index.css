@@ -126,6 +126,9 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-padding-top: 6rem; /* Compensa altura do header fixo (h-24 = 6rem) */
+  }
   body {
     @apply bg-background text-foreground;
     font-family: 'Poppins', system-ui, -apple-system, sans-serif;
