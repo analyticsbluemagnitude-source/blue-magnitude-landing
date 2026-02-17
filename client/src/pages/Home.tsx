@@ -36,7 +36,9 @@ import {
   Wind,
   Wrench,
   PowerOff,
-  FileText
+  FileText,
+  Menu,
+  X
 } from "lucide-react";
 import {
   Tooltip,
@@ -52,6 +54,7 @@ export default function Home() {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -256,17 +259,69 @@ export default function Home() {
                 className="h-20 w-auto py-2"
               />
             </div>
+            
+            {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
               <a href="#beneficios" className="text-sm font-medium hover:text-primary transition-colors">Benefícios</a>
               <a href="#como-funciona" className="text-sm font-medium hover:text-primary transition-colors">Como Funciona</a>
               <a href="#depoimentos" className="text-sm font-medium hover:text-primary transition-colors">Testemunhos</a>
               <a href="#contato" className="text-sm font-medium hover:text-primary transition-colors">Contacto</a>
             </nav>
-            <Button asChild className="energy-glow">
+            
+            {/* Desktop CTA Button */}
+            <Button asChild className="hidden md:flex energy-glow">
               <a href="#orcamento">Solicitar Orçamento</a>
             </Button>
+            
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 hover:bg-accent rounded-md transition-colors"
+              aria-label="Menu"
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
+        
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-background border-t border-border">
+            <nav className="container py-4 flex flex-col gap-4">
+              <a 
+                href="#beneficios" 
+                className="text-sm font-medium hover:text-primary transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Benefícios
+              </a>
+              <a 
+                href="#como-funciona" 
+                className="text-sm font-medium hover:text-primary transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Como Funciona
+              </a>
+              <a 
+                href="#depoimentos" 
+                className="text-sm font-medium hover:text-primary transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Testemunhos
+              </a>
+              <a 
+                href="#contato" 
+                className="text-sm font-medium hover:text-primary transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contacto
+              </a>
+              <Button asChild className="energy-glow w-full" onClick={() => setMobileMenuOpen(false)}>
+                <a href="#orcamento">Solicitar Orçamento</a>
+              </Button>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Hero Carousel Section */}
