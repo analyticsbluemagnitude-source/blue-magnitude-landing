@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
 import { 
   Sun, 
   Zap, 
@@ -46,6 +47,19 @@ export default function Home() {
     phone: "",
     city: ""
   });
+  
+  // Calculator states
+  const [monthlyBill, setMonthlyBill] = useState([150]);
+  const [energyPrice] = useState(0.25); // €0.25 per kWh average in Portugal
+  const [solarSavings] = useState(0.80); // 80% savings
+  
+  // Calculate results
+  const monthlyConsumption = monthlyBill[0] / energyPrice;
+  const monthlySavings = monthlyBill[0] * solarSavings;
+  const yearlySavings = monthlySavings * 12;
+  const estimatedSystemCost = monthlyConsumption * 1.5; // Rough estimate €1.5 per kWh/month
+  const paybackYears = estimatedSystemCost / yearlySavings;
+  const co2Savings = (monthlyConsumption * 12 * 0.233) / 1000; // tons of CO2 per year
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -401,6 +415,112 @@ export default function Home() {
                 </Card>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Calculator Section */}
+      <section className="py-24 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-on-scroll">
+            <h2 className="text-4xl lg:text-5xl font-bold">
+              Calcule a Sua Poupança
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Descubra quanto pode poupar por mês e por ano com energia solar.
+            </p>
+          </div>
+          
+          <div className="max-w-5xl mx-auto">
+            <Card className="p-8 lg:p-12 kinetic-card border-2 border-[#6cca7d] animate-scale">
+              <div className="grid lg:grid-cols-2 gap-12">
+                {/* Input Section */}
+                <div className="space-y-8">
+                  <div>
+                    <Label className="text-lg font-semibold mb-4 block">
+                      Qual é a sua fatura mensal de eletricidade?
+                    </Label>
+                    <div className="space-y-6">
+                      <div className="flex items-center gap-4">
+                        <span className="text-4xl font-bold text-[#243fad]">
+                          €{monthlyBill[0]}
+                        </span>
+                        <span className="text-muted-foreground">/mês</span>
+                      </div>
+                      <Slider
+                        value={monthlyBill}
+                        onValueChange={setMonthlyBill}
+                        min={50}
+                        max={500}
+                        step={10}
+                        className="w-full"
+                      />
+                      <div className="flex justify-between text-sm text-muted-foreground">
+                        <span>€50</span>
+                        <span>€500</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="pt-6 border-t">
+                    <p className="text-sm text-muted-foreground">
+                      <strong className="text-foreground">Consumo estimado:</strong> {Math.round(monthlyConsumption)} kWh/mês
+                    </p>
+                    <p className="text-sm text-muted-foreground mt-2">
+                      <strong className="text-foreground">Tarifa média:</strong> €{energyPrice}/kWh
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Results Section */}
+                <div className="space-y-6">
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-[#6cca7d]/20 to-[#d7e028]/20 border-2 border-[#6cca7d]">
+                    <div className="flex items-center gap-3 mb-3">
+                      <TrendingDown className="w-6 h-6 text-[#6cca7d]" />
+                      <h3 className="text-lg font-semibold">Poupança Mensal</h3>
+                    </div>
+                    <p className="text-4xl font-bold text-[#6cca7d]">
+                      €{monthlySavings.toFixed(2)}
+                    </p>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      Com 80% de redução na fatura
+                    </p>
+                  </div>
+                  
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-[#3ac6ff]/20 to-[#243fad]/20 border-2 border-[#3ac6ff]">
+                    <div className="flex items-center gap-3 mb-3">
+                      <BarChart3 className="w-6 h-6 text-[#3ac6ff]" />
+                      <h3 className="text-lg font-semibold">Poupança Anual</h3>
+                    </div>
+                    <p className="text-4xl font-bold text-[#3ac6ff]">
+                      €{yearlySavings.toFixed(2)}
+                    </p>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      Economia em 12 meses
+                    </p>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="p-4 rounded-xl bg-muted">
+                      <p className="text-xs text-muted-foreground mb-1">Retorno do Investimento</p>
+                      <p className="text-2xl font-bold text-[#243fad]">
+                        {paybackYears.toFixed(1)} anos
+                      </p>
+                    </div>
+                    <div className="p-4 rounded-xl bg-muted">
+                      <p className="text-xs text-muted-foreground mb-1">CO₂ Evitado/Ano</p>
+                      <p className="text-2xl font-bold text-[#6cca7d]">
+                        {co2Savings.toFixed(1)}t
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <Button asChild className="w-full energy-glow" size="lg">
+                    <a href="#orcamento">Solicitar Orçamento Personalizado</a>
+                  </Button>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
