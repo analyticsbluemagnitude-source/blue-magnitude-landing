@@ -454,13 +454,15 @@ export default function Home() {
             </div>
             <div className="relative">
               <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl kinetic-card">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/YKLvWV2KqvM"
-                  title="Processo de Instalação de Painéis Solares"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/wzfZTzfswIpbfnoS.jpg"
+                >
+                  <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/wFcAYExYViImqLCG.mp4" type="video/mp4" />
+                  O seu navegador não suporta a reprodução de vídeos.
+                </video>
               </div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-[#3ac6ff] to-[#d7e028] rounded-full opacity-20 blur-3xl"></div>
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-[#6cca7d] to-[#243fad] rounded-full opacity-20 blur-3xl"></div>
