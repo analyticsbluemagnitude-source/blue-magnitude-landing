@@ -53,6 +53,31 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Intersection Observer for scroll animations
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with animation classes
+    const animatedElements = document.querySelectorAll(
+      '.animate-on-scroll, .animate-fade-in, .animate-slide-left, .animate-slide-right, .animate-scale'
+    );
+    
+    animatedElements.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success("Obrigado! Entraremos em contacto em breve.");
@@ -252,7 +277,7 @@ export default function Home() {
             {stats.map((stat, index) => {
               const Icon = stat.icon;
               return (
-                <div key={index} className="text-center space-y-3">
+                <div key={index} className="text-center space-y-3 animate-scale" style={{transitionDelay: `${index * 0.1}s`}}>
                   <Icon className="w-12 h-12 mx-auto mb-4 animate-pulse-glow" />
                   <div className="text-5xl font-bold">{stat.value}</div>
                   <div className="text-lg opacity-90">{stat.label}</div>
@@ -266,7 +291,7 @@ export default function Home() {
       {/* Services Section */}
       <section className="py-24 bg-gradient-to-br from-[#243fad]/5 to-[#3ac6ff]/5">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-on-scroll">
             <h2 className="text-4xl lg:text-5xl font-bold">
               Os Nossos Serviços
             </h2>
@@ -278,7 +303,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105">
+                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
                     <Zap className="w-12 h-12 mb-4" />
                     <h3 className="text-2xl font-bold">Autoconsumo</h3>
                   </Card>
@@ -290,7 +315,7 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105">
+                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
                     <Battery className="w-12 h-12 mb-4" />
                     <h3 className="text-2xl font-bold">Autoconsumo Com Baterias</h3>
                   </Card>
@@ -302,7 +327,7 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105">
+                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
                     <Wind className="w-12 h-12 mb-4" />
                     <h3 className="text-2xl font-bold">AVAC E Climatização</h3>
                   </Card>
@@ -314,7 +339,7 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105">
+                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
                     <Wrench className="w-12 h-12 mb-4" />
                     <h3 className="text-2xl font-bold">Manutenção</h3>
                   </Card>
@@ -326,7 +351,7 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105">
+                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
                     <PowerOff className="w-12 h-12 mb-4" />
                     <h3 className="text-2xl font-bold">Sistemas OFF-Grid</h3>
                   </Card>
@@ -338,7 +363,7 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105">
+                  <Card className="p-8 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
                     <FileText className="w-12 h-12 mb-4" />
                     <h3 className="text-2xl font-bold">Consultoria</h3>
                   </Card>
@@ -355,7 +380,7 @@ export default function Home() {
       {/* Benefits Section */}
       <section id="beneficios" className="py-24 bg-muted/30">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-on-scroll">
             <h2 className="text-4xl lg:text-5xl font-bold">
               Porquê Escolher Energia Solar?
             </h2>
@@ -367,7 +392,7 @@ export default function Home() {
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               return (
-                <Card key={index} className="p-8 kinetic-card hover:shadow-2xl bg-card border-2">
+                <Card key={index} className="p-8 kinetic-card hover:shadow-2xl bg-card border-2 animate-on-scroll" style={{transitionDelay: `${index * 0.15}s`}}>
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#3ac6ff] to-[#6cca7d] flex items-center justify-center mb-6">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
@@ -381,7 +406,7 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section id="como-funciona" className="py-24 bg-background">
+      <section id="como-funciona" className="py-24 bg-background animate-fade-in">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="text-4xl lg:text-5xl font-bold">
@@ -526,7 +551,7 @@ export default function Home() {
       {/* Gallery Section */}
       <section className="py-24 bg-background">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-on-scroll">
             <h2 className="text-4xl lg:text-5xl font-bold">
               Projetos de Clientes
             </h2>
@@ -535,7 +560,7 @@ export default function Home() {
             </p>
           </div>
           {/* Featured Project Summary */}
-          <Card className="p-8 mb-12 bg-gradient-to-br from-[#243fad]/10 to-[#3ac6ff]/10 border-2 border-[#3ac6ff]">
+          <Card className="p-8 mb-12 bg-gradient-to-br from-[#243fad]/10 to-[#3ac6ff]/10 border-2 border-[#3ac6ff] animate-slide-left">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-3xl font-bold mb-4">Projeto Mata Mourisca</h3>
@@ -701,7 +726,7 @@ export default function Home() {
       </section>
 
       {/* CTA Form Section */}
-      <section id="orcamento" className="py-24 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white diagonal-section diagonal-top">
+      <section id="orcamento" className="py-24 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white diagonal-section diagonal-top animate-fade-in">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 space-y-4">
