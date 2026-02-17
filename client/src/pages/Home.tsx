@@ -38,7 +38,8 @@ import {
   PowerOff,
   FileText,
   Menu,
-  X
+  X,
+  ChevronDown
 } from "lucide-react";
 import {
   Tooltip,
@@ -414,6 +415,11 @@ export default function Home() {
               aria-label={`Ir para slide ${index + 1}`}
             />
           ))}
+        </div>
+        
+        {/* Scroll Down Indicator */}
+        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+          <ChevronDown className="w-8 h-8 text-white/80" />
         </div>
       </Carousel>
 
