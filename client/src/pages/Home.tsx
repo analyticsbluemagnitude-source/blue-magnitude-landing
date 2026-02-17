@@ -44,22 +44,22 @@ export default function Home() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Obrigado! Entraremos em contato em breve.");
+    toast.success("Obrigado! Entraremos em contacto em breve.");
     setFormData({ name: "", email: "", phone: "", city: "" });
   };
 
   const stats = [
     { value: "15+", label: "Anos de Experiência", icon: Award },
     { value: "5.000+", label: "Instalações Realizadas", icon: CheckCircle2 },
-    { value: "95%", label: "Economia Média", icon: TrendingDown },
+    { value: "95%", label: "Poupança Média", icon: TrendingDown },
     { value: "25", label: "Anos de Garantia", icon: Shield }
   ];
 
   const benefits = [
     {
       icon: DollarSign,
-      title: "Economia Imediata",
-      description: "Reduza sua conta de luz em até 95% desde o primeiro mês de instalação."
+      title: "Poupança Imediata",
+      description: "Reduza a sua fatura de eletricidade em até 95% desde o primeiro mês de instalação."
     },
     {
       icon: Leaf,
@@ -74,7 +74,7 @@ export default function Home() {
     {
       icon: Shield,
       title: "Proteção Contra Inflação",
-      description: "Livre-se dos aumentos constantes nas tarifas de energia elétrica."
+      description: "Livre-se dos aumentos constantes nas tarifas de eletricidade."
     },
     {
       icon: BarChart3,
@@ -92,12 +92,12 @@ export default function Home() {
     {
       number: "01",
       title: "Análise Gratuita",
-      description: "Avaliamos seu consumo e dimensionamos o sistema ideal para sua necessidade."
+      description: "Avaliamos o seu consumo e dimensionamos o sistema ideal para a sua necessidade."
     },
     {
       number: "02",
       title: "Projeto Personalizado",
-      description: "Criamos um projeto técnico completo com simulação de economia e retorno."
+      description: "Criamos um projeto técnico completo com simulação de poupança e retorno."
     },
     {
       number: "03",
@@ -115,7 +115,7 @@ export default function Home() {
     {
       name: "Carlos Mendes",
       role: "Empresário",
-      text: "Instalei há 2 anos e já economizei mais de R$ 45.000. Melhor investimento que fiz!",
+      text: "Instalei há 2 anos e já poupei mais de 45.000€. Melhor investimento que fiz!",
       rating: 5
     },
     {
@@ -127,7 +127,7 @@ export default function Home() {
     {
       name: "Roberto Oliveira",
       role: "Produtor Rural",
-      text: "A economia foi além das expectativas. Conta de luz praticamente zerada.",
+      text: "A poupança foi além das expectativas. Fatura de eletricidade praticamente zerada.",
       rating: 5
     }
   ];
@@ -143,7 +143,7 @@ export default function Home() {
     },
     {
       question: "Qual o prazo de retorno do investimento?",
-      answer: "Em média, o retorno ocorre entre 4 a 6 anos, dependendo do consumo e da tarifa local de energia."
+      answer: "Em média, o retorno ocorre entre 4 a 6 anos, dependendo do consumo e da tarifa local de eletricidade."
     },
     {
       question: "Preciso fazer manutenção constante?",
@@ -165,14 +165,14 @@ export default function Home() {
               <img 
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/giWuxHpzJpBsYoQy.png" 
                 alt="Blue Magnitude" 
-                className="h-12 w-auto"
+                className="h-16 w-auto"
               />
             </div>
             <nav className="hidden md:flex items-center gap-8">
               <a href="#beneficios" className="text-sm font-medium hover:text-primary transition-colors">Benefícios</a>
               <a href="#como-funciona" className="text-sm font-medium hover:text-primary transition-colors">Como Funciona</a>
-              <a href="#depoimentos" className="text-sm font-medium hover:text-primary transition-colors">Depoimentos</a>
-              <a href="#contato" className="text-sm font-medium hover:text-primary transition-colors">Contato</a>
+              <a href="#depoimentos" className="text-sm font-medium hover:text-primary transition-colors">Testemunhos</a>
+              <a href="#contato" className="text-sm font-medium hover:text-primary transition-colors">Contacto</a>
             </nav>
             <Button asChild className="energy-glow">
               <a href="#orcamento">Solicitar Orçamento</a>
@@ -204,16 +204,16 @@ export default function Home() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3ac6ff] via-[#6cca7d] to-[#d7e028]">
                   Luz Solar
                 </span>
-                {" "}em Economia Real
+                {" "}em Poupança Real
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Reduza sua conta de energia em até <strong className="text-[#d7e028]">95%</strong> com painéis solares de última geração. 
-                Investimento inteligente com retorno garantido e sustentabilidade para sua família.
+                Reduza a sua fatura de energia em até <strong className="text-[#d7e028]">95%</strong> com painéis solares de última geração. 
+                Investimento inteligente com retorno garantido e sustentabilidade para a sua família.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" asChild className="energy-glow text-lg h-14 px-8">
                   <a href="#orcamento">
-                    Quero Economizar Agora
+                    Quero Poupar Agora
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </a>
                 </Button>
@@ -257,10 +257,10 @@ export default function Home() {
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="text-4xl lg:text-5xl font-bold">
-              Por Que Escolher Energia Solar?
+              Porquê Escolher Energia Solar?
             </h2>
             <p className="text-xl text-muted-foreground">
-              Invista no futuro com tecnologia sustentável que traz economia real e valorização do seu patrimônio.
+              Invista no futuro com tecnologia sustentável que traz poupança real e valorização do seu património.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -323,11 +323,11 @@ export default function Home() {
             </div>
             <div className="space-y-8">
               <h2 className="text-4xl lg:text-5xl font-bold">
-                Mais de 5.000 Famílias Já Economizam com a Gente
+                Mais de 5.000 Famílias Já Poupam Connosco
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Junte-se aos milhares de brasileiros que já transformaram suas casas em usinas de energia limpa 
-                e estão economizando milhares de reais todos os meses.
+                Junte-se aos milhares de portugueses que já transformaram as suas casas em centrais de energia limpa 
+                e estão a poupar milhares de euros todos os meses.
               </p>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -368,10 +368,10 @@ export default function Home() {
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="text-4xl lg:text-5xl font-bold">
-              O Que Nossos Clientes Dizem
+              O Que os Nossos Clientes Dizem
             </h2>
             <p className="text-xl text-muted-foreground">
-              Depoimentos reais de quem já está economizando com energia solar.
+              Testemunhos reais de quem já está a poupar com energia solar.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -421,7 +421,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 space-y-4">
               <h2 className="text-4xl lg:text-5xl font-bold">
-                Solicite Seu Orçamento Gratuito
+                Solicite o Seu Orçamento Gratuito
               </h2>
               <p className="text-xl opacity-90">
                 Preencha o formulário e receba uma proposta personalizada em até 24 horas.
@@ -437,7 +437,7 @@ export default function Home() {
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       required
-                      placeholder="Seu nome"
+                      placeholder="O seu nome"
                       className="h-12"
                     />
                   </div>
@@ -449,7 +449,7 @@ export default function Home() {
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
                       required
-                      placeholder="seu@email.com"
+                      placeholder="o-seu@email.pt"
                       className="h-12"
                     />
                   </div>
@@ -472,7 +472,7 @@ export default function Home() {
                       value={formData.city}
                       onChange={(e) => setFormData({...formData, city: e.target.value})}
                       required
-                      placeholder="Sua cidade"
+                      placeholder="A sua cidade"
                       className="h-12"
                     />
                   </div>
@@ -482,7 +482,7 @@ export default function Home() {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
                 <p className="text-sm text-center text-muted-foreground">
-                  Ao enviar, você concorda em receber contato da Blue Magnitude sobre sua solicitação.
+                  Ao enviar, concorda em receber contacto da Blue Magnitude sobre a sua solicitação.
                 </p>
               </form>
             </Card>
@@ -496,10 +496,10 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-8">
               <h2 className="text-4xl lg:text-5xl font-bold">
-                Entre em Contato
+                Entre em Contacto
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Nossa equipe está pronta para tirar suas dúvidas e ajudar você a dar o primeiro passo 
+                A nossa equipa está pronta para esclarecer as suas dúvidas e ajudá-lo a dar o primeiro passo 
                 rumo à independência energética.
               </p>
               <div className="space-y-6">
@@ -509,8 +509,8 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="font-bold mb-1">Telefone</div>
-                    <a href="tel:+5511999999999" className="text-muted-foreground hover:text-primary transition-colors">
-                      (11) 99999-9999
+                    <a href="tel:+351999999999" className="text-muted-foreground hover:text-primary transition-colors">
+                      +351 999 999 999
                     </a>
                   </div>
                 </div>
@@ -532,7 +532,7 @@ export default function Home() {
                   <div>
                     <div className="font-bold mb-1">Endereço</div>
                     <p className="text-muted-foreground">
-                      São Paulo, SP - Brasil
+                      Lisboa, Portugal
                     </p>
                   </div>
                 </div>
@@ -557,10 +557,10 @@ export default function Home() {
               <img 
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/giWuxHpzJpBsYoQy.png" 
                 alt="Blue Magnitude" 
-                className="h-10 w-auto brightness-0 invert"
+                className="h-12 w-auto brightness-0 invert"
               />
               <p className="text-sm opacity-80">
-                Transformando luz solar em economia e sustentabilidade desde 2009.
+                A transformar luz solar em poupança e sustentabilidade desde 2009.
               </p>
             </div>
             <div>
@@ -568,8 +568,8 @@ export default function Home() {
               <ul className="space-y-2 text-sm opacity-80">
                 <li><a href="#beneficios" className="hover:opacity-100 transition-opacity">Benefícios</a></li>
                 <li><a href="#como-funciona" className="hover:opacity-100 transition-opacity">Como Funciona</a></li>
-                <li><a href="#depoimentos" className="hover:opacity-100 transition-opacity">Depoimentos</a></li>
-                <li><a href="#contato" className="hover:opacity-100 transition-opacity">Contato</a></li>
+                <li><a href="#depoimentos" className="hover:opacity-100 transition-opacity">Testemunhos</a></li>
+                <li><a href="#contato" className="hover:opacity-100 transition-opacity">Contacto</a></li>
               </ul>
             </div>
             <div>
@@ -582,11 +582,11 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Contato</h4>
+              <h4 className="font-bold mb-4">Contacto</h4>
               <ul className="space-y-2 text-sm opacity-80">
-                <li>(11) 99999-9999</li>
-                <li>contato@bluemagnitude.com.br</li>
-                <li>São Paulo, SP - Brasil</li>
+                <li>+351 999 999 999</li>
+                <li>contacto@bluemagnitude.pt</li>
+                <li>Lisboa, Portugal</li>
               </ul>
             </div>
           </div>
