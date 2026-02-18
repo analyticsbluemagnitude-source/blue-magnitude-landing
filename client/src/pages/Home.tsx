@@ -828,16 +828,26 @@ export default function Home() {
                 </div>
               </div>
               <div className="space-y-4">
-                <img 
-                  src="https://private-us-east-1.manuscdn.com/sessionFile/q5sviWRou2JGIIHcxzxwoX/sandbox/naqrcvcQxtrVwZaHNxmMoq-img-1_1771420125000_na1fn_bWF0YS1tb3VyaXNjYS1kZXBvaXM.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcTVzdmlXUm91MkpHSUlIY3h6eHdvWC9zYW5kYm94L25hcXJjdmNReHRyVndaYUhOeG1Nb3EtaW1nLTFfMTc3MTQyMDEyNTAwMF9uYTFmbl9iV0YwWVMxdGIzVnlhWE5qWVMxa1pYQnZhWE0uanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=o6LdjWgigBGBzlUuZ7sPsPZrrbOUC-dVeqZdebooODMak7m0~kyz6zqj0OcUcR8CQkBK1griIwhSNzZX4dvYrQYSeYp0tNpB0v5L0fiXyJoi7H-HqtsGBfl8UzbCnBvpSmHf92LXMufHLGPENinepDxHzlT4Lvm-Ja3akokliihqAt0u5WrNQjfo6urkK6~UpFI7Ha1zJdosKl0TWKaGg08eAnqSqmRnFPfH3OlrHC8cIHc9ncH2DEdVHMT0nhc2hjFJdNIM286XtApP5acpRJc89vLPfDygqgg3LWW5lgPlK-tU35iV4zbR4oC6EVhLDQCySazZwuoWNDjgzmuKvA__"
-                  alt="Projeto Mata Mourisca - Depois da Instalação"
-                  className="rounded-xl shadow-lg w-full h-auto object-cover"
-                />
-                <img 
-                  src="https://private-us-east-1.manuscdn.com/sessionFile/q5sviWRou2JGIIHcxzxwoX/sandbox/naqrcvcQxtrVwZaHNxmMoq-img-2_1771420127000_na1fn_bWF0YS1tb3VyaXNjYS1hbnRlcw.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcTVzdmlXUm91MkpHSUlIY3h6eHdvWC9zYW5kYm94L25hcXJjdmNReHRyVndaYUhOeG1Nb3EtaW1nLTJfMTc3MTQyMDEyNzAwMF9uYTFmbl9iV0YwWVMxdGIzVnlhWE5qWVMxaGJuUmxjdy5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=SnMzimmeVhUURhwr9wqNJX~BDkLyKKQ9uD3OYK55aqc9vjsoyX7pzXrjsmbfG3j7r~ZODmQPZx6VqTokx8c~KeHimhDqQ6~DQoPbCvB6N7wMA4u8P6K5NZZ-TmrA7uk6WcJPYlCP0AYo-FIsi3DD60xCVy81xmNZDBG~RzNEEyAm3hRGIpF4~MVYz59ZCoBJstT1b~7WKT0huVlWgCANeuHhLMFVFYLVkC3SjpgssfOaA-GSW-vxJxiq~QSDSKuakRhIwq~nzpAlphMgr-YhD-efl-vYQfKjfcAXrfRTMnuovg6hXlaz-L4VQKDV5YapuNh-zOJr6GT09D4pyqk3Fg__"
-                  alt="Projeto Mata Mourisca - Antes da Instalação"
-                  className="rounded-xl shadow-lg w-full h-auto object-cover"
-                />
+                <div className="group relative overflow-hidden rounded-xl">
+                  <img 
+                    src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/wzfZTzfswIpbfnoS.jpg"
+                    alt="Projeto Mata Mourisca - Instalação"
+                    className="rounded-xl shadow-lg w-full h-auto object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-start justify-start p-6">
+                    <span className="text-white text-3xl font-bold">DEPOIS</span>
+                  </div>
+                </div>
+                <div className="group relative overflow-hidden rounded-xl">
+                  <img 
+                    src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/runBWVaITLbvTBCm.jpg"
+                    alt="Projeto Mata Mourisca - Painéis Completos"
+                    className="rounded-xl shadow-lg w-full h-auto object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-start justify-start p-6">
+                    <span className="text-white text-3xl font-bold">ANTES</span>
+                  </div>
+                </div>
               </div>
             </div>
           </Card>
