@@ -5,3 +5,7 @@
 
 - [x] Remover título "Depoimento em Vídeo da Susy" da seção de testemunhos
 - [x] Simplificar seção mantendo apenas título principal e descrição breve
+
+- [x] Criar botão de play personalizado sobre vídeo de testemunho
+- [x] Adicionar thumbnail atrativo ao vídeo
+- [x] Implementar estado de hover e animações no botão
