@@ -732,48 +732,48 @@ export default function Home() {
       {/* Video Section */}
       <section className="py-10 bg-gradient-to-br from-[#243fad]/10 to-[#6cca7d]/10">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-            <h2 className="text-2xl lg:text-3xl font-bold">
+          <div className="text-center max-w-3xl mx-auto mb-6 space-y-2">
+            <h2 className="text-xl lg:text-2xl font-bold">
               Veja Como Instalamos
             </h2>
-            <p className="text-base text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               Acompanhe o processo completo de instalação dos nossos sistemas fotovoltaicos.
             </p>
           </div>
-          <div className="grid lg:grid-cols-3 gap-12 items-start">
-            <div className="lg:col-span-1 space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#3ac6ff] flex items-center justify-center flex-shrink-0">
-                  <CheckCircle2 className="w-6 h-6 text-white" />
+          <div className="grid lg:grid-cols-3 gap-6 items-start">
+            <div className="lg:col-span-1 space-y-3">
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-[#3ac6ff] flex items-center justify-center flex-shrink-0">
+                  <CheckCircle2 className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold mb-1">Equipa Certificada</h4>
-                  <p className="text-muted-foreground">Técnicos especializados e certificados pela DGEG</p>
+                  <h4 className="text-sm font-bold mb-0.5">Equipa Certificada</h4>
+                  <p className="text-xs text-muted-foreground">Técnicos especializados e certificados pela DGEG</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#6cca7d] flex items-center justify-center flex-shrink-0">
-                  <CheckCircle2 className="w-6 h-6 text-white" />
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-[#6cca7d] flex items-center justify-center flex-shrink-0">
+                  <CheckCircle2 className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold mb-1">Equipamentos Premium</h4>
-                  <p className="text-muted-foreground">Painéis e inversores de marcas líderes mundiais</p>
+                  <h4 className="text-sm font-bold mb-0.5">Equipamentos Premium</h4>
+                  <p className="text-xs text-muted-foreground">Painéis e inversores de marcas líderes mundiais</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#d7e028] flex items-center justify-center flex-shrink-0">
-                  <CheckCircle2 className="w-6 h-6 text-white" />
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-[#d7e028] flex items-center justify-center flex-shrink-0">
+                  <CheckCircle2 className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold mb-1">Instalação Rápida</h4>
-                  <p className="text-muted-foreground">Sistema completo operacional em até 3 dias</p>
+                  <h4 className="text-sm font-bold mb-0.5">Instalação Rápida</h4>
+                  <p className="text-xs text-muted-foreground">Sistema completo operacional em até 3 dias</p>
                 </div>
               </div>
             </div>
             <div className="lg:col-span-2 relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl kinetic-card bg-black">
                 <video
-                  className="w-full h-auto max-h-[700px]"
+                  className="w-full h-auto max-h-[500px]"
                   controls
                   preload="metadata"
                   poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/lSuvGiPJAIfNVQds.jpg"
@@ -782,8 +782,6 @@ export default function Home() {
                   O seu navegador não suporta a reprodução de vídeos.
                 </video>
               </div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-[#3ac6ff] to-[#d7e028] rounded-full opacity-20 blur-3xl"></div>
-              <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-[#6cca7d] to-[#243fad] rounded-full opacity-20 blur-3xl"></div>
             </div>
           </div>
         </div>
@@ -845,186 +843,188 @@ export default function Home() {
       {/* Gallery Section */}
       <section className="py-10 bg-background">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4 animate-on-scroll">
-            <h2 className="text-2xl lg:text-3xl font-bold">
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <h2 className="text-xl lg:text-2xl font-bold">
               Projetos de Clientes
             </h2>
-            <p className="text-base text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               Conheça algumas das mais de 300 instalações solares que já realizamos em Portugal.
             </p>
           </div>
-          {/* Featured Project Summary */}
-          <Card className="p-8 mb-12 bg-gradient-to-br from-[#243fad]/10 to-[#3ac6ff]/10 border-2 border-[#3ac6ff] animate-slide-left">
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-2xl font-bold mb-4">Projeto Mata Mourisca</h3>
-                <div className="space-y-3 text-base">
-                  <p className="text-muted-foreground">
-                    <strong className="text-foreground">Sistema:</strong> 7 painéis solares Aiko 450W com inversor híbrido Solplanet ASW4000H
-                  </p>
-                  <p className="text-muted-foreground">
-                    <strong className="text-foreground">Armazenamento:</strong> Bateria Sunwoda Monawall 5,12 kW
-                  </p>
-                  <p className="text-muted-foreground">
-                    <strong className="text-foreground">Resultado:</strong> Energia renovável consistente com autonomia total, mesmo durante a noite
-                  </p>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="group relative overflow-hidden rounded-xl">
-                  <img 
-                    src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/wzfZTzfswIpbfnoS.jpg"
-                    alt="Projeto Mata Mourisca - Instalação"
-                    className="rounded-xl shadow-lg w-full h-auto object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-start justify-start p-6">
-                    <span className="text-white text-3xl font-bold">DEPOIS</span>
+          
+          <Carousel className="w-full" opts={{ loop: true }}>
+            <CarouselContent>
+              {/* Projeto 1: Mata Mourisca */}
+              <CarouselItem>
+                <Card className="p-6 bg-gradient-to-br from-[#243fad]/10 to-[#3ac6ff]/10 border-2 border-[#3ac6ff]">
+                  <div className="grid lg:grid-cols-2 gap-6 items-center">
+                    <div>
+                      <h3 className="text-xl font-bold mb-3">Projeto Mata Mourisca</h3>
+                      <div className="space-y-2 text-sm">
+                        <p className="text-muted-foreground">
+                          <strong className="text-foreground">Sistema:</strong> 7 painéis Aiko 450W + Solplanet ASW4000H
+                        </p>
+                        <p className="text-muted-foreground">
+                          <strong className="text-foreground">Armazenamento:</strong> Bateria Sunwoda 5,12 kW
+                        </p>
+                        <p className="text-muted-foreground">
+                          <strong className="text-foreground">Resultado:</strong> Autonomia total 24h
+                        </p>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <img 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/wzfZTzfswIpbfnoS.jpg"
+                        alt="Projeto Mata Mourisca - Depois"
+                        className="rounded-xl shadow-lg w-full h-auto object-cover"
+                      />
+                      <img 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/runBWVaITLbvTBCm.jpg"
+                        alt="Projeto Mata Mourisca - Antes"
+                        className="rounded-xl shadow-lg w-full h-auto object-cover"
+                      />
+                    </div>
+                  </div>
+                </Card>
+              </CarouselItem>
+              
+              {/* Projeto 2: Autoconsumo Alto Desempenho */}
+              <CarouselItem>
+                <Card className="p-6 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10 border-2 border-[#6cca7d]">
+                  <div className="grid lg:grid-cols-2 gap-6 items-center">
+                    <div className="space-y-3">
+                      <img 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/WVgFGcHSCvZpgfeD.jpg"
+                        alt="Projeto Autoconsumo"
+                        className="rounded-xl shadow-lg w-full h-auto object-cover"
+                      />
+                      <img 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/aKenSoiHHZUobuqN.jpg"
+                        alt="Projeto Autoconsumo - Painéis"
+                        className="rounded-xl shadow-lg w-full h-auto object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-3">Autoconsumo Alto Desempenho</h3>
+                      <div className="space-y-2 text-sm">
+                        <p className="text-muted-foreground">
+                          <strong className="text-foreground">Sistema:</strong> 20 painéis Aiko 605W + Fox ESS H3-Pro 20.0
+                        </p>
+                        <p className="text-muted-foreground">
+                          <strong className="text-foreground">Armazenamento:</strong> Baterias Fox ESS 11,6 kW
+                        </p>
+                        <p className="text-muted-foreground">
+                          <strong className="text-foreground">Resultado:</strong> Máxima autonomia energética
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </CarouselItem>
+              
+              {/* Projetos Adicionais */}
+              <CarouselItem>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
+                    <img 
+                      src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/JBfLRaTDPyOmSYTB.jpg"
+                      alt="Telhado Metálico"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-white">
+                      <h3 className="font-bold">Telhado Metálico</h3>
+                      <p className="text-xs">Adaptação para diversos tipos</p>
+                    </div>
+                  </div>
+                  <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
+                    <img 
+                      src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/mjIFhCQRvUScOGio.jpg"
+                      alt="Projeto Comercial"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-white">
+                      <h3 className="font-bold">Projeto Comercial</h3>
+                      <p className="text-xs">Soluções para empresas</p>
+                    </div>
+                  </div>
+                  <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
+                    <img 
+                      src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/bJReAHxZrjozkZKi.jpg"
+                      alt="Grande Porte"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-white">
+                      <h3 className="font-bold">Grande Porte</h3>
+                      <p className="text-xs">Alta capacidade</p>
+                    </div>
+                  </div>
+                  <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
+                    <img 
+                      src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/HqZchUXqjPHNOylS.png"
+                      alt="Armazenamento"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-white">
+                      <h3 className="font-bold">Armazenamento</h3>
+                      <p className="text-xs">Baterias de alta capacidade</p>
+                    </div>
                   </div>
                 </div>
-                <div className="group relative overflow-hidden rounded-xl">
-                  <img 
-                    src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/runBWVaITLbvTBCm.jpg"
-                    alt="Projeto Mata Mourisca - Painéis Completos"
-                    className="rounded-xl shadow-lg w-full h-auto object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-start justify-start p-6">
-                    <span className="text-white text-3xl font-bold">ANTES</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Card>
-          
-          {/* Second Featured Project */}
-          <Card className="p-8 mb-12 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10 border-2 border-[#6cca7d] animate-slide-right">
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div className="space-y-4">
-                <img 
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/WVgFGcHSCvZpgfeD.jpg"
-                  alt="Projeto Autoconsumo - Instalação"
-                  className="rounded-xl shadow-lg w-full h-auto object-cover max-h-[280px]"
-                />
-                <img 
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/aKenSoiHHZUobuqN.jpg"
-                  alt="Projeto Autoconsumo - Painéis Completos"
-                  className="rounded-xl shadow-lg w-full h-auto object-cover max-h-[280px]"
-                />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-4">Projeto Autoconsumo de Alto Desempenho</h3>
-                <div className="space-y-3 text-base">
-                  <p className="text-muted-foreground">
-                    <strong className="text-foreground">Sistema:</strong> 20 painéis solares Aiko 605W com inversor Fox ESS H3-Pro 20.0
-                  </p>
-                  <p className="text-muted-foreground">
-                    <strong className="text-foreground">Armazenamento:</strong> Baterias Fox ESS Energy Cube 2900 (11,6 kW total)
-                  </p>
-                  <p className="text-muted-foreground">
-                    <strong className="text-foreground">Resultado:</strong> Autonomia energética maximizada com fornecimento contínuo e estável
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Card>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
-              <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/JBfLRaTDPyOmSYTB.jpg"
-                alt="Sistema Residencial Completo"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-bold mb-2">Telhado Metálico</h3>
-                  <p className="text-sm opacity-90">Adaptação para diversos tipos de cobertura</p>
-                </div>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
-              <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/mjIFhCQRvUScOGio.jpg"
-                alt="Instalação Comercial"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-bold mb-2">Projeto Comercial</h3>
-                  <p className="text-sm opacity-90">Soluções para empresas e indústrias</p>
-                </div>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
-              <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/bJReAHxZrjozkZKi.jpg"
-                alt="Sistema de Grande Porte"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-bold mb-2">Grande Porte</h3>
-                  <p className="text-sm opacity-90">Sistemas de alta capacidade para grandes consumos</p>
-                </div>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
-              <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/HqZchUXqjPHNOylS.png"
-                alt="Bateria Solplanet de Armazenamento"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-bold mb-2">Armazenamento</h3>
-                  <p className="text-sm opacity-90">Energia garantida à noite, dias sem sol e sem eletricidade. Baterias armazenam o excedente para independência energética</p>
-                </div>
-              </div>
-            </div>
-          </div>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious className="left-4" />
+            <CarouselNext className="right-4" />
+          </Carousel>
         </div>
       </section>
 
       {/* Testimonials Section */}
       <section id="depoimentos" className="py-10 bg-background">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-2xl lg:text-3xl font-bold">
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <h2 className="text-xl lg:text-2xl font-bold">
               O Que os Nossos Clientes Dizem
             </h2>
-            <p className="text-base text-muted-foreground mt-4">
-              Conheça as experiências reais de clientes que já transformaram as suas casas com energia solar.
-            </p>
           </div>
           
-          {/* Video Testimonial */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <div className="rounded-xl overflow-hidden shadow-2xl mb-6">
-              <video
-                className="w-full h-auto max-h-[500px]"
-                controls
-                poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/aSoVwIwDLKcGIJXi.png"
-              >
-                <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/GakVTWAQclLNENtl.mp4" type="video/mp4" />
-                O seu navegador não suporta a reprodução de vídeos.
-              </video>
-            </div>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="p-8 kinetic-card">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Sun key={i} className="w-5 h-5 fill-[#d7e028] text-[#d7e028]" />
-                  ))}
-                </div>
-                <p className="text-lg mb-6 leading-relaxed italic">"{testimonial.text}"</p>
-                <div>
-                  <div className="font-bold">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                </div>
-              </Card>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <Carousel className="w-full" opts={{ loop: true }}>
+              <CarouselContent>
+                {/* Video Testimonial Slide */}
+                <CarouselItem>
+                  <div className="rounded-xl overflow-hidden shadow-2xl">
+                    <video
+                      className="w-full h-auto max-h-[500px]"
+                      controls
+                      poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/aSoVwIwDLKcGIJXi.png"
+                    >
+                      <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/GakVTWAQclLNENtl.mp4" type="video/mp4" />
+                      O seu navegador não suporta a reprodução de vídeos.
+                    </video>
+                  </div>
+                </CarouselItem>
+                
+                {/* Text Testimonials Slides */}
+                {testimonials.map((testimonial, index) => (
+                  <CarouselItem key={index}>
+                    <Card className="p-8 kinetic-card h-full flex flex-col justify-center">
+                      <div className="flex gap-1 mb-4 justify-center">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Sun key={i} className="w-5 h-5 fill-[#d7e028] text-[#d7e028]" />
+                        ))}
+                      </div>
+                      <p className="text-lg mb-6 leading-relaxed italic text-center">"{testimonial.text}"</p>
+                      <div className="text-center">
+                        <div className="font-bold">{testimonial.name}</div>
+                        <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                      </div>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-4" />
+              <CarouselNext className="right-4" />
+            </Carousel>
           </div>
         </div>
       </section>

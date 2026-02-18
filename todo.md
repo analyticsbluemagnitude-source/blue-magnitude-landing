@@ -81,3 +81,8 @@
 - [x] Mover título e descrição do formulário para dentro da área azul
 - [x] Reduzir espaçamentos internos do formulário
 - [x] Garantir que todo conteúdo fique dentro do card azul
+
+- [x] Compactar seção de vídeo de instalação (reduzir fontes, ícones e espaçamentos)
+- [x] Transformar testemunhos em carrossel (vídeo + 2 cards de texto)
+- [x] Transformar galeria de projetos em carrossel com navegação
+- [x] Testar responsividade dos novos carrosséis
