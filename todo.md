@@ -130,3 +130,9 @@
 
 - [x] Reduzir espaçamento entre seção de Testemunhos e FAQ
 - [x] Ajustar padding da seção FAQ
+
+- [x] Implementar auto-play no carrossel hero (5 segundos)
+- [x] Implementar auto-play no carrossel de testemunhos (5 segundos)
+- [x] Implementar auto-play no carrossel de projetos (5 segundos)
+- [x] Adicionar pausa ao hover em todos os carrosséis
+- [x] Testar transições automáticas

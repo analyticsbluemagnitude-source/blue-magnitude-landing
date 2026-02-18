@@ -72,8 +72,10 @@ export default function Home() {
   const [isPaused, setIsPaused] = useState(false);
   const [testimonialsApi, setTestimonialsApi] = useState<CarouselApi>();
   const [currentTestimonialSlide, setCurrentTestimonialSlide] = useState(0);
+  const [isTestimonialsPaused, setIsTestimonialsPaused] = useState(false);
   const [projectsApi, setProjectsApi] = useState<CarouselApi>();
   const [currentProjectSlide, setCurrentProjectSlide] = useState(0);
+  const [isProjectsPaused, setIsProjectsPaused] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -158,6 +160,28 @@ export default function Home() {
       projectsApi.off("select", onSelect);
     };
   }, [projectsApi]);
+
+  // Auto-play testimonials carousel
+  useEffect(() => {
+    if (!testimonialsApi || isTestimonialsPaused) return;
+
+    const autoplay = setInterval(() => {
+      testimonialsApi.scrollNext();
+    }, 5000); // 5 seconds
+
+    return () => clearInterval(autoplay);
+  }, [testimonialsApi, isTestimonialsPaused]);
+
+  // Auto-play projects carousel
+  useEffect(() => {
+    if (!projectsApi || isProjectsPaused) return;
+
+    const autoplay = setInterval(() => {
+      projectsApi.scrollNext();
+    }, 5000); // 5 seconds
+
+    return () => clearInterval(autoplay);
+  }, [projectsApi, isProjectsPaused]);
 
   // Auto-play carousel
   useEffect(() => {
@@ -895,7 +919,13 @@ export default function Home() {
           </div>
           
           <div className="relative">
-          <Carousel className="w-full" opts={{ loop: true }} setApi={setProjectsApi}>
+          <Carousel 
+            className="w-full" 
+            opts={{ loop: true }} 
+            setApi={setProjectsApi}
+            onMouseEnter={() => setIsProjectsPaused(true)}
+            onMouseLeave={() => setIsProjectsPaused(false)}
+          >
             <CarouselContent>
               {/* Projeto 1: Mata Mourisca */}
               <CarouselItem>
@@ -1038,7 +1068,13 @@ export default function Home() {
           </div>
           
           <div className="max-w-4xl mx-auto relative">
-            <Carousel className="w-full" opts={{ loop: true }} setApi={setTestimonialsApi}>
+            <Carousel 
+              className="w-full" 
+              opts={{ loop: true }} 
+              setApi={setTestimonialsApi}
+              onMouseEnter={() => setIsTestimonialsPaused(true)}
+              onMouseLeave={() => setIsTestimonialsPaused(false)}
+            >
               <CarouselContent>
                 {/* Video Testimonial Slide */}
                 <CarouselItem>
