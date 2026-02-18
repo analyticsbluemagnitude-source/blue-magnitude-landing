@@ -1084,7 +1084,7 @@ export default function Home() {
                     />
                   </div>
                 </div>
-                <Button type="submit" size="lg" className="w-full h-14 text-lg energy-glow text-white flex items-center justify-center gap-2">
+                <Button type="submit" className="w-full h-16 text-base font-semibold energy-glow text-white flex items-center justify-center gap-3 px-8">
                   <span>Receber Orçamento Gratuito</span>
                   <ArrowRight className="w-5 h-5" />
                 </Button>

@@ -14,3 +14,6 @@
 - [x] Padronizar todos os botões com tom de azul (#243fad)
 - [x] Adicionar animações aos botões
 - [x] Remover botão de play personalizado do vídeo
+
+- [x] Ajustar altura e espaçamento do botão "Receber Orçamento Gratuito"
+- [x] Garantir que texto fique perfeitamente visível e centralizado
