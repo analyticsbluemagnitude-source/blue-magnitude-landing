@@ -567,27 +567,27 @@ export default function Home() {
       {/* Calculator Section */}
       <section className="py-16 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4 animate-on-scroll">
-            <h2 className="text-2xl lg:text-3xl font-bold">
+          <div className="text-center max-w-3xl mx-auto mb-8 space-y-2 animate-on-scroll">
+            <h2 className="text-xl lg:text-2xl font-bold">
               Calcule a Sua Poupança
             </h2>
-            <p className="text-base text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               Descubra quanto pode poupar por mês e por ano com energia solar.
             </p>
           </div>
           
-          <div className="max-w-5xl mx-auto">
-            <Card className="p-8 lg:p-12 kinetic-card border-2 border-[#6cca7d] animate-scale">
-              <div className="grid lg:grid-cols-2 gap-12">
+          <div className="max-w-4xl mx-auto">
+            <Card className="p-6 lg:p-8 kinetic-card border-2 border-[#6cca7d] animate-scale">
+              <div className="grid lg:grid-cols-2 gap-8">
                 {/* Input Section */}
-                <div className="space-y-8">
+                <div className="space-y-6">
                   <div>
-                    <Label className="text-lg font-semibold mb-4 block">
+                    <Label className="text-base font-semibold mb-3 block">
                       Qual é a sua fatura mensal de eletricidade?
                     </Label>
-                    <div className="space-y-6">
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl font-bold text-[#243fad]">
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <span className="text-3xl font-bold text-[#243fad]">
                           €{monthlyBill[0]}
                         </span>
                         <span className="text-muted-foreground">/mês</span>
@@ -618,13 +618,13 @@ export default function Home() {
                 </div>
                 
                 {/* Results Section */}
-                <div className="space-y-6">
-                  <div className="p-6 rounded-2xl bg-gradient-to-br from-[#6cca7d]/20 to-[#d7e028]/20 border-2 border-[#6cca7d]">
-                    <div className="flex items-center gap-3 mb-3">
-                      <TrendingDown className="w-6 h-6 text-[#6cca7d]" />
-                      <h3 className="text-lg font-semibold">Poupança Mensal</h3>
+                <div className="space-y-4">
+                  <div className="p-4 rounded-xl bg-gradient-to-br from-[#6cca7d]/20 to-[#d7e028]/20 border-2 border-[#6cca7d]">
+                    <div className="flex items-center gap-2 mb-2">
+                      <TrendingDown className="w-5 h-5 text-[#6cca7d]" />
+                      <h3 className="text-base font-semibold">Poupança Mensal</h3>
                     </div>
-                    <p className="text-4xl font-bold text-[#6cca7d]">
+                    <p className="text-3xl font-bold text-[#6cca7d]">
                       €{monthlySavings.toFixed(2)}
                     </p>
                     <p className="text-sm text-muted-foreground mt-1">
@@ -632,12 +632,12 @@ export default function Home() {
                     </p>
                   </div>
                   
-                  <div className="p-6 rounded-2xl bg-gradient-to-br from-[#3ac6ff]/20 to-[#243fad]/20 border-2 border-[#3ac6ff]">
-                    <div className="flex items-center gap-3 mb-3">
-                      <BarChart3 className="w-6 h-6 text-[#3ac6ff]" />
-                      <h3 className="text-lg font-semibold">Poupança Anual</h3>
+                  <div className="p-4 rounded-xl bg-gradient-to-br from-[#3ac6ff]/20 to-[#243fad]/20 border-2 border-[#3ac6ff]">
+                    <div className="flex items-center gap-2 mb-2">
+                      <BarChart3 className="w-5 h-5 text-[#3ac6ff]" />
+                      <h3 className="text-base font-semibold">Poupança Anual</h3>
                     </div>
-                    <p className="text-4xl font-bold text-[#3ac6ff]">
+                    <p className="text-3xl font-bold text-[#3ac6ff]">
                       €{yearlySavings.toFixed(2)}
                     </p>
                     <p className="text-sm text-muted-foreground mt-1">
@@ -645,16 +645,16 @@ export default function Home() {
                     </p>
                   </div>
                   
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="p-4 rounded-xl bg-muted">
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="p-3 rounded-lg bg-muted">
                       <p className="text-xs text-muted-foreground mb-1">Retorno do Investimento</p>
-                      <p className="text-2xl font-bold text-[#243fad]">
+                      <p className="text-xl font-bold text-[#243fad]">
                         {paybackYears.toFixed(1)} anos
                       </p>
                     </div>
-                    <div className="p-4 rounded-xl bg-muted">
+                    <div className="p-3 rounded-lg bg-muted">
                       <p className="text-xs text-muted-foreground mb-1">CO₂ Evitado/Ano</p>
-                      <p className="text-2xl font-bold text-[#6cca7d]">
+                      <p className="text-xl font-bold text-[#6cca7d]">
                         {co2Savings.toFixed(1)}t
                       </p>
                     </div>

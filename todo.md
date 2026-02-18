@@ -36,3 +36,9 @@
 - [x] Aumentar tamanho do logo em branco no rodapé azul
 
 - [x] Atualizar slogan no footer para "Fazemos circular energia"
+
+- [ ] Adicionar imagem de capa (poster) ao vídeo de testemunho
+
+- [x] Reduzir tamanho e espaçamento da seção da calculadora
+- [x] Diminuir padding e espaçamentos internos
+- [x] Reduzir tamanhos de fonte e elementos visuais
