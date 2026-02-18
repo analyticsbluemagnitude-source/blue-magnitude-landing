@@ -733,7 +733,7 @@ export default function Home() {
                   className="w-full h-auto max-h-[700px]"
                   controls
                   preload="metadata"
-                  poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/wzfZTzfswIpbfnoS.jpg"
+                  poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/lSuvGiPJAIfNVQds.jpg"
                 >
                   <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/wFcAYExYViImqLCG.mp4" type="video/mp4" />
                   O seu navegador não suporta a reprodução de vídeos.
