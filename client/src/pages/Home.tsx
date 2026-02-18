@@ -40,7 +40,8 @@ import {
   Menu,
   X,
   ChevronDown,
-  MessageCircle
+  MessageCircle,
+  ChevronUp
 } from "lucide-react";
 import {
   Tooltip,
@@ -72,6 +73,7 @@ export default function Home() {
   });
   const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const [successDialogType, setSuccessDialogType] = useState<"quote" | "contact">("quote");
+  const [showScrollTop, setShowScrollTop] = useState(false);
   
   // Calculator states
   const [monthlyBill, setMonthlyBill] = useState([150]);
@@ -87,10 +89,17 @@ export default function Home() {
   const co2Savings = (monthlyConsumption * 12 * 0.233) / 1000; // tons of CO2 per year
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+      setShowScrollTop(window.scrollY > 400);
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // Carousel slide tracking
   useEffect(() => {
@@ -1026,16 +1035,16 @@ export default function Home() {
       <section id="orcamento" className="py-10 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white diagonal-section diagonal-top animate-fade-in">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12 space-y-4">
-              <h2 className="text-2xl lg:text-3xl font-bold">
+            <div className="text-center mb-6 space-y-2">
+              <h2 className="text-xl lg:text-2xl font-bold">
                 Solicite o Seu Orçamento Gratuito
               </h2>
-              <p className="text-base opacity-90">
+              <p className="text-sm opacity-90">
                 Preencha o formulário e receba uma proposta personalizada em até 24 horas.
               </p>
             </div>
-            <Card className="p-8 lg:p-12">
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <Card className="p-6 lg:p-8">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">Nome e Apelido *</Label>
@@ -1203,6 +1212,17 @@ export default function Home() {
         </div>
       </footer>
       
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed right-3 bottom-24 z-50 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] hover:from-[#1e3490] hover:to-[#2ba5d9] text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-in fade-in slide-in-from-bottom-5"
+          aria-label="Voltar ao Topo"
+        >
+          <ChevronUp className="w-6 h-6" />
+        </button>
+      )}
+
       {/* WhatsApp Floating Button */}
       <a
         href="https://wa.me/351938719773"

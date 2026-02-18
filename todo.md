@@ -59,3 +59,10 @@
 - [x] Reduzir padding vertical das seções (py-16 para py-10)
 - [x] Reduzir espaçamento entre cards de serviços e benefícios
 - [x] Otimizar espaçamentos gerais da página
+
+- [x] Compactar seção do formulário de orçamento
+- [x] Reduzir tamanho do título do formulário
+- [x] Otimizar espaçamentos internos do formulário
+- [x] Criar botão flutuante "Voltar ao Topo"
+- [x] Adicionar lógica para mostrar/ocultar baseado no scroll
+- [x] Implementar animação suave de scroll ao clicar
