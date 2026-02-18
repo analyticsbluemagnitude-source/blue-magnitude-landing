@@ -10,6 +10,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
   Carousel,
   CarouselContent,
   CarouselItem,
@@ -773,7 +779,7 @@ export default function Home() {
             <div className="lg:col-span-2 relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl kinetic-card bg-black">
                 <video
-                  className="w-full h-auto max-h-[500px]"
+                  className="w-full h-auto max-h-[350px]"
                   controls
                   preload="metadata"
                   poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/lSuvGiPJAIfNVQds.jpg"
@@ -994,7 +1000,7 @@ export default function Home() {
                 <CarouselItem>
                   <div className="rounded-xl overflow-hidden shadow-2xl">
                     <video
-                      className="w-full h-auto max-h-[500px]"
+                      className="w-full h-auto max-h-[350px]"
                       controls
                       poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/aSoVwIwDLKcGIJXi.png"
                     >
@@ -1032,21 +1038,27 @@ export default function Home() {
       {/* FAQ Section */}
       <section className="py-10 bg-muted/30">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-            <h2 className="text-2xl lg:text-3xl font-bold">
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <h2 className="text-xl lg:text-2xl font-bold">
               Perguntas Frequentes
             </h2>
-            <p className="text-base text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               Tire suas dúvidas sobre energia solar.
             </p>
           </div>
-          <div className="max-w-4xl mx-auto space-y-4">
-            {faqs.map((faq, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                <h3 className="text-xl font-bold mb-3">{faq.question}</h3>
-                <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
-              </Card>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="w-full">
+              {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger className="text-left hover:no-underline">
+                    <span className="font-bold">{faq.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
@@ -1174,9 +1186,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl max-h-[400px]">
               <video
-                className="w-full h-full object-cover"
+                className="w-full h-auto max-h-[400px]"
                 controls
                 preload="metadata"
               >

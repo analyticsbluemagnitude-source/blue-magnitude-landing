@@ -86,3 +86,10 @@
 - [x] Transformar testemunhos em carrossel (vídeo + 2 cards de texto)
 - [x] Transformar galeria de projetos em carrossel com navegação
 - [x] Testar responsividade dos novos carrosséis
+
+- [x] Verificar se componente Accordion do shadcn/ui está disponível
+- [x] Instalar componente Accordion se necessário
+- [x] Transformar FAQ estática em accordion interativo
+- [x] Testar funcionalidade de expandir/colapsar
+
+- [x] Reduzir tamanho dos vídeos mantendo visualização coerente
