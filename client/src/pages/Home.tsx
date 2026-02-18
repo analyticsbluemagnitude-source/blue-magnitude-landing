@@ -1139,7 +1139,7 @@ export default function Home() {
                   <div>
                     <div className="font-bold mb-1">Endereço</div>
                     <p className="text-muted-foreground">
-                      Lisboa, Portugal
+                      Estr. de Pinheiros 480, 2415-776 Leiria
                     </p>
                   </div>
                 </div>
@@ -1192,8 +1192,8 @@ export default function Home() {
               <h4 className="font-bold mb-4">Contacto</h4>
               <ul className="space-y-2 text-sm opacity-80">
                 <li>+351 938 719 773</li>
-                <li>contacto@bluemagnitude.pt</li>
-                <li>Lisboa, Portugal</li>
+                <li>geral@bluemagnitude.pt</li>
+                <li>Estr. de Pinheiros 480, 2415-776 Leiria</li>
               </ul>
             </div>
           </div>

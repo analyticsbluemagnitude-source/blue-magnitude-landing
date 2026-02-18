@@ -50,3 +50,8 @@
 - [x] Verificar links tel:
 
 - [x] Reorganizar cards de serviços para 2 colunas em vez de 3
+
+- [x] Atualizar email para geral@bluemagnitude.pt em todos os lugares
+- [x] Atualizar endereço para Estr. de Pinheiros 480, 2415-776 Leiria
+- [x] Verificar seção de contacto
+- [x] Verificar footer
