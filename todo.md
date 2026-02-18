@@ -9,3 +9,8 @@
 - [x] Criar botão de play personalizado sobre vídeo de testemunho
 - [x] Adicionar thumbnail atrativo ao vídeo
 - [x] Implementar estado de hover e animações no botão
+
+- [x] Ajustar texto dentro do botão "Receber Orçamento Gratuito"
+- [x] Padronizar todos os botões com tom de azul (#243fad)
+- [x] Adicionar animações aos botões
+- [x] Remover botão de play personalizado do vídeo

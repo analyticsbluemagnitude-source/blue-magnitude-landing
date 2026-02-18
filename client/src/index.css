@@ -257,22 +257,33 @@
   /* Energy Glow Effect */
   .energy-glow {
     position: relative;
+    background: linear-gradient(135deg, var(--magnetic-blue), var(--electric-blue)) !important;
+    transition: all 0.3s ease-out;
   }
   
   .energy-glow::before {
     content: '';
     position: absolute;
     inset: -2px;
-    background: linear-gradient(135deg, var(--electric-blue), var(--electric-green));
+    background: linear-gradient(135deg, var(--magnetic-blue), var(--electric-blue));
     border-radius: inherit;
     opacity: 0;
     transition: opacity 0.3s ease-out;
     z-index: -1;
-    filter: blur(8px);
+    filter: blur(12px);
+  }
+  
+  .energy-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(36, 63, 173, 0.4);
   }
   
   .energy-glow:hover::before {
-    opacity: 0.6;
+    opacity: 0.8;
+  }
+  
+  .energy-glow:active {
+    transform: translateY(0);
   }
   
   /* Kinetic Card */

@@ -372,7 +372,7 @@ export default function Home() {
                     Na Blue Magnitude, criamos soluções de energia solar feitas à medida para o teu negócio. Reduz a tua fatura de eletricidade e junta-te às inúmeras empresas que já se conectaram ao sol com as nossas soluções sustentáveis.
                   </p>
                   <div>
-                    <Button size="lg" className="bg-[#6cca7d] hover:bg-[#5bb96d] text-white text-base h-12 px-6">
+                    <Button size="lg" className="energy-glow text-white text-base h-12 px-6">
                       Pedir Proposta
                     </Button>
                   </div>
@@ -404,7 +404,7 @@ export default function Home() {
                     Descobre as nossas soluções completas para autoconsumo com painéis solares fotovoltaicos. Reduz a tua conta de eletricidade até 70%. Vamos começar o teu projeto?
                   </p>
                   <div>
-                    <Button size="lg" className="bg-[#6cca7d] hover:bg-[#5bb96d] text-white text-base h-12 px-6">
+                    <Button size="lg" className="energy-glow text-white text-base h-12 px-6">
                       Pedir Proposta
                     </Button>
                   </div>
@@ -969,65 +969,15 @@ export default function Home() {
           
           {/* Video Testimonial */}
           <div className="max-w-4xl mx-auto mb-16">
-            <div className="relative rounded-xl overflow-hidden shadow-2xl mb-6 group cursor-pointer"
-                 onClick={(e) => {
-                   const video = e.currentTarget.querySelector('video') as HTMLVideoElement;
-                   const overlay = e.currentTarget.querySelector('.video-overlay') as HTMLElement;
-                   if (video && overlay) {
-                     if (video.paused) {
-                       video.play();
-                       overlay.style.opacity = '0';
-                       overlay.style.pointerEvents = 'none';
-                     }
-                   }
-                 }}
-            >
+            <div className="rounded-xl overflow-hidden shadow-2xl mb-6">
               <video
                 className="w-full h-auto max-h-[500px]"
                 controls
                 poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/kLqSkJQspwvNxSOz.jpg"
-                onPlay={(e) => {
-                  const overlay = e.currentTarget.parentElement?.querySelector('.video-overlay') as HTMLElement;
-                  if (overlay) {
-                    overlay.style.opacity = '0';
-                    overlay.style.pointerEvents = 'none';
-                  }
-                }}
-                onPause={(e) => {
-                  const overlay = e.currentTarget.parentElement?.querySelector('.video-overlay') as HTMLElement;
-                  if (overlay && e.currentTarget.currentTime === 0) {
-                    overlay.style.opacity = '1';
-                    overlay.style.pointerEvents = 'auto';
-                  }
-                }}
               >
                 <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/GakVTWAQclLNENtl.mp4" type="video/mp4" />
                 O seu navegador não suporta a reprodução de vídeos.
               </video>
-              
-              {/* Custom Play Button Overlay */}
-              <div className="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300">
-                <div className="relative">
-                  {/* Pulsing ring effect */}
-                  <div className="absolute inset-0 rounded-full bg-white/30 animate-ping" style={{animationDuration: '2s'}}></div>
-                  
-                  {/* Play button */}
-                  <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center shadow-2xl transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_40px_rgba(108,202,125,0.6)]">
-                    <svg 
-                      className="w-12 h-12 text-white ml-1" 
-                      fill="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                  
-                  {/* Text below button */}
-                  <p className="text-white text-center mt-6 font-semibold text-lg drop-shadow-lg">
-                    Ver Testemunho
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
           
@@ -1134,9 +1084,9 @@ export default function Home() {
                     />
                   </div>
                 </div>
-                <Button type="submit" size="lg" className="w-full h-14 text-lg energy-glow">
-                  Receber Orçamento Gratuito
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                <Button type="submit" size="lg" className="w-full h-14 text-lg energy-glow text-white flex items-center justify-center gap-2">
+                  <span>Receber Orçamento Gratuito</span>
+                  <ArrowRight className="w-5 h-5" />
                 </Button>
                 <p className="text-sm text-center text-muted-foreground">
                   Ao enviar, concorda em receber contacto da Blue Magnitude sobre a sua solicitação.
