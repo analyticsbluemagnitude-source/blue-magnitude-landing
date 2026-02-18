@@ -1289,9 +1289,14 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="font-bold mb-1">Endereço</div>
-                    <p className="text-muted-foreground">
+                    <a 
+                      href="https://www.google.com/maps/search/?api=1&query=Estr.+de+Pinheiros+480,+2415-776+Leiria" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-[#d7e028] transition-colors underline"
+                    >
                       Estr. de Pinheiros 480, 2415-776 Leiria
-                    </p>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -1347,7 +1352,16 @@ export default function Home() {
               <ul className="space-y-2 text-sm opacity-80">
                 <li>+351 938 719 773</li>
                 <li>geral@bluemagnitude.pt</li>
-                <li>Estr. de Pinheiros 480, 2415-776 Leiria</li>
+                <li>
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=Estr.+de+Pinheiros+480,+2415-776+Leiria" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:opacity-100 transition-opacity underline"
+                  >
+                    Estr. de Pinheiros 480, 2415-776 Leiria
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

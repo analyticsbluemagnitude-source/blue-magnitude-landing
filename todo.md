@@ -156,3 +156,6 @@
 - [x] Reduzir tamanho dos números das etapas
 - [x] Reduzir espaçamentos entre etapas
 - [x] Compactar margin-bottom do título
+
+- [x] Transformar endereço em link clicável para Google Maps
+- [x] Testar abertura do Google Maps
