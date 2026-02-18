@@ -32,3 +32,5 @@
 - [x] Remover centralização (mx-auto text-center) dos textos dos banners
 - [x] Manter alinhamento à esquerda como estava originalmente
 - [x] Manter fontes menores já ajustadas
+
+- [x] Aumentar tamanho do logo em branco no rodapé azul

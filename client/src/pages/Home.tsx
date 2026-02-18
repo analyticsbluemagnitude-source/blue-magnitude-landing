@@ -1164,7 +1164,7 @@ export default function Home() {
               <img 
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/giWuxHpzJpBsYoQy.png" 
                 alt="Blue Magnitude" 
-                className="h-12 w-auto brightness-0 invert"
+                className="h-20 w-auto brightness-0 invert"
               />
               <p className="text-sm opacity-80">
                 A transformar luz solar em poupança e sustentabilidade. Certificados pela DGEG.
