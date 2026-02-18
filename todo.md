@@ -115,3 +115,8 @@
 - [x] Adicionar Twitter Cards para compartilhamento no Twitter
 - [x] Adicionar meta tags SEO (description, keywords, author)
 - [x] Testar meta tags com validadores online
+
+- [x] Analisar estrutura e proporções do slide Mata Mourisca
+- [x] Ajustar slide de Autoconsumo para mesmas proporções
+- [x] Ajustar slide de Instalação para mesmas proporções
+- [x] Garantir uniformidade de todos os 3 slides do carrossel

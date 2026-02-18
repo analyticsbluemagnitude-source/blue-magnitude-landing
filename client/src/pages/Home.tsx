@@ -937,20 +937,6 @@ export default function Home() {
               <CarouselItem>
                 <Card className="p-6 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10 border-2 border-[#6cca7d]">
                   <div className="grid lg:grid-cols-2 gap-6 items-center">
-                    <div className="space-y-3">
-                      <img 
-                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/WVgFGcHSCvZpgfeD.jpg"
-                        alt="Projeto Autoconsumo"
-                        className="rounded-xl shadow-lg w-full h-auto object-cover"
-                        loading="lazy"
-                      />
-                      <img 
-                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/aKenSoiHHZUobuqN.jpg"
-                        alt="Projeto Autoconsumo - Painéis"
-                        className="rounded-xl shadow-lg w-full h-auto object-cover"
-                        loading="lazy"
-                      />
-                    </div>
                     <div>
                       <h3 className="text-xl font-bold mb-3">Autoconsumo Alto Desempenho</h3>
                       <div className="space-y-2 text-sm">
@@ -964,6 +950,20 @@ export default function Home() {
                           <strong className="text-foreground">Resultado:</strong> Máxima autonomia energética
                         </p>
                       </div>
+                    </div>
+                    <div className="space-y-3">
+                      <img 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/WVgFGcHSCvZpgfeD.jpg"
+                        alt="Projeto Autoconsumo"
+                        className="rounded-xl shadow-lg w-full h-auto object-cover"
+                        loading="lazy"
+                      />
+                      <img 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/aKenSoiHHZUobuqN.jpg"
+                        alt="Projeto Autoconsumo - Painéis"
+                        className="rounded-xl shadow-lg w-full h-auto object-cover"
+                        loading="lazy"
+                      />
                     </div>
                   </div>
                 </Card>
