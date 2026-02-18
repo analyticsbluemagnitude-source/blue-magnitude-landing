@@ -938,13 +938,10 @@ export default function Home() {
       {/* Testimonials Section */}
       <section id="depoimentos" className="py-16 bg-background">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-2xl lg:text-3xl font-bold">
               O Que os Nossos Clientes Dizem
             </h2>
-            <p className="text-base text-muted-foreground">
-              Testemunhos reais de quem já está a poupar com energia solar.
-            </p>
           </div>
           
           {/* Video Testimonial */}
