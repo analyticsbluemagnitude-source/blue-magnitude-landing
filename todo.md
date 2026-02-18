@@ -34,3 +34,5 @@
 - [x] Manter fontes menores já ajustadas
 
 - [x] Aumentar tamanho do logo em branco no rodapé azul
+
+- [x] Atualizar slogan no footer para "Fazemos circular energia"
