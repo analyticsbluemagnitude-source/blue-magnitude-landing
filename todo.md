@@ -165,3 +165,10 @@
 - [x] Reduzir tamanhos de fonte nos resultados
 - [x] Compactar cards de resultados
 - [x] Reduzir espaçamentos entre elementos
+
+- [x] Compactar formulário de orçamento (padding, fontes, espaçamentos)
+- [x] Compactar seção Entre em Contacto (padding, fontes, vídeo)
+- [x] Testar funcionalidade dos formulários
+
+- [x] Ajustar altura dos testemunhos escritos para mesma proporção do vídeo
+- [x] Reduzir espaçamento entre testemunhos e FAQ

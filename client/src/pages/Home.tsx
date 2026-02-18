@@ -1107,16 +1107,16 @@ export default function Home() {
                 {/* Text Testimonials Slides */}
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem key={index}>
-                    <Card className="p-8 kinetic-card h-full flex flex-col justify-center">
-                      <div className="flex gap-1 mb-4 justify-center">
+                    <Card className="p-6 kinetic-card flex flex-col justify-center" style={{minHeight: '350px', maxHeight: '350px'}}>
+                      <div className="flex gap-1 mb-3 justify-center">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <Sun key={i} className="w-5 h-5 fill-[#d7e028] text-[#d7e028]" />
+                          <Sun key={i} className="w-4 h-4 fill-[#d7e028] text-[#d7e028]" />
                         ))}
                       </div>
-                      <p className="text-lg mb-6 leading-relaxed italic text-center">"{testimonial.text}"</p>
+                      <p className="text-base mb-4 leading-relaxed italic text-center">"{testimonial.text}"</p>
                       <div className="text-center">
-                        <div className="font-bold">{testimonial.name}</div>
-                        <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                        <div className="font-semibold text-sm">{testimonial.name}</div>
+                        <div className="text-xs text-muted-foreground">{testimonial.role}</div>
                       </div>
                     </Card>
                   </CarouselItem>
@@ -1146,7 +1146,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-6 bg-muted/30">
+      <section className="py-4 bg-muted/30">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-8">
             <h2 className="text-xl lg:text-2xl font-bold">
@@ -1174,33 +1174,33 @@ export default function Home() {
       </section>
 
       {/* CTA Form Section */}
-      <section id="orcamento" className="py-10 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white diagonal-section diagonal-top animate-fade-in">
+      <section id="orcamento" className="py-6 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white diagonal-section diagonal-top animate-fade-in">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <Card className="p-6 lg:p-8">
-              <div className="text-center mb-4 space-y-1">
-                <h2 className="text-xl lg:text-2xl font-bold text-foreground">
+            <Card className="p-4 lg:p-6">
+              <div className="text-center mb-3 space-y-0.5">
+                <h2 className="text-lg lg:text-xl font-bold text-foreground">
                   Solicite o Seu Orçamento Gratuito
                 </h2>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xs text-muted-foreground">
                   Preencha o formulário e receba uma proposta personalizada em até 24 horas.
                 </p>
               </div>
-              <form onSubmit={handleSubmit} className="space-y-3">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Nome e Apelido *</Label>
+              <form onSubmit={handleSubmit} className="space-y-2.5">
+                <div className="grid md:grid-cols-2 gap-3">
+                  <div className="space-y-1.5">
+                    <Label className="text-sm" htmlFor="name">Nome e Apelido *</Label>
                     <Input 
                       id="name"
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       required
                       placeholder="Nome e apelido completo"
-                      className="h-10"
+                      className="h-9 text-sm"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">E-mail *</Label>
+                  <div className="space-y-1.5">
+                    <Label className="text-sm" htmlFor="email">E-mail *</Label>
                     <Input 
                       id="email"
                       type="email"
@@ -1208,11 +1208,11 @@ export default function Home() {
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
                       required
                       placeholder="o-seu@email.pt"
-                      className="h-10"
+                      className="h-9 text-sm"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Telefone/WhatsApp *</Label>
+                  <div className="space-y-1.5">
+                    <Label className="text-sm" htmlFor="phone">Telefone/WhatsApp *</Label>
                     <Input 
                       id="phone"
                       type="tel"
@@ -1220,26 +1220,26 @@ export default function Home() {
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
                       required
                       placeholder="+351 938 719 773"
-                      className="h-10"
+                      className="h-9 text-sm"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="city">Localidade *</Label>
+                  <div className="space-y-1.5">
+                    <Label className="text-sm" htmlFor="city">Localidade *</Label>
                     <Input 
                       id="city"
                       value={formData.city}
                       onChange={(e) => setFormData({...formData, city: e.target.value})}
                       required
                       placeholder="Cidade ou vila"
-                      className="h-10"
+                      className="h-9 text-sm"
                     />
                   </div>
                 </div>
-                <Button type="submit" className="w-full h-12 text-sm font-semibold energy-glow text-white flex items-center justify-center gap-3 px-8">
+                <Button type="submit" className="w-full h-10 text-sm font-semibold energy-glow text-white flex items-center justify-center gap-2 px-6">
                   <span>Receber Orçamento Gratuito</span>
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-4 h-4" />
                 </Button>
-                <p className="text-sm text-center text-muted-foreground">
+                <p className="text-xs text-center text-muted-foreground">
                   Ao enviar, concorda em receber contacto da Blue Magnitude sobre a sua solicitação.
                 </p>
               </form>
@@ -1249,51 +1249,51 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contato" className="py-10 bg-background">
+      <section id="contato" className="py-6 bg-background">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <h2 className="text-2xl lg:text-3xl font-bold">
+          <div className="grid lg:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <h2 className="text-xl lg:text-2xl font-bold">
                 Entre em Contacto
               </h2>
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 A nossa equipa está pronta para esclarecer as suas dúvidas e ajudá-lo a dar o primeiro passo 
                 rumo à independência energética.
               </p>
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-[#3ac6ff]/10 flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-[#3ac6ff]" />
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#3ac6ff]/10 flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-[#3ac6ff]" />
                   </div>
                   <div>
-                    <div className="font-bold mb-1">Telefone</div>
-                    <a href="tel:+351938719773" className="text-muted-foreground hover:text-primary transition-colors">
+                    <div className="text-sm font-bold mb-0.5">Telefone</div>
+                    <a href="tel:+351938719773" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                       +351 938 719 773
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-[#6cca7d]/10 flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-[#6cca7d]" />
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#6cca7d]/10 flex items-center justify-center">
+                    <Mail className="w-5 h-5 text-[#6cca7d]" />
                   </div>
                   <div>
-                    <div className="font-bold mb-1">E-mail</div>
-                    <a href="mailto:geral@bluemagnitude.pt" className="text-muted-foreground hover:text-primary transition-colors">
+                    <div className="text-sm font-bold mb-0.5">E-mail</div>
+                    <a href="mailto:geral@bluemagnitude.pt" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                       geral@bluemagnitude.pt
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-[#d7e028]/10 flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-[#d7e028]" />
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#d7e028]/10 flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-[#d7e028]" />
                   </div>
                   <div>
-                    <div className="font-bold mb-1">Endereço</div>
+                    <div className="text-sm font-bold mb-0.5">Endereço</div>
                     <a 
                       href="https://www.google.com/maps/search/?api=1&query=Estr.+de+Pinheiros+480,+2415-776+Leiria" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-[#d7e028] transition-colors underline"
+                      className="text-sm text-muted-foreground hover:text-[#d7e028] transition-colors underline"
                     >
                       Estr. de Pinheiros 480, 2415-776 Leiria
                     </a>
@@ -1301,9 +1301,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl max-h-[400px]">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl max-h-[300px]">
               <video
-                className="w-full h-auto max-h-[400px]"
+                className="w-full h-auto max-h-[300px]"
                 controls
                 preload="metadata"
               >
