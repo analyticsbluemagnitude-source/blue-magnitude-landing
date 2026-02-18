@@ -70,6 +70,10 @@ export default function Home() {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [testimonialsApi, setTestimonialsApi] = useState<CarouselApi>();
+  const [currentTestimonialSlide, setCurrentTestimonialSlide] = useState(0);
+  const [projectsApi, setProjectsApi] = useState<CarouselApi>();
+  const [currentProjectSlide, setCurrentProjectSlide] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -122,6 +126,38 @@ export default function Home() {
       carouselApi.off("select", onSelect);
     };
   }, [carouselApi]);
+
+  // Testimonials carousel tracking
+  useEffect(() => {
+    if (!testimonialsApi) return;
+
+    const onSelect = () => {
+      setCurrentTestimonialSlide(testimonialsApi.selectedScrollSnap());
+    };
+
+    testimonialsApi.on("select", onSelect);
+    onSelect();
+
+    return () => {
+      testimonialsApi.off("select", onSelect);
+    };
+  }, [testimonialsApi]);
+
+  // Projects carousel tracking
+  useEffect(() => {
+    if (!projectsApi) return;
+
+    const onSelect = () => {
+      setCurrentProjectSlide(projectsApi.selectedScrollSnap());
+    };
+
+    projectsApi.on("select", onSelect);
+    onSelect();
+
+    return () => {
+      projectsApi.off("select", onSelect);
+    };
+  }, [projectsApi]);
 
   // Auto-play carousel
   useEffect(() => {
@@ -858,7 +894,8 @@ export default function Home() {
             </p>
           </div>
           
-          <Carousel className="w-full" opts={{ loop: true }}>
+          <div className="relative">
+          <Carousel className="w-full" opts={{ loop: true }} setApi={setProjectsApi}>
             <CarouselContent>
               {/* Projeto 1: Mata Mourisca */}
               <CarouselItem>
@@ -981,6 +1018,23 @@ export default function Home() {
             <CarouselPrevious className="left-4" />
             <CarouselNext className="right-4" />
           </Carousel>
+          
+          {/* Dots Indicators */}
+          <div className="flex justify-center gap-2 mt-6">
+            {[...Array(3)].map((_, index) => (
+              <button
+                key={index}
+                onClick={() => projectsApi?.scrollTo(index)}
+                className={`h-2 rounded-full transition-all ${
+                  currentProjectSlide === index 
+                    ? 'w-8 bg-[#6cca7d]' 
+                    : 'w-2 bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Ir para slide ${index + 1}`}
+              />
+            ))}
+          </div>
+          </div>
         </div>
       </section>
 
@@ -993,8 +1047,8 @@ export default function Home() {
             </h2>
           </div>
           
-          <div className="max-w-4xl mx-auto">
-            <Carousel className="w-full" opts={{ loop: true }}>
+          <div className="max-w-4xl mx-auto relative">
+            <Carousel className="w-full" opts={{ loop: true }} setApi={setTestimonialsApi}>
               <CarouselContent>
                 {/* Video Testimonial Slide */}
                 <CarouselItem>
@@ -1031,6 +1085,22 @@ export default function Home() {
               <CarouselPrevious className="left-4" />
               <CarouselNext className="right-4" />
             </Carousel>
+            
+            {/* Dots Indicators */}
+            <div className="flex justify-center gap-2 mt-6">
+              {[...Array(testimonials.length + 1)].map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => testimonialsApi?.scrollTo(index)}
+                  className={`h-2 rounded-full transition-all ${
+                    currentTestimonialSlide === index 
+                      ? 'w-8 bg-[#3ac6ff]' 
+                      : 'w-2 bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Ir para slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>

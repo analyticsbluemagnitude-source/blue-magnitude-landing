@@ -93,3 +93,8 @@
 - [x] Testar funcionalidade de expandir/colapsar
 
 - [x] Reduzir tamanho dos vídeos mantendo visualização coerente
+
+- [x] Adicionar estado e API tracking aos carrosséis de testemunhos e projetos
+- [x] Implementar indicadores visuais (dots) para carrossel de testemunhos
+- [x] Implementar indicadores visuais (dots) para carrossel de projetos
+- [x] Testar navegação por clique nos indicadores
