@@ -17,3 +17,5 @@
 
 - [x] Ajustar altura e espaçamento do botão "Receber Orçamento Gratuito"
 - [x] Garantir que texto fique perfeitamente visível e centralizado
+
+- [x] Reduzir tamanho da fonte do botão "Receber Orçamento Gratuito"
