@@ -50,8 +50,14 @@ import {
 } from "@/components/ui/tooltip";
 import { useState, useEffect, useCallback } from "react";
 import { toast } from "sonner";
+import { useAuth } from "@/_core/hooks/useAuth";
+import { trpc } from "@/lib/trpc";
 
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   const [scrollY, setScrollY] = useState(0);
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -135,10 +141,20 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  // tRPC mutations para envio de formulários
+  const submitQuoteMutation = trpc.forms.submitQuote.useMutation({
+    onSuccess: () => {
+      toast.success("Obrigado! Entraremos em contacto em breve.");
+      setFormData({ name: "", email: "", phone: "", city: "" });
+    },
+    onError: (error) => {
+      toast.error(error.message || "Erro ao enviar formulário. Por favor, tente novamente.");
+    },
+  });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Obrigado! Entraremos em contacto em breve.");
-    setFormData({ name: "", email: "", phone: "", city: "" });
+    submitQuoteMutation.mutate(formData);
   };
 
   const stats = [
@@ -1022,13 +1038,13 @@ export default function Home() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Nome Completo *</Label>
+                    <Label htmlFor="name">Nome e Apelido *</Label>
                     <Input 
                       id="name"
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       required
-                      placeholder="O seu nome"
+                      placeholder="Nome e apelido completo"
                       className="h-12"
                     />
                   </div>
@@ -1052,18 +1068,18 @@ export default function Home() {
                       value={formData.phone}
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
                       required
-                      placeholder="(00) 00000-0000"
+                      placeholder="+351 912 345 678"
                       className="h-12"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="city">Cidade *</Label>
+                    <Label htmlFor="city">Localidade *</Label>
                     <Input 
                       id="city"
                       value={formData.city}
                       onChange={(e) => setFormData({...formData, city: e.target.value})}
                       required
-                      placeholder="A sua cidade"
+                      placeholder="Cidade ou vila"
                       className="h-12"
                     />
                   </div>
@@ -1111,8 +1127,8 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="font-bold mb-1">E-mail</div>
-                    <a href="mailto:contato@bluemagnitude.com.br" className="text-muted-foreground hover:text-primary transition-colors">
-                      contato@bluemagnitude.com.br
+                    <a href="mailto:geral@bluemagnitude.pt" className="text-muted-foreground hover:text-primary transition-colors">
+                      geral@bluemagnitude.pt
                     </a>
                   </div>
                 </div>
