@@ -1174,12 +1174,15 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative">
-              <img 
-                src="https://private-us-east-1.manuscdn.com/sessionFile/q5sviWRou2JGIIHcxzxwoX/sandbox/EwlI46E21FiSAhws1TmOi1-img-5_1771360500000_na1fn_dGVjaG5vbG9neS1pbm5vdmF0aW9u.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcTVzdmlXUm91MkpHSUlIY3h6eHdvWC9zYW5kYm94L0V3bEk0NkUyMUZpU0Fod3MxVG1PaTEtaW1nLTVfMTc3MTM2MDUwMDAwMF9uYTFmbl9kR1ZqYUc1dmJHOW5lUzFwYm01dmRtRjBhVzl1LnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=P70RTxZy8RDxPxq5KmccRCLhSVM5yktDy1ZlsKowt~tBv6VjEt6UwqKyZI4oZ1ERVLvrnO6dxZQi4MGGRDxi-tEVcmukImsmDBYMYRQlfNENn8Sm1JI5jlrbl4DcxDt-FamEyWvD~ElXWM69TgSLAzA4qwUo6~FOkhWxpCV38KvQiN~~ZBTTTwyvrl5Fgt9gBs-n9e20Zq6etGyHWTmBMtTsMkLxk4U-TNpqOdDd0DY9n60k1oBkQ19IrD~B1FZJvkqQLxMX9Ws5UZf6RjvYIQsjMEYuPtpGH7infqmcsPv8w73yaU2Hb~hx4htU7r12KT8p8oDiFuSR8Z2BWF50bg__"
-                alt="Tecnologia Solar Avançada"
-                className="rounded-3xl shadow-2xl"
-              />
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <video
+                className="w-full h-full object-cover"
+                controls
+                preload="metadata"
+              >
+                <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/ukIRBkuSHcqRYrNL.mp4" type="video/mp4" />
+                O seu navegador não suporta a reprodução de vídeos.
+              </video>
             </div>
           </div>
         </div>

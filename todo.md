@@ -72,3 +72,8 @@
 - [x] Implementar evento de conversão para envio de formulário de orçamento
 - [x] Implementar evento de conversão para cliques no WhatsApp
 - [x] Testar rastreamento de eventos
+
+- [x] Fazer upload do vídeo de redução de custos para S3
+- [x] Substituir imagem da seção de contacto pelo vídeo
+- [x] Garantir alinhamento e formatação adequada do vídeo
+- [x] Adicionar controles e poster ao vídeo
