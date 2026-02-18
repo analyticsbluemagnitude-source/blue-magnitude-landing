@@ -962,14 +962,13 @@ export default function Home() {
             <h2 className="text-2xl lg:text-3xl font-bold">
               O Que os Nossos Clientes Dizem
             </h2>
+            <p className="text-base text-muted-foreground mt-4">
+              Conheça as experiências reais de clientes que já transformaram as suas casas com energia solar.
+            </p>
           </div>
           
           {/* Video Testimonial */}
           <div className="max-w-4xl mx-auto mb-16">
-            <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold mb-2">Depoimento em Vídeo da Susy</h3>
-              <p className="text-base text-muted-foreground">Conheça a experiência real de uma das nossas clientes satisfeitas</p>
-            </div>
             <div className="rounded-xl overflow-hidden shadow-2xl mb-6">
               <video
                 className="w-full h-auto max-h-[500px]"
@@ -979,9 +978,6 @@ export default function Home() {
                 <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/GakVTWAQclLNENtl.mp4" type="video/mp4" />
                 O seu navegador não suporta a reprodução de vídeos.
               </video>
-            </div>
-            <div className="text-center">
-              <p className="text-base text-muted-foreground italic">"A experiência de Susy com o nosso sistema solar e a dedicação da nossa equipa"</p>
             </div>
           </div>
           
