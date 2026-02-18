@@ -124,3 +124,6 @@
 - [x] Reduzir tamanho das imagens do slide Autoconsumo
 - [x] Adicionar max-height para uniformizar proporções
 - [x] Garantir consistência visual entre todos os 3 slides
+
+- [x] Reduzir espaçamento entre seção de Projetos e Testemunhos
+- [x] Ajustar padding/margin das seções
