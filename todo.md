@@ -159,3 +159,9 @@
 
 - [x] Transformar endereço em link clicável para Google Maps
 - [x] Testar abertura do Google Maps
+
+- [x] Reduzir padding da seção da calculadora
+- [x] Compactar margin-bottom do título
+- [x] Reduzir tamanhos de fonte nos resultados
+- [x] Compactar cards de resultados
+- [x] Reduzir espaçamentos entre elementos

@@ -663,9 +663,9 @@ export default function Home() {
       </section>
 
       {/* Calculator Section */}
-      <section className="py-10 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10">
+      <section className="py-6 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-8 space-y-2 animate-on-scroll">
+          <div className="text-center max-w-3xl mx-auto mb-4 space-y-1 animate-on-scroll">
             <h2 className="text-xl lg:text-2xl font-bold">
               Calcule a Sua Poupança
             </h2>
@@ -675,20 +675,20 @@ export default function Home() {
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <Card className="p-6 lg:p-8 kinetic-card border-2 border-[#6cca7d] animate-scale">
-              <div className="grid lg:grid-cols-2 gap-8">
+            <Card className="p-4 lg:p-6 kinetic-card border-2 border-[#6cca7d] animate-scale">
+              <div className="grid lg:grid-cols-2 gap-6">
                 {/* Input Section */}
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <div>
-                    <Label className="text-base font-semibold mb-3 block">
+                    <Label className="text-sm font-semibold mb-2 block">
                       Qual é a sua fatura mensal de eletricidade?
                     </Label>
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3">
-                        <span className="text-3xl font-bold text-[#243fad]">
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        <span className="text-2xl font-bold text-[#243fad]">
                           €{monthlyBill[0]}
                         </span>
-                        <span className="text-muted-foreground">/mês</span>
+                        <span className="text-sm text-muted-foreground">/mês</span>
                       </div>
                       <Slider
                         value={monthlyBill}
@@ -716,60 +716,60 @@ export default function Home() {
                     </div>
                   </div>
                   
-                  <div className="pt-6 border-t">
-                    <p className="text-sm text-muted-foreground">
+                  <div className="pt-3 border-t">
+                    <p className="text-xs text-muted-foreground">
                       <strong className="text-foreground">Consumo estimado:</strong> {Math.round(monthlyConsumption)} kWh/mês
                     </p>
-                    <p className="text-sm text-muted-foreground mt-2">
+                    <p className="text-xs text-muted-foreground mt-1">
                       <strong className="text-foreground">Tarifa média:</strong> €{energyPrice}/kWh
                     </p>
                   </div>
                 </div>
                 
                 {/* Results Section */}
-                <div className="space-y-4">
-                  <div className="p-4 rounded-xl bg-gradient-to-br from-[#6cca7d]/20 to-[#d7e028]/20 border-2 border-[#6cca7d]">
-                    <div className="flex items-center gap-2 mb-2">
-                      <TrendingDown className="w-5 h-5 text-[#6cca7d]" />
-                      <h3 className="text-base font-semibold">Poupança Mensal</h3>
+                <div className="space-y-3">
+                  <div className="p-3 rounded-xl bg-gradient-to-br from-[#6cca7d]/20 to-[#d7e028]/20 border-2 border-[#6cca7d]">
+                    <div className="flex items-center gap-2 mb-1">
+                      <TrendingDown className="w-4 h-4 text-[#6cca7d]" />
+                      <h3 className="text-sm font-semibold">Poupança Mensal</h3>
                     </div>
-                    <p className="text-3xl font-bold text-[#6cca7d]">
+                    <p className="text-2xl font-bold text-[#6cca7d]">
                       €{monthlySavings.toFixed(2)}
                     </p>
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <p className="text-xs text-muted-foreground mt-0.5">
                       Com 80% de redução na fatura
                     </p>
                   </div>
                   
-                  <div className="p-4 rounded-xl bg-gradient-to-br from-[#3ac6ff]/20 to-[#243fad]/20 border-2 border-[#3ac6ff]">
-                    <div className="flex items-center gap-2 mb-2">
-                      <BarChart3 className="w-5 h-5 text-[#3ac6ff]" />
-                      <h3 className="text-base font-semibold">Poupança Anual</h3>
+                  <div className="p-3 rounded-xl bg-gradient-to-br from-[#3ac6ff]/20 to-[#243fad]/20 border-2 border-[#3ac6ff]">
+                    <div className="flex items-center gap-2 mb-1">
+                      <BarChart3 className="w-4 h-4 text-[#3ac6ff]" />
+                      <h3 className="text-sm font-semibold">Poupança Anual</h3>
                     </div>
-                    <p className="text-3xl font-bold text-[#3ac6ff]">
+                    <p className="text-2xl font-bold text-[#3ac6ff]">
                       €{yearlySavings.toFixed(2)}
                     </p>
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <p className="text-xs text-muted-foreground mt-0.5">
                       Economia em 12 meses
                     </p>
                   </div>
                   
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="p-3 rounded-lg bg-muted">
-                      <p className="text-xs text-muted-foreground mb-1">Retorno do Investimento</p>
-                      <p className="text-xl font-bold text-[#243fad]">
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="p-2 rounded-lg bg-muted">
+                      <p className="text-xs text-muted-foreground mb-0.5">Retorno do Investimento</p>
+                      <p className="text-lg font-bold text-[#243fad]">
                         {paybackYears.toFixed(1)} anos
                       </p>
                     </div>
-                    <div className="p-3 rounded-lg bg-muted">
-                      <p className="text-xs text-muted-foreground mb-1">CO₂ Evitado/Ano</p>
-                      <p className="text-xl font-bold text-[#6cca7d]">
+                    <div className="p-2 rounded-lg bg-muted">
+                      <p className="text-xs text-muted-foreground mb-0.5">CO₂ Evitado/Ano</p>
+                      <p className="text-lg font-bold text-[#6cca7d]">
                         {co2Savings.toFixed(1)}t
                       </p>
                     </div>
                   </div>
                   
-                  <Button asChild className="w-full energy-glow" size="lg">
+                  <Button asChild className="w-full energy-glow" size="default">
                     <a href="#orcamento">Solicitar Orçamento Personalizado</a>
                   </Button>
                 </div>
