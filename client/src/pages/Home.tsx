@@ -206,21 +206,15 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: "Carlos Mendes",
-      role: "Empresário",
-      text: "Instalei há 2 anos e já poupei mais de 45.000€. Melhor investimento que fiz!",
+      name: "Tiago Pinto",
+      role: "Cliente Blue Magnitude",
+      text: "Após uma má experiência de um fornecedor de energia anterior, encontrei a Bluemagnitude, e graças ao estudo do Ivo Santos e ao profissionalismo da equipa, o meu sistema solar funciona perfeitamente, mesmo num apartamento, e agora estou a economizar e protegido contra apagões. Recomendo!",
       rating: 5
     },
     {
-      name: "Ana Paula Silva",
-      role: "Arquiteta",
-      text: "Equipe profissional, instalação rápida e sistema funcionando perfeitamente. Recomendo!",
-      rating: 5
-    },
-    {
-      name: "Roberto Oliveira",
-      role: "Produtor Rural",
-      text: "A poupança foi além das expectativas. Fatura de eletricidade praticamente zerada.",
+      name: "Maria Costa",
+      role: "Proprietária Residencial",
+      text: "Instalação rápida e profissional. O sistema funciona perfeitamente e já estou a ver a diferença na fatura de eletricidade. Muito satisfeita!",
       rating: 5
     }
   ];
