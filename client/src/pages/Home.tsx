@@ -914,6 +914,19 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
+              <img 
+                src="https://private-us-east-1.manuscdn.com/sessionFile/q5sviWRou2JGIIHcxzxwoX/sandbox/Y6sdo2Ye22CULZfTSGHoLL-img-1_1771418781000_na1fn_YmF0ZXJpYS1hcm1hemVuYW1lbnRvLXNvbGFy.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80"
+                alt="Bateria de Armazenamento"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-xl font-bold mb-2">Armazenamento</h3>
+                  <p className="text-sm opacity-90">Baterias para usar energia quando nao ha sol</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
