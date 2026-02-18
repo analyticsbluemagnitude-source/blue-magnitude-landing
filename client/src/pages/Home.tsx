@@ -849,12 +849,12 @@ export default function Home() {
                 <img 
                   src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/WVgFGcHSCvZpgfeD.jpg"
                   alt="Projeto Autoconsumo - Instalação"
-                  className="rounded-xl shadow-lg w-full h-auto object-cover"
+                  className="rounded-xl shadow-lg w-full h-auto object-cover max-h-[280px]"
                 />
                 <img 
                   src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/aKenSoiHHZUobuqN.jpg"
                   alt="Projeto Autoconsumo - Painéis Completos"
-                  className="rounded-xl shadow-lg w-full h-auto object-cover"
+                  className="rounded-xl shadow-lg w-full h-auto object-cover max-h-[280px]"
                 />
               </div>
               <div>
