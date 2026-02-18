@@ -159,6 +159,15 @@ export default function Home() {
       setFormData({ name: "", email: "", phone: "", city: "" });
       setSuccessDialogType("quote");
       setShowSuccessDialog(true);
+      
+      // Google Analytics 4 event
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'generate_lead', {
+          event_category: 'Formulário',
+          event_label: 'Orçamento Gratuito',
+          value: 1
+        });
+      }
     },
     onError: (error) => {
       toast.error(error.message || "Erro ao enviar formulário. Por favor, tente novamente.");
@@ -603,7 +612,18 @@ export default function Home() {
                       </div>
                       <Slider
                         value={monthlyBill}
-                        onValueChange={setMonthlyBill}
+                        onValueChange={(value) => {
+                          setMonthlyBill(value);
+                          
+                          // Google Analytics 4 event
+                          if (typeof window !== 'undefined' && (window as any).gtag) {
+                            (window as any).gtag('event', 'calculator_used', {
+                              event_category: 'Calculadora',
+                              event_label: 'Ajuste de Valor',
+                              value: value[0]
+                            });
+                          }
+                        }}
                         min={50}
                         max={500}
                         step={10}
@@ -1230,6 +1250,16 @@ export default function Home() {
         rel="noopener noreferrer"
         className="fixed right-3 top-1/2 -translate-y-1/2 z-50 bg-[#25D366] hover:bg-[#1eaa50] text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 whatsapp-button"
         aria-label="Contacte-nos pelo WhatsApp"
+        onClick={() => {
+          // Google Analytics 4 event
+          if (typeof window !== 'undefined' && (window as any).gtag) {
+            (window as any).gtag('event', 'click', {
+              event_category: 'WhatsApp',
+              event_label: 'Botão Flutuante',
+              value: 1
+            });
+          }
+        }}
       >
         <MessageCircle className="w-6 h-6" />
       </a>

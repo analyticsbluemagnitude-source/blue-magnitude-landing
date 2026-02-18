@@ -66,3 +66,9 @@
 - [x] Criar botão flutuante "Voltar ao Topo"
 - [x] Adicionar lógica para mostrar/ocultar baseado no scroll
 - [x] Implementar animação suave de scroll ao clicar
+
+- [x] Adicionar script do Google Analytics 4 no index.html
+- [x] Configurar ID de medição G-LRPZWZFKF3
+- [x] Implementar evento de conversão para envio de formulário de orçamento
+- [x] Implementar evento de conversão para cliques no WhatsApp
+- [x] Testar rastreamento de eventos
