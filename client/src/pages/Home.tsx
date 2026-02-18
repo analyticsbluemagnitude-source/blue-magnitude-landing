@@ -1,206 +1,68 @@
-/* Design Philosophy: Energia Cinética Moderna
- * - Estrutura diagonal assimétrica com elementos sobrepostos
- * - Movimento fluido com parallax sutil
- * - Paleta vibrante contando história da transformação energética
- */
-
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from "@/components/ui/carousel";
-import { 
-  Sun, 
-  Zap, 
-  TrendingDown, 
-  Shield, 
-  Clock, 
-  Award,
-  CheckCircle2,
-  Phone,
-  Mail,
-  MapPin,
-  ArrowRight,
-  Leaf,
-  DollarSign,
-  BarChart3,
-  Battery,
-  Wind,
-  Wrench,
-  PowerOff,
-  FileText,
-  Menu,
-  X,
-  ChevronDown,
-  MessageCircle
-} from "lucide-react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { useState, useEffect, useCallback } from "react";
-import { toast } from "sonner";
+import { useState, useEffect } from 'react';
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Tooltip, TooltipProvider, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
+import { Zap, Battery, Wind, Wrench, PowerOff, FileText, Sun, CheckCircle2, Shield, Clock, TrendingDown, BarChart3, Menu, X, ChevronDown, MessageCircle, Phone, Mail, MapPin } from 'lucide-react';
 
 export default function Home() {
-  const [scrollY, setScrollY] = useState(0);
-  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [carouselApi, setCarouselApi] = useState<any>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    city: ""
-  });
-  
-  // Calculator states
-  const [monthlyBill, setMonthlyBill] = useState([150]);
-  const [energyPrice] = useState(0.25); // €0.25 per kWh average in Portugal
-  const [solarSavings] = useState(0.80); // 80% savings
-  
-  // Calculate results
-  const monthlyConsumption = monthlyBill[0] / energyPrice;
-  const monthlySavings = monthlyBill[0] * solarSavings;
-  const yearlySavings = monthlySavings * 12;
-  const estimatedSystemCost = monthlyConsumption * 1.5; // Rough estimate €1.5 per kWh/month
-  const paybackYears = estimatedSystemCost / yearlySavings;
-  const co2Savings = (monthlyConsumption * 12 * 0.233) / 1000; // tons of CO2 per year
+  const [savings, setSavings] = useState(0);
+  const [systemSize, setSystemSize] = useState(5);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Carousel slide tracking
-  useEffect(() => {
-    if (!carouselApi) return;
-
-    const onSelect = () => {
-      setCurrentSlide(carouselApi.selectedScrollSnap());
-    };
-
-    carouselApi.on("select", onSelect);
-    onSelect(); // Set initial slide
-
-    return () => {
-      carouselApi.off("select", onSelect);
-    };
-  }, [carouselApi]);
-
-  // Auto-play carousel
-  useEffect(() => {
-    if (!carouselApi || isPaused) return;
-
-    const autoplay = setInterval(() => {
-      carouselApi.scrollNext();
-    }, 5000); // 5 seconds
-
-    return () => clearInterval(autoplay);
-  }, [carouselApi, isPaused]);
-
-  // Intersection Observer for scroll animations
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
-        }
+    if (carouselApi) {
+      carouselApi.on('select', () => {
+        setCurrentSlide(carouselApi.selectedScrollSnap());
       });
-    }, observerOptions);
-
-    // Observe all elements with animation classes
-    const animatedElements = document.querySelectorAll(
-      '.animate-on-scroll, .animate-fade-in, .animate-slide-left, .animate-slide-right, .animate-scale'
-    );
-    
-    animatedElements.forEach(el => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success("Obrigado! Entraremos em contacto em breve.");
-    setFormData({ name: "", email: "", phone: "", city: "" });
-  };
-
-  const stats = [
-    { value: "2", label: "Anos no Mercado", icon: Award },
-    { value: "+300", label: "Instalações Realizadas", icon: CheckCircle2 },
-    { value: "80%", label: "Poupança na Fatura", icon: TrendingDown },
-    { value: "DGEG", label: "Certificado", icon: Shield }
-  ];
-
-  const benefits = [
-    {
-      icon: DollarSign,
-      title: "Poupança Imediata",
-      description: "Reduza a sua fatura de eletricidade em até 80% desde o primeiro mês de instalação."
-    },
-    {
-      icon: Leaf,
-      title: "Sustentabilidade",
-      description: "Contribua para um planeta mais limpo gerando sua própria energia renovável."
-    },
-    {
-      icon: TrendingDown,
-      title: "Valorização do Imóvel",
-      description: "Imóveis com energia solar valorizam até 30% no mercado."
-    },
-    {
-      icon: Shield,
-      title: "Proteção Contra Inflação",
-      description: "Livre-se dos aumentos constantes nas tarifas de eletricidade."
-    },
-    {
-      icon: BarChart3,
-      title: "Retorno Garantido",
-      description: "Investimento com retorno entre 4 a 6 anos e benefícios por mais de 25 anos."
-    },
-    {
-      icon: Zap,
-      title: "Tecnologia Avançada",
-      description: "Painéis de última geração com monitoramento inteligente em tempo real."
     }
-  ];
+  }, [carouselApi]);
 
   const process = [
     {
       number: "01",
-      title: "Análise Gratuita",
-      description: "Avaliamos o seu consumo e dimensionamos o sistema ideal para a sua necessidade."
+      title: "Análise e Orçamento",
+      description: "Avaliamos o seu imóvel, consumo energético e potencial solar para criar uma solução personalizada."
     },
     {
       number: "02",
-      title: "Projeto Personalizado",
-      description: "Criamos um projeto técnico completo com simulação de poupança e retorno."
+      title: "Instalação Profissional",
+      description: "Nossa equipa experiente realiza a instalação com qualidade e segurança, minimizando perturbações."
     },
     {
       number: "03",
-      title: "Instalação Profissional",
-      description: "Equipe certificada realiza a instalação completa em até 3 dias."
+      title: "Monitoramento Contínuo",
+      description: "Sistema de monitoramento em tempo real permite acompanhar a produção e poupança gerada."
     },
     {
       number: "04",
-      title: "Ativação e Suporte",
-      description: "Acompanhamento completo com monitoramento e suporte técnico vitalício."
+      title: "Suporte Permanente",
+      description: "Manutenção preventiva e suporte técnico garantem o funcionamento ótimo do seu sistema."
+    }
+  ];
+
+  const benefits = [
+    {
+      icon: TrendingDown,
+      title: "Redução de Custos",
+      description: "Diminua significativamente sua fatura de eletricidade com energia renovável."
+    },
+    {
+      icon: Shield,
+      title: "Proteção Contra Apagões",
+      description: "Sistemas com bateria garantem energia mesmo durante interrupções da rede."
+    },
+    {
+      icon: Clock,
+      title: "Rápido Retorno",
+      description: "Recupere seu investimento em 5-8 anos e aproveite décadas de poupança."
+    },
+    {
+      icon: CheckCircle2,
+      title: "Sustentabilidade",
+      description: "Contribua para um futuro mais verde reduzindo sua pegada de carbono."
     }
   ];
 
@@ -229,18 +91,25 @@ export default function Home() {
       answer: "Sim! Mesmo em dias nublados os painéis captam luz difusa e geram energia, embora com eficiência reduzida."
     },
     {
-      question: "Qual o prazo de retorno do investimento?",
-      answer: "Em média, o retorno ocorre entre 4 a 6 anos, dependendo do consumo e da tarifa local de eletricidade."
+      question: "Qual é o custo de manutenção?",
+      answer: "A manutenção é mínima. Recomendamos limpeza anual dos painéis e inspeção do sistema. Custos são muito inferiores às economias geradas."
     },
     {
-      question: "Preciso fazer manutenção constante?",
-      answer: "A manutenção é mínima. Recomendamos limpeza semestral dos painéis e inspeção anual do sistema."
+      question: "Posso vender o excesso de energia?",
+      answer: "Sim, através do sistema de compensação de energia (net metering), você pode vender o excedente gerado para a rede elétrica."
     },
     {
-      question: "Posso vender energia excedente?",
-      answer: "Sim! Através do sistema de compensação de energia, créditos são gerados e abatidos nas próximas faturas."
+      question: "Funciona à noite?",
+      answer: "Durante a noite, o sistema não gera energia. Com baterias de armazenamento, você pode usar a energia acumulada durante o dia."
+    },
+    {
+      question: "Qual é o investimento inicial?",
+      answer: "O investimento varia conforme o tamanho do sistema. Oferecemos opções de financiamento para tornar acessível a energia solar."
     }
   ];
+
+  const paybackYears = systemSize * 1.2;
+  const co2Savings = systemSize * 4.5;
 
   return (
     <div className="min-h-screen">
@@ -249,24 +118,21 @@ export default function Home() {
         <div className="container">
           <div className="flex items-center justify-between h-21">
             <div className="flex items-center gap-2">
-              <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/giWuxHpzJpBsYoQy.png" 
-                alt="Blue Magnitude" 
-                className="h-20 w-auto py-2"
-              />
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#243fad] to-[#3ac6ff] flex items-center justify-center">
+                <span className="text-white font-bold text-sm">Blue Magnitude</span>
+              </div>
             </div>
             
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#beneficios" className="text-sm font-medium hover:text-primary transition-colors">Benefícios</a>
-              <a href="#como-funciona" className="text-sm font-medium hover:text-primary transition-colors">Como Funciona</a>
-              <a href="#depoimentos" className="text-sm font-medium hover:text-primary transition-colors">Testemunhos</a>
-              <a href="#contato" className="text-sm font-medium hover:text-primary transition-colors">Contacto</a>
+              <a href="#beneficios" className="text-foreground hover:text-accent transition-colors">Benefícios</a>
+              <a href="#como-funciona" className="text-foreground hover:text-accent transition-colors">Como Funciona</a>
+              <a href="#depoimentos" className="text-foreground hover:text-accent transition-colors">Testemunhos</a>
+              <a href="#contato" className="text-foreground hover:text-accent transition-colors">Contacto</a>
             </nav>
-            
-            {/* Desktop CTA Button */}
-            <Button asChild className="hidden md:flex energy-glow">
-              <a href="#orcamento">Solicitar Orçamento</a>
+
+            <Button className="hidden md:flex bg-[#243fad] hover:bg-[#1a2d7d] text-white">
+              Solicitar Orçamento
             </Button>
             
             {/* Mobile Menu Button */}
@@ -278,7 +144,6 @@ export default function Home() {
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
-        </div>
         
         {/* Mobile Menu */}
         {mobileMenuOpen && (
@@ -286,56 +151,50 @@ export default function Home() {
             <nav className="container py-4 flex flex-col gap-4">
               <a 
                 href="#beneficios" 
-                className="text-sm font-medium hover:text-primary transition-colors py-2"
+                className="text-foreground hover:text-accent transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Benefícios
               </a>
               <a 
                 href="#como-funciona" 
-                className="text-sm font-medium hover:text-primary transition-colors py-2"
+                className="text-foreground hover:text-accent transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Como Funciona
               </a>
               <a 
                 href="#depoimentos" 
-                className="text-sm font-medium hover:text-primary transition-colors py-2"
+                className="text-foreground hover:text-accent transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Testemunhos
               </a>
               <a 
                 href="#contato" 
-                className="text-sm font-medium hover:text-primary transition-colors py-2"
+                className="text-foreground hover:text-accent transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contacto
               </a>
-              <Button asChild className="energy-glow w-full" onClick={() => setMobileMenuOpen(false)}>
-                <a href="#orcamento">Solicitar Orçamento</a>
+              <Button className="w-full bg-[#243fad] hover:bg-[#1a2d7d] text-white">
+                Solicitar Orçamento
               </Button>
             </nav>
           </div>
         )}
+        </div>
       </header>
 
-      {/* Hero Carousel Section */}
-      <Carousel 
-        className="w-full relative" 
-        opts={{ loop: true }} 
-        setApi={setCarouselApi}
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
+      {/* Carousel */}
+      <Carousel setApi={setCarouselApi} className="relative">
         <CarouselContent>
-          {/* Slide 1: Energia Solar Para Empresas */}
           <CarouselItem>
             <section 
               className="relative h-[60vh] flex items-center pt-20 overflow-hidden"
               style={{
-                backgroundImage: `url('https://private-us-east-1.manuscdn.com/sessionFile/q5sviWRou2JGIIHcxzxwoX/sandbox/REFC4GPOzcnFnppBcZZ4PK-img-1_1771368547000_na1fn_aGVyby1zbGlkZS1lbXByZXNhcw.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcTVzdmlXUm91MkpHSUlIY3h6eHdvWC9zYW5kYm94L1JFRkM0R1BPemNuRm5wcEJjWlo0UEstaW1nLTFfMTc3MTM2ODU0NzAwMF9uYTFmbl9hR1Z5YnkxemJHbGtaUzFsYlhCeVpYTmhjdy5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=kqFYNL84SMuooRgeCk5pOajXXRXeItwClRA8Gzs4zDclE8ckZI3Q1C5Bk7XXFYMOpgHOBxbczWR3VT~Sgmq1uCyNUeiB4Hmw3K0a~9cNr2RbPST0Os3sWk2NMPYUC-SUW7awmyUHjgGdVEGMvdHYRTgrrOY7w9r1TTgEmXdlfWbRT~-hQsc6lNkCKIISmoXAhbIVe3kgluv3rbiHgyFb4CzpSdqEkpgzkx07bRfWum5su3iz416ZA2ty~KB2AjzyE6Nv4wpT7oR4mGVOtaxosxwAiySieR1k9qiSI8ZdSD-q7F25-JG19kefT1lyxktqKA2qAfPNm4d9-zefIPS~lg__')`,
-                backgroundSize: '120%',
+                backgroundImage: `url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/kLqSkJQspwvNxSOz.jpg')`,
+                backgroundSize: '130%',
                 backgroundPosition: 'center 40%'
               }}
             >
@@ -361,12 +220,11 @@ export default function Home() {
             </section>
           </CarouselItem>
 
-          {/* Slide 2: Autoconsumo Residencial */}
           <CarouselItem>
             <section 
               className="relative h-[60vh] flex items-center pt-20 overflow-hidden"
               style={{
-                backgroundImage: `url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/kLqSkJQspwvNxSOz.jpg')`,
+                backgroundImage: `url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/DJI_0125-1536x864.jpg')`,
                 backgroundSize: '130%',
                 backgroundPosition: 'center 35%'
               }}
@@ -401,7 +259,7 @@ export default function Home() {
           {[0, 1].map((index) => (
             <button
               key={index}
-              onClick={() => carouselApi?.scrollTo(index)}
+              onClick={() => carouselApi?.scrollTo?.(index)}
               className={`h-3 rounded-full transition-all duration-300 ${
                 currentSlide === index 
                   ? 'w-12 bg-[#6cca7d]' 
@@ -423,7 +281,7 @@ export default function Home() {
           className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer hover:scale-110 transition-transform"
           aria-label="Rolar para baixo"
         >
-          <ChevronDown className="w-8 h-8 text-white/80" />
+          <ChevronDown className="w-8 h-8 text-white" />
         </button>
       </Carousel>
 
@@ -447,9 +305,7 @@ export default function Home() {
                     <h3 className="text-lg font-bold">Autoconsumo</h3>
                   </Card>
                 </TooltipTrigger>
-                <TooltipContent side="bottom" className="max-w-xs p-4">
-                  <p>Sistemas fotovoltaicos para consumo próprio, reduzindo a dependência da rede elétrica e a fatura de eletricidade.</p>
-                </TooltipContent>
+                <TooltipContent>Sistemas de energia solar para consumo próprio</TooltipContent>
               </Tooltip>
 
               <Tooltip>
@@ -459,9 +315,7 @@ export default function Home() {
                     <h3 className="text-lg font-bold">Autoconsumo Com Baterias</h3>
                   </Card>
                 </TooltipTrigger>
-                <TooltipContent side="bottom" className="max-w-xs p-4">
-                  <p>Sistemas com armazenamento de energia para uso noturno ou em períodos sem sol, garantindo autonomia total.</p>
-                </TooltipContent>
+                <TooltipContent>Armazenamento de energia para uso noturno</TooltipContent>
               </Tooltip>
 
               <Tooltip>
@@ -471,9 +325,7 @@ export default function Home() {
                     <h3 className="text-lg font-bold">AVAC E Climatização</h3>
                   </Card>
                 </TooltipTrigger>
-                <TooltipContent side="bottom" className="max-w-xs p-4">
-                  <p>Integração de sistemas de aquecimento, ventilação e ar condicionado alimentados por energia solar.</p>
-                </TooltipContent>
+                <TooltipContent>Sistemas de climatização eficientes</TooltipContent>
               </Tooltip>
 
               <Tooltip>
@@ -483,9 +335,7 @@ export default function Home() {
                     <h3 className="text-lg font-bold">Manutenção</h3>
                   </Card>
                 </TooltipTrigger>
-                <TooltipContent side="bottom" className="max-w-xs p-4">
-                  <p>Serviços de manutenção preventiva e corretiva para garantir máxima eficiência do sistema solar.</p>
-                </TooltipContent>
+                <TooltipContent>Serviços de manutenção preventiva e corretiva</TooltipContent>
               </Tooltip>
 
               <Tooltip>
@@ -495,9 +345,7 @@ export default function Home() {
                     <h3 className="text-lg font-bold">Sistemas OFF-Grid</h3>
                   </Card>
                 </TooltipTrigger>
-                <TooltipContent side="bottom" className="max-w-xs p-4">
-                  <p>Soluções autónomas para locais sem acesso à rede elétrica, com baterias de grande capacidade.</p>
-                </TooltipContent>
+                <TooltipContent>Sistemas independentes da rede elétrica</TooltipContent>
               </Tooltip>
 
               <Tooltip>
@@ -507,9 +355,7 @@ export default function Home() {
                     <h3 className="text-lg font-bold">Consultoria</h3>
                   </Card>
                 </TooltipTrigger>
-                <TooltipContent side="bottom" className="max-w-xs p-4">
-                  <p>Análise técnica e económica personalizada para identificar a melhor solução solar para o seu caso.</p>
-                </TooltipContent>
+                <TooltipContent>Análise e consultoria especializada</TooltipContent>
               </Tooltip>
             </div>
           </TooltipProvider>
@@ -524,10 +370,10 @@ export default function Home() {
               Porquê Escolher Energia Solar?
             </h2>
             <p className="text-base text-muted-foreground">
-              Invista no futuro com tecnologia sustentável que traz poupança real e valorização do seu património.
+              Benefícios comprovados para o seu bolso e para o planeta.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               return (
@@ -536,7 +382,7 @@ export default function Home() {
                     <Icon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-lg font-bold mb-3">{benefit.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">{benefit.description}</p>
                 </Card>
               );
             })}
@@ -552,48 +398,27 @@ export default function Home() {
               Calcule a Sua Poupança
             </h2>
             <p className="text-base text-muted-foreground">
-              Descubra quanto pode poupar por mês e por ano com energia solar.
+              Descubra quanto pode economizar com energia solar.
             </p>
           </div>
-          
-          <div className="max-w-5xl mx-auto">
-            <Card className="p-8 lg:p-12 kinetic-card border-2 border-[#6cca7d] animate-scale">
-              <div className="grid lg:grid-cols-2 gap-12">
-                {/* Input Section */}
-                <div className="space-y-8">
-                  <div>
-                    <Label className="text-lg font-semibold mb-4 block">
-                      Qual é a sua fatura mensal de eletricidade?
-                    </Label>
-                    <div className="space-y-6">
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl font-bold text-[#243fad]">
-                          €{monthlyBill[0]}
-                        </span>
-                        <span className="text-muted-foreground">/mês</span>
-                      </div>
-                      <Slider
-                        value={monthlyBill}
-                        onValueChange={setMonthlyBill}
-                        min={50}
-                        max={500}
-                        step={10}
-                        className="w-full"
-                      />
-                      <div className="flex justify-between text-sm text-muted-foreground">
-                        <span>€50</span>
-                        <span>€500</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="pt-6 border-t">
-                    <p className="text-sm text-muted-foreground">
-                      <strong className="text-foreground">Consumo estimado:</strong> {Math.round(monthlyConsumption)} kWh/mês
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      <strong className="text-foreground">Tarifa média:</strong> €{energyPrice}/kWh
-                    </p>
+
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-card rounded-2xl p-8 border-2 border-[#6cca7d]">
+              <div className="space-y-6">
+                <div>
+                  <label className="block text-sm font-semibold mb-3">Tamanho do Sistema (kW)</label>
+                  <input 
+                    type="range" 
+                    min="3" 
+                    max="20" 
+                    value={systemSize}
+                    onChange={(e) => setSystemSize(Number(e.target.value))}
+                    className="w-full h-2 bg-muted rounded-lg appearance-none cursor-pointer"
+                  />
+                  <div className="flex justify-between mt-2 text-sm text-muted-foreground">
+                    <span>3 kW</span>
+                    <span className="font-bold text-foreground">{systemSize} kW</span>
+                    <span>20 kW</span>
                   </div>
                 </div>
                 
@@ -604,11 +429,8 @@ export default function Home() {
                       <TrendingDown className="w-6 h-6 text-[#6cca7d]" />
                       <h3 className="text-lg font-semibold">Poupança Mensal</h3>
                     </div>
-                    <p className="text-4xl font-bold text-[#6cca7d]">
-                      €{monthlySavings.toFixed(2)}
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Com 80% de redução na fatura
+                    <p className="text-3xl font-bold text-[#6cca7d]">
+                      ~€{(systemSize * 45).toFixed(0)}/mês
                     </p>
                   </div>
                   
@@ -617,11 +439,8 @@ export default function Home() {
                       <BarChart3 className="w-6 h-6 text-[#3ac6ff]" />
                       <h3 className="text-lg font-semibold">Poupança Anual</h3>
                     </div>
-                    <p className="text-4xl font-bold text-[#3ac6ff]">
-                      €{yearlySavings.toFixed(2)}
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Economia em 12 meses
+                    <p className="text-3xl font-bold text-[#3ac6ff]">
+                      ~€{(systemSize * 540).toFixed(0)}/ano
                     </p>
                   </div>
                   
@@ -639,13 +458,9 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                  
-                  <Button asChild className="w-full energy-glow" size="lg">
-                    <a href="#orcamento">Solicitar Orçamento Personalizado</a>
-                  </Button>
                 </div>
               </div>
-            </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -658,7 +473,7 @@ export default function Home() {
               Como Funciona o Processo
             </h2>
             <p className="text-base text-muted-foreground">
-              Do primeiro contato até a ativação do sistema, cuidamos de tudo para você.
+              Desde a análise até à instalação, acompanhamos cada passo.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -688,9 +503,10 @@ export default function Home() {
               Veja Como Instalamos
             </h2>
             <p className="text-base text-muted-foreground">
-              Acompanhe o processo completo de instalação dos nossos sistemas fotovoltaicos.
+              Processo profissional de instalação de sistemas solares.
             </p>
           </div>
+
           <div className="grid lg:grid-cols-3 gap-12 items-start">
             <div className="lg:col-span-1 space-y-6">
               <div className="flex items-start gap-4">
@@ -698,8 +514,8 @@ export default function Home() {
                   <CheckCircle2 className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold mb-1">Equipa Certificada</h4>
-                  <p className="text-muted-foreground">Técnicos especializados e certificados pela DGEG</p>
+                  <h4 className="font-bold mb-1">Avaliação Completa</h4>
+                  <p className="text-sm text-muted-foreground">Análise detalhada do local e potencial solar</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -707,8 +523,8 @@ export default function Home() {
                   <CheckCircle2 className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold mb-1">Equipamentos Premium</h4>
-                  <p className="text-muted-foreground">Painéis e inversores de marcas líderes mundiais</p>
+                  <h4 className="font-bold mb-1">Instalação Rápida</h4>
+                  <p className="text-sm text-muted-foreground">Equipa profissional e experiente</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -716,8 +532,8 @@ export default function Home() {
                   <CheckCircle2 className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold mb-1">Instalação Rápida</h4>
-                  <p className="text-muted-foreground">Sistema completo operacional em até 3 dias</p>
+                  <h4 className="font-bold mb-1">Garantia Total</h4>
+                  <p className="text-sm text-muted-foreground">Suporte e manutenção contínua</p>
                 </div>
               </div>
             </div>
@@ -726,10 +542,9 @@ export default function Home() {
                 <video
                   className="w-full h-auto max-h-[700px]"
                   controls
-                  preload="metadata"
-                  poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/lSuvGiPJAIfNVQds.jpg"
+                  poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/DJI_0125-1536x864.jpg"
                 >
-                  <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/wFcAYExYViImqLCG.mp4" type="video/mp4" />
+                  <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/VID_20250121_142020_0.mp4" type="video/mp4" />
                   O seu navegador não suporta a reprodução de vídeos.
                 </video>
               </div>
@@ -745,19 +560,11 @@ export default function Home() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <img 
-                src="https://private-us-east-1.manuscdn.com/sessionFile/q5sviWRou2JGIIHcxzxwoX/sandbox/EwlI46E21FiSAhws1TmOi1-img-3_1771360510000_na1fn_aGFwcHktZmFtaWx5LXNvbGFy.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcTVzdmlXUm91MkpHSUlIY3h6eHdvWC9zYW5kYm94L0V3bEk0NkUyMUZpU0Fod3MxVG1PaTEtaW1nLTNfMTc3MTM2MDUxMDAwMF9uYTFmbl9hR0Z3Y0hrdFptRnRhV3g1TFhOdmJHRnkucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=fPdiUJiQ5e9yORwXoM7HzkTAhH8vzt8jty9wLgylzgmpxt2gT9HxoFeCKCjjCl-xRJd6rTxzRJ1s9HKvIQ8Q9HnrRR67NZAwCkqhyagCrn3hFHAghIrHoQk2k7LdiCkQRl~eDi96hnOWp3bgy-lEDYhH9bZefXG-PHNlFTMRPWj9DqM2IA7Hz6B2PJM~ppq4nhRtBAXzzuH4wKe9HqSLqc95CQ7gTz99kxetvXi90FIHvn1RNuA275Xne4t6~GGmrbXeoEo91L2vKRS86LltlVIJFFsKVYi-fk582kmA3D30Vx1p2IEpWfbDtte3VZihgqmURqttUxZbzRdWKkXibg__"
-                alt="Família Feliz com Energia Solar"
-                className="rounded-3xl shadow-2xl"
-              />
-            </div>
-            <div className="space-y-8">
-              <h2 className="text-2xl lg:text-3xl font-bold">
-                Mais de 300 Famílias Já Poupam Connosco
+              <h2 className="text-2xl lg:text-3xl font-bold mb-6">
+                Porque Nos Escolhem
               </h2>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                Junte-se às centenas de portugueses que já transformaram as suas casas em centrais de energia limpa 
-                e estão a poupar na fatura de eletricidade todos os meses. Empresa certificada pela DGEG.
+              <p className="text-base text-muted-foreground mb-8 leading-relaxed">
+                Mais de 2 anos de experiência, 300+ instalações realizadas e clientes satisfeitos em toda a região. Somos parceiros de marcas líderes em energia solar e certificados pela DGEG.
               </p>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -765,8 +572,8 @@ export default function Home() {
                     <CheckCircle2 className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold mb-1">Instalação Rápida</h4>
-                    <p className="text-muted-foreground">Sistema completo instalado em até 3 dias úteis.</p>
+                    <h4 className="font-bold mb-1">Experiência Comprovada</h4>
+                    <p className="text-sm text-muted-foreground">Mais de 2 anos ajudando clientes a economizar</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -774,8 +581,8 @@ export default function Home() {
                     <Shield className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold mb-1">Garantia Estendida</h4>
-                    <p className="text-muted-foreground">25 anos de garantia nos painéis e 10 anos nos inversores.</p>
+                    <h4 className="font-bold mb-1">Garantia de Qualidade</h4>
+                    <p className="text-sm text-muted-foreground">Equipamentos de marcas premium certificadas</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -783,10 +590,28 @@ export default function Home() {
                     <Clock className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold mb-1">Suporte Vitalício</h4>
-                    <p className="text-muted-foreground">Acompanhamento e suporte técnico durante toda vida útil do sistema.</p>
+                    <h4 className="font-bold mb-1">Suporte 24/7</h4>
+                    <p className="text-sm text-muted-foreground">Equipa disponível para qualquer dúvida</p>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="text-center p-6 bg-card rounded-xl border-2 border-[#6cca7d]">
+                <p className="text-3xl font-bold text-[#6cca7d] mb-2">300+</p>
+                <p className="text-sm text-muted-foreground">Instalações Realizadas</p>
+              </div>
+              <div className="text-center p-6 bg-card rounded-xl border-2 border-[#3ac6ff]">
+                <p className="text-3xl font-bold text-[#3ac6ff] mb-2">2+</p>
+                <p className="text-sm text-muted-foreground">Anos de Experiência</p>
+              </div>
+              <div className="text-center p-6 bg-card rounded-xl border-2 border-[#d7e028]">
+                <p className="text-3xl font-bold text-[#d7e028] mb-2">80%</p>
+                <p className="text-sm text-muted-foreground">Poupança Média</p>
+              </div>
+              <div className="text-center p-6 bg-card rounded-xl border-2 border-[#243fad]">
+                <p className="text-3xl font-bold text-[#243fad] mb-2">✓</p>
+                <p className="text-sm text-muted-foreground">Certificado DGEG</p>
               </div>
             </div>
           </div>
@@ -801,7 +626,7 @@ export default function Home() {
               Projetos de Clientes
             </h2>
             <p className="text-base text-muted-foreground">
-              Conheça algumas das mais de 300 instalações solares que já realizamos em Portugal.
+              Conheça alguns dos nossos projetos realizados com sucesso.
             </p>
           </div>
           {/* Featured Project Summary */}
@@ -809,17 +634,9 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl font-bold mb-4">Projeto Mata Mourisca</h3>
-                <div className="space-y-3 text-base">
-                  <p className="text-muted-foreground">
-                    <strong className="text-foreground">Sistema:</strong> 7 painéis solares Aiko 450W com inversor híbrido Solplanet ASW4000H
-                  </p>
-                  <p className="text-muted-foreground">
-                    <strong className="text-foreground">Armazenamento:</strong> Bateria Sunwoda Monawall 5,12 kW
-                  </p>
-                  <p className="text-muted-foreground">
-                    <strong className="text-foreground">Resultado:</strong> Energia renovável consistente com autonomia total, mesmo durante a noite
-                  </p>
-                </div>
+                <p className="text-base text-muted-foreground mb-4 leading-relaxed">
+                  Instalação de sistema solar residencial com armazenamento em bateria. Resultado: Energia renovável consistente com autonomia total, mesmo durante a noite
+                </p>
               </div>
               <div className="space-y-4">
                 <div className="group relative overflow-hidden rounded-xl">
@@ -851,38 +668,26 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div className="space-y-4">
                 <img 
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/WVgFGcHSCvZpgfeD.jpg"
-                  alt="Projeto Autoconsumo - Instalação"
-                  className="rounded-xl shadow-lg w-full h-auto object-cover max-h-[280px]"
-                />
-                <img 
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/aKenSoiHHZUobuqN.jpg"
-                  alt="Projeto Autoconsumo - Painéis Completos"
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/IMG_20250121_142020_0.jpg"
+                  alt="Autoconsumo de Alto Desempenho"
                   className="rounded-xl shadow-lg w-full h-auto object-cover max-h-[280px]"
                 />
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-4">Projeto Autoconsumo de Alto Desempenho</h3>
-                <div className="space-y-3 text-base">
-                  <p className="text-muted-foreground">
-                    <strong className="text-foreground">Sistema:</strong> 20 painéis solares Aiko 605W com inversor Fox ESS H3-Pro 20.0
-                  </p>
-                  <p className="text-muted-foreground">
-                    <strong className="text-foreground">Armazenamento:</strong> Baterias Fox ESS Energy Cube 2900 (11,6 kW total)
-                  </p>
-                  <p className="text-muted-foreground">
-                    <strong className="text-foreground">Resultado:</strong> Autonomia energética maximizada com fornecimento contínuo e estável
-                  </p>
-                </div>
+                <h3 className="text-2xl font-bold mb-4">Autoconsumo de Alto Desempenho</h3>
+                <p className="text-base text-muted-foreground mb-6 leading-relaxed">
+                  Sistema de grande capacidade para consumo industrial. Redução de 80% na fatura de eletricidade com retorno do investimento em 5 anos.
+                </p>
               </div>
             </div>
           </Card>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
+
+          {/* Gallery Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="group relative overflow-hidden rounded-xl h-64 cursor-pointer">
               <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/JBfLRaTDPyOmSYTB.jpg"
-                alt="Sistema Residencial Completo"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/IMG_20250121_142020_0.jpg"
+                alt="Telhado Metálico"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -892,9 +697,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
+
+            <div className="group relative overflow-hidden rounded-xl h-64 cursor-pointer">
               <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/mjIFhCQRvUScOGio.jpg"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/IMG_20250121_142020_0.jpg"
                 alt="Instalação Comercial"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -905,9 +711,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
+
+            <div className="group relative overflow-hidden rounded-xl h-64 cursor-pointer">
               <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/bJReAHxZrjozkZKi.jpg"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/IMG_20250121_142020_0.jpg"
                 alt="Sistema de Grande Porte"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -918,9 +725,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
+
+            <div className="group relative overflow-hidden rounded-xl h-64 cursor-pointer">
               <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/HqZchUXqjPHNOylS.png"
+                src="https://private-us-east-1.manuscdn.com/sessionFile/q5sviWRou2JGIIHcxzxwoX/sandbox/naqrcvcQxtrVwZaHNxmMoq-img-2_1771420127000_na1fn_bWF0YS1tb3VyaXNjYS1hbnRlcw.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcTVzdmlXUm91MkpHSUlIY3h6eHdvWC9zYW5kYm94L25hcXJjdmNReHRyVndaYUhOeG1Nb3EtaW1nLTJfMTc3MTQyMDEyNzAwMF9uYTFmbl9iV0YwWVMxdGIzVnlhWE5qWVMxaGJuUmxjdy5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=SnMzimmeVhUURhwr9wqNJX~BDkLyKKQ9uD3OYK55aqc9vjsoyX7pzXrjsmbfG3j7r~ZODmQPZx6VqTokx8c~KeHimhDqQ6~DQoPbCvB6N7wMA4u8P6K5NZZ-TmrA7uk6WcJPYlCP0AYo-FIsi3DD60xCVy81xmNZDBG~RzNEEyAm3hRGIpF4~MVYz59ZCoBJstT1b~7WKT0huVlWgCANeuHhLMFVFYLVkC3SjpgssfOaA-GSW-vxJxiq~QSDSKuakRhIwq~nzpAlphMgr-YhD-efl-vYQfKjfcAXrfRTMnuovg6hXlaz-L4VQKDV5YapuNh-zOJr6GT09D4pyqk3Fg__"
                 alt="Bateria Solplanet de Armazenamento"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -946,21 +754,45 @@ export default function Home() {
               Testemunhos reais de quem já está a poupar com energia solar.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="p-8 kinetic-card">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Sun key={i} className="w-5 h-5 fill-[#d7e028] text-[#d7e028]" />
-                  ))}
-                </div>
-                <p className="text-lg mb-6 leading-relaxed italic">"{testimonial.text}"</p>
-                <div>
-                  <div className="font-bold">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                </div>
-              </Card>
-            ))}
+          <div className="space-y-12">
+            {/* Video Testimonial */}
+            <div className="bg-gradient-to-br from-[#6cca7d]/10 to-[#3ac6ff]/10 rounded-2xl p-8 border-2 border-[#6cca7d]">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold mb-2">Depoimento em Vídeo</h3>
+                <p className="text-base text-muted-foreground">Conheça a experiência real de Susy com a Blue Magnitude</p>
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-2xl mb-6">
+                <video
+                  className="w-full h-auto max-h-[500px]"
+                  controls
+                  poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/QTUDVHOBVvFgWvew.mp4"
+                >
+                  <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/QTUDVHOBVvFgWvew.mp4" type="video/mp4" />
+                  O seu navegador não suporta a reprodução de vídeos.
+                </video>
+              </div>
+              <div className="text-center">
+                <p className="text-base text-muted-foreground italic">"A experiência de Susy com o nosso sistema solar e a dedicação da nossa equipa"</p>
+              </div>
+            </div>
+
+            {/* Text Testimonials */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <Card key={index} className="p-8 kinetic-card">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Sun key={i} className="w-5 h-5 fill-[#d7e028] text-[#d7e028]" />
+                    ))}
+                  </div>
+                  <p className="text-lg mb-6 leading-relaxed italic">"{testimonial.text}"</p>
+                  <div>
+                    <div className="font-bold">{testimonial.name}</div>
+                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                  </div>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -973,14 +805,19 @@ export default function Home() {
               Perguntas Frequentes
             </h2>
             <p className="text-base text-muted-foreground">
-              Tire suas dúvidas sobre energia solar.
+              Respostas às dúvidas mais comuns sobre energia solar.
             </p>
           </div>
-          <div className="max-w-4xl mx-auto space-y-4">
+          <div className="max-w-3xl mx-auto space-y-4">
             {faqs.map((faq, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                <h3 className="text-xl font-bold mb-3">{faq.question}</h3>
-                <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+              <Card key={index} className="p-6 kinetic-card">
+                <details className="cursor-pointer">
+                  <summary className="font-bold text-lg flex items-center justify-between">
+                    {faq.question}
+                    <span className="ml-4">+</span>
+                  </summary>
+                  <p className="text-muted-foreground mt-4 leading-relaxed">{faq.answer}</p>
+                </details>
               </Card>
             ))}
           </div>
@@ -993,71 +830,44 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 space-y-4">
               <h2 className="text-2xl lg:text-3xl font-bold">
-                Solicite o Seu Orçamento Gratuito
+                Solicite o Seu Orçamento
               </h2>
               <p className="text-base opacity-90">
-                Preencha o formulário e receba uma proposta personalizada em até 24 horas.
+                Preencha o formulário abaixo e nossa equipa entrará em contacto em breve.
               </p>
             </div>
-            <Card className="p-8 lg:p-12">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Nome Completo *</Label>
-                    <Input 
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
-                      required
-                      placeholder="O seu nome"
-                      className="h-12"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">E-mail *</Label>
-                    <Input 
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      required
-                      placeholder="o-seu@email.pt"
-                      className="h-12"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Telefone/WhatsApp *</Label>
-                    <Input 
-                      id="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                      required
-                      placeholder="(00) 00000-0000"
-                      className="h-12"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="city">Cidade *</Label>
-                    <Input 
-                      id="city"
-                      value={formData.city}
-                      onChange={(e) => setFormData({...formData, city: e.target.value})}
-                      required
-                      placeholder="A sua cidade"
-                      className="h-12"
-                    />
-                  </div>
-                </div>
-                <Button type="submit" size="lg" className="w-full h-14 text-lg energy-glow">
-                  Receber Orçamento Gratuito
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-                <p className="text-sm text-center text-muted-foreground">
-                  Ao enviar, concorda em receber contacto da Blue Magnitude sobre a sua solicitação.
-                </p>
-              </form>
-            </Card>
+            <form className="grid md:grid-cols-2 gap-6">
+              <input 
+                type="text" 
+                placeholder="Seu Nome" 
+                className="px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-white/50"
+                required
+              />
+              <input 
+                type="email" 
+                placeholder="Seu Email" 
+                className="px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-white/50"
+              />
+              <input 
+                type="tel" 
+                placeholder="Seu Telefone" 
+                className="px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-white/50"
+              />
+              <select className="px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:border-white/50" defaultValue="">
+                <option value="">Tipo de Instalação</option>
+                <option value="residential">Residencial</option>
+                <option value="commercial">Comercial</option>
+                <option value="industrial">Industrial</option>
+              </select>
+              <textarea 
+                placeholder="Mensagem (opcional)" 
+                rows={4}
+                className="md:col-span-2 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-white/50"
+              ></textarea>
+              <Button className="md:col-span-2 bg-white text-[#243fad] hover:bg-gray-100 text-lg h-12 font-bold">
+                Enviar Orçamento
+              </Button>
+            </form>
           </div>
         </div>
       </section>
@@ -1067,23 +877,22 @@ export default function Home() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-8">
-              <h2 className="text-2xl lg:text-3xl font-bold">
-                Entre em Contacto
-              </h2>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                A nossa equipa está pronta para esclarecer as suas dúvidas e ajudá-lo a dar o primeiro passo 
-                rumo à independência energética.
-              </p>
+              <div>
+                <h2 className="text-2xl lg:text-3xl font-bold mb-4">
+                  Entre em Contacto
+                </h2>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Tem dúvidas? Nossa equipa está pronta para ajudar. Entre em contacto conosco através de qualquer um dos canais abaixo.
+                </p>
+              </div>
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-2xl bg-[#3ac6ff]/10 flex items-center justify-center">
                     <Phone className="w-6 h-6 text-[#3ac6ff]" />
                   </div>
                   <div>
-                    <div className="font-bold mb-1">Telefone</div>
-                    <a href="tel:+351999999999" className="text-muted-foreground hover:text-primary transition-colors">
-                      +351 999 999 999
-                    </a>
+                    <h4 className="font-bold">Telefone</h4>
+                    <p className="text-muted-foreground">+351 XXX XXX XXX</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -1091,10 +900,8 @@ export default function Home() {
                     <Mail className="w-6 h-6 text-[#6cca7d]" />
                   </div>
                   <div>
-                    <div className="font-bold mb-1">E-mail</div>
-                    <a href="mailto:contato@bluemagnitude.com.br" className="text-muted-foreground hover:text-primary transition-colors">
-                      contato@bluemagnitude.com.br
-                    </a>
+                    <h4 className="font-bold">Email</h4>
+                    <p className="text-muted-foreground">info@bluemagnitude.pt</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -1102,20 +909,34 @@ export default function Home() {
                     <MapPin className="w-6 h-6 text-[#d7e028]" />
                   </div>
                   <div>
-                    <div className="font-bold mb-1">Endereço</div>
-                    <p className="text-muted-foreground">
-                      Lisboa, Portugal
-                    </p>
+                    <h4 className="font-bold">Localização</h4>
+                    <p className="text-muted-foreground">Portugal</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="relative">
-              <img 
-                src="https://private-us-east-1.manuscdn.com/sessionFile/q5sviWRou2JGIIHcxzxwoX/sandbox/EwlI46E21FiSAhws1TmOi1-img-5_1771360500000_na1fn_dGVjaG5vbG9neS1pbm5vdmF0aW9u.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcTVzdmlXUm91MkpHSUlIY3h6eHdvWC9zYW5kYm94L0V3bEk0NkUyMUZpU0Fod3MxVG1PaTEtaW1nLTVfMTc3MTM2MDUwMDAwMF9uYTFmbl9kR1ZqYUc1dmJHOW5lUzFwYm01dmRtRjBhVzl1LnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=P70RTxZy8RDxPxq5KmccRCLhSVM5yktDy1ZlsKowt~tBv6VjEt6UwqKyZI4oZ1ERVLvrnO6dxZQi4MGGRDxi-tEVcmukImsmDBYMYRQlfNENn8Sm1JI5jlrbl4DcxDt-FamEyWvD~ElXWM69TgSLAzA4qwUo6~FOkhWxpCV38KvQiN~~ZBTTTwyvrl5Fgt9gBs-n9e20Zq6etGyHWTmBMtTsMkLxk4U-TNpqOdDd0DY9n60k1oBkQ19IrD~B1FZJvkqQLxMX9Ws5UZf6RjvYIQsjMEYuPtpGH7infqmcsPv8w73yaU2Hb~hx4htU7r12KT8p8oDiFuSR8Z2BWF50bg__"
-                alt="Tecnologia Solar Avançada"
-                className="rounded-3xl shadow-2xl"
-              />
+            <div className="bg-muted rounded-2xl p-8 border-2 border-border">
+              <h3 className="text-xl font-bold mb-6">Formulário de Contacto</h3>
+              <form className="space-y-4">
+                <input 
+                  type="text" 
+                  placeholder="Nome" 
+                  className="w-full px-4 py-2 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-[#6cca7d]"
+                />
+                <input 
+                  type="email" 
+                  placeholder="Email" 
+                  className="w-full px-4 py-2 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-[#6cca7d]"
+                />
+                <textarea 
+                  placeholder="Mensagem" 
+                  rows={4}
+                  className="w-full px-4 py-2 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-[#6cca7d]"
+                ></textarea>
+                <Button className="w-full bg-[#6cca7d] hover:bg-[#5bb96d] text-white">
+                  Enviar
+                </Button>
+              </form>
             </div>
           </div>
         </div>
@@ -1126,50 +947,50 @@ export default function Home() {
         <div className="container">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="space-y-4">
-              <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/giWuxHpzJpBsYoQy.png" 
-                alt="Blue Magnitude" 
-                className="h-12 w-auto brightness-0 invert"
-              />
-              <p className="text-sm opacity-80">
-                A transformar luz solar em poupança e sustentabilidade. Certificados pela DGEG.
-              </p>
+              <h4 className="font-bold">Blue Magnitude</h4>
+              <p className="text-sm opacity-80">Soluções de energia solar para um futuro sustentável.</p>
             </div>
-            <div>
-              <h4 className="font-bold mb-4">Navegação</h4>
-              <ul className="space-y-2 text-sm opacity-80">
-                <li><a href="#beneficios" className="hover:opacity-100 transition-opacity">Benefícios</a></li>
-                <li><a href="#como-funciona" className="hover:opacity-100 transition-opacity">Como Funciona</a></li>
-                <li><a href="#depoimentos" className="hover:opacity-100 transition-opacity">Testemunhos</a></li>
-                <li><a href="#contato" className="hover:opacity-100 transition-opacity">Contacto</a></li>
+            <div className="space-y-4">
+              <h4 className="font-bold">Serviços</h4>
+              <ul className="text-sm opacity-80 space-y-2">
+                <li><a href="#" className="hover:opacity-100">Autoconsumo</a></li>
+                <li><a href="#" className="hover:opacity-100">Com Baterias</a></li>
+                <li><a href="#" className="hover:opacity-100">Manutenção</a></li>
               </ul>
             </div>
-            <div>
-              <h4 className="font-bold mb-4">Serviços</h4>
-              <ul className="space-y-2 text-sm opacity-80">
-                <li>Instalação Residencial</li>
-                <li>Instalação Comercial</li>
-                <li>Instalação Industrial</li>
-                <li>Manutenção Preventiva</li>
+            <div className="space-y-4">
+              <h4 className="font-bold">Empresa</h4>
+              <ul className="text-sm opacity-80 space-y-2">
+                <li><a href="#" className="hover:opacity-100">Sobre Nós</a></li>
+                <li><a href="#" className="hover:opacity-100">Contacto</a></li>
+                <li><a href="#" className="hover:opacity-100">Blog</a></li>
               </ul>
             </div>
-            <div>
-              <h4 className="font-bold mb-4">Contacto</h4>
-              <ul className="space-y-2 text-sm opacity-80">
-                <li>+351 999 999 999</li>
-                <li>contacto@bluemagnitude.pt</li>
-                <li>Lisboa, Portugal</li>
+            <div className="space-y-4">
+              <h4 className="font-bold">Legal</h4>
+              <ul className="text-sm opacity-80 space-y-2">
+                <li><a href="#" className="hover:opacity-100">Privacidade</a></li>
+                <li><a href="#" className="hover:opacity-100">Termos</a></li>
+                <li><a href="#" className="hover:opacity-100">Cookies</a></li>
               </ul>
             </div>
           </div>
-          <div className="pt-8 border-t border-white/20 text-center text-sm opacity-80">
-            <p>&copy; 2026 Blue Magnitude. Todos os direitos reservados.</p>
+          <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-sm opacity-80">&copy; 2026 Blue Magnitude. Todos os direitos reservados.</p>
+            <a 
+              href="https://wa.me/351938719773"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm opacity-80 hover:opacity-100"
+            >
+              WhatsApp: +351 938 719 773
+            </a>
           </div>
         </div>
       </footer>
-      
-      {/* WhatsApp Floating Button */}
-      <a
+
+      {/* WhatsApp Button */}
+      <a 
         href="https://wa.me/351938719773"
         target="_blank"
         rel="noopener noreferrer"
