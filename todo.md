@@ -127,3 +127,6 @@
 
 - [x] Reduzir espaçamento entre seção de Projetos e Testemunhos
 - [x] Ajustar padding/margin das seções
+
+- [x] Reduzir espaçamento entre seção de Testemunhos e FAQ
+- [x] Ajustar padding da seção FAQ
