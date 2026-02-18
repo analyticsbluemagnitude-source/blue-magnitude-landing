@@ -838,6 +838,7 @@ export default function Home() {
                 src="https://private-us-east-1.manuscdn.com/sessionFile/q5sviWRou2JGIIHcxzxwoX/sandbox/EwlI46E21FiSAhws1TmOi1-img-3_1771360510000_na1fn_aGFwcHktZmFtaWx5LXNvbGFy.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcTVzdmlXUm91MkpHSUlIY3h6eHdvWC9zYW5kYm94L0V3bEk0NkUyMUZpU0Fod3MxVG1PaTEtaW1nLTNfMTc3MTM2MDUxMDAwMF9uYTFmbl9hR0Z3Y0hrdFptRnRhV3g1TFhOdmJHRnkucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=fPdiUJiQ5e9yORwXoM7HzkTAhH8vzt8jty9wLgylzgmpxt2gT9HxoFeCKCjjCl-xRJd6rTxzRJ1s9HKvIQ8Q9HnrRR67NZAwCkqhyagCrn3hFHAghIrHoQk2k7LdiCkQRl~eDi96hnOWp3bgy-lEDYhH9bZefXG-PHNlFTMRPWj9DqM2IA7Hz6B2PJM~ppq4nhRtBAXzzuH4wKe9HqSLqc95CQ7gTz99kxetvXi90FIHvn1RNuA275Xne4t6~GGmrbXeoEo91L2vKRS86LltlVIJFFsKVYi-fk582kmA3D30Vx1p2IEpWfbDtte3VZihgqmURqttUxZbzRdWKkXibg__"
                 alt="Família Feliz com Energia Solar"
                 className="rounded-3xl shadow-2xl"
+                loading="lazy"
               />
             </div>
             <div className="space-y-8">
@@ -920,11 +921,13 @@ export default function Home() {
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/wzfZTzfswIpbfnoS.jpg"
                         alt="Projeto Mata Mourisca - Depois"
                         className="rounded-xl shadow-lg w-full h-auto object-cover"
+                        loading="lazy"
                       />
                       <img 
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/runBWVaITLbvTBCm.jpg"
                         alt="Projeto Mata Mourisca - Antes"
                         className="rounded-xl shadow-lg w-full h-auto object-cover"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -940,11 +943,13 @@ export default function Home() {
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/WVgFGcHSCvZpgfeD.jpg"
                         alt="Projeto Autoconsumo"
                         className="rounded-xl shadow-lg w-full h-auto object-cover"
+                        loading="lazy"
                       />
                       <img 
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/aKenSoiHHZUobuqN.jpg"
                         alt="Projeto Autoconsumo - Painéis"
                         className="rounded-xl shadow-lg w-full h-auto object-cover"
+                        loading="lazy"
                       />
                     </div>
                     <div>
@@ -988,11 +993,13 @@ export default function Home() {
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/mjIFhCQRvUScOGio.jpg"
                         alt="Projeto Comercial"
                         className="rounded-xl shadow-lg w-full h-auto object-cover"
+                        loading="lazy"
                       />
                       <img 
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/JBfLRaTDPyOmSYTB.jpg"
                         alt="Telhado Metálico"
                         className="rounded-xl shadow-lg w-full h-auto object-cover"
+                        loading="lazy"
                       />
                     </div>
                   </div>

@@ -102,3 +102,7 @@
 - [x] Transformar terceiro slide de projetos em formato consistente
 - [x] Padronizar proporções de todos os slides de projetos
 - [x] Garantir layout uniforme seguindo modelo do Projeto Mata Mourisca
+
+- [x] Adicionar loading='lazy' nas imagens dos projetos de clientes
+- [x] Adicionar loading='lazy' em outras imagens da página (exceto logo do header)
+- [x] Testar performance e carregamento otimizado
