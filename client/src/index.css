@@ -310,10 +310,23 @@ html {
   }
 }
 
+@keyframes whatsapp-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(108, 202, 125, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(108, 202, 125, 0);
+  }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.whatsapp-button {
+  animation: whatsapp-pulse 2s infinite;
 }
