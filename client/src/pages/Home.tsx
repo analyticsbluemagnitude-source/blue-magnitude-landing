@@ -973,7 +973,7 @@ export default function Home() {
               <video
                 className="w-full h-auto max-h-[500px]"
                 controls
-                poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/kLqSkJQspwvNxSOz.jpg"
+                poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/aSoVwIwDLKcGIJXi.png"
               >
                 <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/GakVTWAQclLNENtl.mp4" type="video/mp4" />
                 O seu navegador não suporta a reprodução de vídeos.

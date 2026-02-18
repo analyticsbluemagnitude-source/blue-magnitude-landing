@@ -37,7 +37,8 @@
 
 - [x] Atualizar slogan no footer para "Fazemos circular energia"
 
-- [ ] Adicionar imagem de capa (poster) ao vídeo de testemunho
+- [x] Fazer upload da imagem da Susy para S3
+- [x] Atualizar poster do vídeo com imagem da Susy
 
 - [x] Reduzir tamanho e espaçamento da seção da calculadora
 - [x] Diminuir padding e espaçamentos internos
