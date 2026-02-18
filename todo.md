@@ -172,3 +172,13 @@
 
 - [x] Ajustar altura dos testemunhos escritos para mesma proporção do vídeo
 - [x] Reduzir espaçamento entre testemunhos e FAQ
+
+- [ ] Reduzir altura do card do formulário de orçamento
+- [ ] Compactar espaçamentos internos do formulário
+- [ ] Verificar que não sobrepõe FAQ
+
+- [x] Adicionar efeitos glassmorphism nos cards
+- [x] Melhorar sombras e gradientes para visual sofisticado
+- [x] Adicionar animações sutis de hover e transição
+- [ ] Aplicar classes premium nos componentes principais
+- [ ] Testar visual premium em todos os cards e seções
