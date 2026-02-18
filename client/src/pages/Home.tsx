@@ -633,9 +633,9 @@ export default function Home() {
       </section>
 
       {/* Benefits Section */}
-      <section id="beneficios" className="py-10 bg-muted/30">
+      <section id="beneficios" className="py-6 bg-muted/30">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4 animate-on-scroll">
+          <div className="text-center max-w-3xl mx-auto mb-6 space-y-4 animate-on-scroll">
             <h2 className="text-2xl lg:text-3xl font-bold">
               Porquê Escolher Energia Solar?
             </h2>
@@ -643,17 +643,19 @@ export default function Home() {
               Invista no futuro com tecnologia sustentável que traz poupança real e valorização do seu património.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               return (
-                <Card key={index} className="p-6 kinetic-card hover:shadow-2xl bg-card border-2 animate-on-scroll" style={{transitionDelay: `${index * 0.15}s`}}>
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#3ac6ff] to-[#6cca7d] flex items-center justify-center mb-4">
-                    <Icon className="w-7 h-7 text-white" />
+                <div key={index} className="flex items-start gap-3 p-4 rounded-lg hover:bg-muted/50 transition-colors duration-300">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#3ac6ff] to-[#6cca7d] flex items-center justify-center">
+                    <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold mb-3">{benefit.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
-                </Card>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-bold mb-1">{benefit.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-snug">{benefit.description}</p>
+                  </div>
+                </div>
               );
             })}
           </div>

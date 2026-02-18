@@ -145,3 +145,8 @@
 - [x] Adicionar tooltips com explicações ao hover
 - [x] Reduzir espaço vertical da seção de serviços
 - [x] Testar interação dos tooltips
+
+- [x] Transformar cards de benefícios em layout compacto
+- [x] Adicionar ícones com descrições curtas ao lado/abaixo
+- [x] Criar layout diferente dos serviços para variedade
+- [x] Reduzir espaço vertical da seção de benefícios
