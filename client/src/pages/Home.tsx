@@ -1145,23 +1145,22 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div className="pt-8 border-t border-white/20">
-            <div className="flex items-center justify-between">
-              <p className="text-sm opacity-80">&copy; 2026 Blue Magnitude. Todos os direitos reservados.</p>
-              {/* WhatsApp Button in Footer */}
-              <a
-                href="https://wa.me/351938719773"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#25D366] hover:bg-[#1eaa50] text-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-                aria-label="Contacte-nos pelo WhatsApp"
-              >
-                <MessageCircle className="w-5 h-5" />
-              </a>
-            </div>
+          <div className="pt-8 border-t border-white/20 text-center text-sm opacity-80">
+            <p>&copy; 2026 Blue Magnitude. Todos os direitos reservados.</p>
           </div>
         </div>
       </footer>
+      
+      {/* WhatsApp Floating Button */}
+      <a
+        href="https://wa.me/351938719773"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 z-50 bg-[#25D366] hover:bg-[#1eaa50] text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+        aria-label="Contacte-nos pelo WhatsApp"
+      >
+        <MessageCircle className="w-6 h-6" />
+      </a>
     </div>
   );
 }
