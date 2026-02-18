@@ -77,3 +77,7 @@
 - [x] Substituir imagem da seção de contacto pelo vídeo
 - [x] Garantir alinhamento e formatação adequada do vídeo
 - [x] Adicionar controles e poster ao vídeo
+
+- [x] Mover título e descrição do formulário para dentro da área azul
+- [x] Reduzir espaçamentos internos do formulário
+- [x] Garantir que todo conteúdo fique dentro do card azul

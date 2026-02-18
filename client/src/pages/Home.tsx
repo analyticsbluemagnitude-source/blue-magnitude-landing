@@ -1055,17 +1055,17 @@ export default function Home() {
       <section id="orcamento" className="py-10 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white diagonal-section diagonal-top animate-fade-in">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-6 space-y-2">
-              <h2 className="text-xl lg:text-2xl font-bold">
-                Solicite o Seu Orçamento Gratuito
-              </h2>
-              <p className="text-sm opacity-90">
-                Preencha o formulário e receba uma proposta personalizada em até 24 horas.
-              </p>
-            </div>
             <Card className="p-6 lg:p-8">
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-6">
+              <div className="text-center mb-4 space-y-1">
+                <h2 className="text-xl lg:text-2xl font-bold text-foreground">
+                  Solicite o Seu Orçamento Gratuito
+                </h2>
+                <p className="text-sm text-muted-foreground">
+                  Preencha o formulário e receba uma proposta personalizada em até 24 horas.
+                </p>
+              </div>
+              <form onSubmit={handleSubmit} className="space-y-3">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="name">Nome e Apelido *</Label>
                     <Input 
@@ -1074,7 +1074,7 @@ export default function Home() {
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       required
                       placeholder="Nome e apelido completo"
-                      className="h-12"
+                      className="h-10"
                     />
                   </div>
                   <div className="space-y-2">
@@ -1086,7 +1086,7 @@ export default function Home() {
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
                       required
                       placeholder="o-seu@email.pt"
-                      className="h-12"
+                      className="h-10"
                     />
                   </div>
                   <div className="space-y-2">
@@ -1098,7 +1098,7 @@ export default function Home() {
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
                       required
                       placeholder="+351 938 719 773"
-                      className="h-12"
+                      className="h-10"
                     />
                   </div>
                   <div className="space-y-2">
@@ -1109,11 +1109,11 @@ export default function Home() {
                       onChange={(e) => setFormData({...formData, city: e.target.value})}
                       required
                       placeholder="Cidade ou vila"
-                      className="h-12"
+                      className="h-10"
                     />
                   </div>
                 </div>
-                <Button type="submit" className="w-full h-16 text-sm font-semibold energy-glow text-white flex items-center justify-center gap-3 px-8">
+                <Button type="submit" className="w-full h-12 text-sm font-semibold energy-glow text-white flex items-center justify-center gap-3 px-8">
                   <span>Receber Orçamento Gratuito</span>
                   <ArrowRight className="w-5 h-5" />
                 </Button>
