@@ -120,3 +120,7 @@
 - [x] Ajustar slide de Autoconsumo para mesmas proporções
 - [x] Ajustar slide de Instalação para mesmas proporções
 - [x] Garantir uniformidade de todos os 3 slides do carrossel
+
+- [x] Reduzir tamanho das imagens do slide Autoconsumo
+- [x] Adicionar max-height para uniformizar proporções
+- [x] Garantir consistência visual entre todos os 3 slides
