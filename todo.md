@@ -24,3 +24,7 @@
 - [x] Reduzir fonte do título se necessário para melhor centralização
 
 - [x] Alterar porcentagem de 70% para 80% no slide Autoconsumo Residencial
+
+- [x] Criar animações de fade-in para textos dos slides
+- [x] Aplicar animações escalonadas (título → descrição → botão)
+- [x] Garantir transições suaves entre mudanças de slides

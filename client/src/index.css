@@ -330,6 +330,17 @@ html {
   }
 }
 
+@keyframes slide-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -340,4 +351,17 @@ html {
 
 .whatsapp-button {
   animation: whatsapp-pulse 2s infinite;
+}
+
+/* Slide Animations */
+.slide-title {
+  animation: slide-fade-in 0.8s ease-out 0.2s both;
+}
+
+.slide-description {
+  animation: slide-fade-in 0.8s ease-out 0.4s both;
+}
+
+.slide-button {
+  animation: slide-fade-in 0.8s ease-out 0.6s both;
 }
