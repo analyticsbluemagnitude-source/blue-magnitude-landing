@@ -106,3 +106,7 @@
 - [x] Adicionar loading='lazy' nas imagens dos projetos de clientes
 - [x] Adicionar loading='lazy' em outras imagens da página (exceto logo do header)
 - [x] Testar performance e carregamento otimizado
+
+- [x] Comparar seções "300 Famílias" e "Veja Como Instalamos"
+- [x] Ajustar padding e espaçamentos da seção social proof
+- [x] Garantir proporções uniformes entre as duas seções

@@ -832,52 +832,51 @@ export default function Home() {
       {/* Social Proof Section */}
       <section className="py-10 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="text-center max-w-3xl mx-auto mb-6 space-y-2">
+            <h2 className="text-xl lg:text-2xl font-bold">
+              Mais de 300 Famílias Já Poupam Connosco
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              Junte-se às centenas de portugueses que já transformaram as suas casas em centrais de energia limpa.
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-3 gap-6 items-start">
+            <div className="lg:col-span-1 space-y-3">
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-[#6cca7d] flex items-center justify-center flex-shrink-0">
+                  <CheckCircle2 className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold mb-0.5">Instalação Rápida</h4>
+                  <p className="text-xs text-muted-foreground">Sistema completo instalado em até 3 dias úteis</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-[#3ac6ff] flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold mb-0.5">Garantia Estendida</h4>
+                  <p className="text-xs text-muted-foreground">25 anos de garantia nos painéis e 10 anos nos inversores</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-[#d7e028] flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold mb-0.5">Suporte Vitalício</h4>
+                  <p className="text-xs text-muted-foreground">Acompanhamento e suporte técnico durante toda vida útil</p>
+                </div>
+              </div>
+            </div>
+            <div className="lg:col-span-2">
               <img 
                 src="https://private-us-east-1.manuscdn.com/sessionFile/q5sviWRou2JGIIHcxzxwoX/sandbox/EwlI46E21FiSAhws1TmOi1-img-3_1771360510000_na1fn_aGFwcHktZmFtaWx5LXNvbGFy.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcTVzdmlXUm91MkpHSUlIY3h6eHdvWC9zYW5kYm94L0V3bEk0NkUyMUZpU0Fod3MxVG1PaTEtaW1nLTNfMTc3MTM2MDUxMDAwMF9uYTFmbl9hR0Z3Y0hrdFptRnRhV3g1TFhOdmJHRnkucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=fPdiUJiQ5e9yORwXoM7HzkTAhH8vzt8jty9wLgylzgmpxt2gT9HxoFeCKCjjCl-xRJd6rTxzRJ1s9HKvIQ8Q9HnrRR67NZAwCkqhyagCrn3hFHAghIrHoQk2k7LdiCkQRl~eDi96hnOWp3bgy-lEDYhH9bZefXG-PHNlFTMRPWj9DqM2IA7Hz6B2PJM~ppq4nhRtBAXzzuH4wKe9HqSLqc95CQ7gTz99kxetvXi90FIHvn1RNuA275Xne4t6~GGmrbXeoEo91L2vKRS86LltlVIJFFsKVYi-fk582kmA3D30Vx1p2IEpWfbDtte3VZihgqmURqttUxZbzRdWKkXibg__"
                 alt="Família Feliz com Energia Solar"
-                className="rounded-3xl shadow-2xl"
+                className="rounded-2xl shadow-2xl w-full h-auto"
                 loading="lazy"
               />
-            </div>
-            <div className="space-y-8">
-              <h2 className="text-2xl lg:text-3xl font-bold">
-                Mais de 300 Famílias Já Poupam Connosco
-              </h2>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                Junte-se às centenas de portugueses que já transformaram as suas casas em centrais de energia limpa 
-                e estão a poupar na fatura de eletricidade todos os meses. Empresa certificada pela DGEG.
-              </p>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#6cca7d] flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-bold mb-1">Instalação Rápida</h4>
-                    <p className="text-muted-foreground">Sistema completo instalado em até 3 dias úteis.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#3ac6ff] flex items-center justify-center flex-shrink-0">
-                    <Shield className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-bold mb-1">Garantia Estendida</h4>
-                    <p className="text-muted-foreground">25 anos de garantia nos painéis e 10 anos nos inversores.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#d7e028] flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-bold mb-1">Suporte Vitalício</h4>
-                    <p className="text-muted-foreground">Acompanhamento e suporte técnico durante toda vida útil do sistema.</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
