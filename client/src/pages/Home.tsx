@@ -780,28 +780,28 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section id="como-funciona" className="py-10 bg-background animate-fade-in">
+      <section id="como-funciona" className="py-6 bg-background animate-fade-in">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
+          <div className="text-center max-w-3xl mx-auto mb-6 space-y-2">
             <h2 className="text-2xl lg:text-3xl font-bold">
               Como Funciona o Processo
             </h2>
-            <p className="text-base text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               Do primeiro contato até a ativação do sistema, cuidamos de tudo para você.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {process.map((step, index) => (
               <div key={index} className="relative">
-                <div className="space-y-4">
-                  <div className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#3ac6ff] to-[#d7e028] opacity-20">
+                <div className="space-y-2">
+                  <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#3ac6ff] to-[#d7e028] opacity-20">
                     {step.number}
                   </div>
-                  <h3 className="text-xl font-bold">{step.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                  <h3 className="text-base font-bold">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-snug">{step.description}</p>
                 </div>
                 {index < process.length - 1 && (
-                  <div className="hidden lg:block absolute top-12 -right-4 w-8 h-0.5 bg-gradient-to-r from-[#3ac6ff] to-transparent"></div>
+                  <div className="hidden lg:block absolute top-8 -right-2 w-4 h-0.5 bg-gradient-to-r from-[#3ac6ff] to-transparent"></div>
                 )}
               </div>
             ))}

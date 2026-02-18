@@ -150,3 +150,9 @@
 - [x] Adicionar ícones com descrições curtas ao lado/abaixo
 - [x] Criar layout diferente dos serviços para variedade
 - [x] Reduzir espaço vertical da seção de benefícios
+
+- [x] Reduzir padding da seção Como Funciona
+- [x] Reduzir tamanhos de fontes (títulos e descrições)
+- [x] Reduzir tamanho dos números das etapas
+- [x] Reduzir espaçamentos entre etapas
+- [x] Compactar margin-bottom do título
