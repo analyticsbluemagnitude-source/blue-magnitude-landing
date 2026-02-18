@@ -448,7 +448,7 @@ export default function Home() {
       </Carousel>
 
       {/* Services Section */}
-      <section id="servicos" className="py-16 bg-gradient-to-br from-[#243fad]/5 to-[#3ac6ff]/5">
+      <section id="servicos" className="py-10 bg-gradient-to-br from-[#243fad]/5 to-[#3ac6ff]/5">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12 space-y-4 animate-on-scroll">
             <h2 className="text-2xl lg:text-3xl font-bold">
@@ -537,7 +537,7 @@ export default function Home() {
       </section>
 
       {/* Benefits Section */}
-      <section id="beneficios" className="py-16 bg-muted/30">
+      <section id="beneficios" className="py-10 bg-muted/30">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12 space-y-4 animate-on-scroll">
             <h2 className="text-2xl lg:text-3xl font-bold">
@@ -565,7 +565,7 @@ export default function Home() {
       </section>
 
       {/* Calculator Section */}
-      <section className="py-16 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10">
+      <section className="py-10 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-8 space-y-2 animate-on-scroll">
             <h2 className="text-xl lg:text-2xl font-bold">
@@ -671,7 +671,7 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section id="como-funciona" className="py-16 bg-background animate-fade-in">
+      <section id="como-funciona" className="py-10 bg-background animate-fade-in">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
             <h2 className="text-2xl lg:text-3xl font-bold">
@@ -701,7 +701,7 @@ export default function Home() {
       </section>
 
       {/* Video Section */}
-      <section className="py-16 bg-gradient-to-br from-[#243fad]/10 to-[#6cca7d]/10">
+      <section className="py-10 bg-gradient-to-br from-[#243fad]/10 to-[#6cca7d]/10">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
             <h2 className="text-2xl lg:text-3xl font-bold">
@@ -761,7 +761,7 @@ export default function Home() {
       </section>
 
       {/* Social Proof Section */}
-      <section className="py-16 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10">
+      <section className="py-10 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -814,7 +814,7 @@ export default function Home() {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-16 bg-background">
+      <section className="py-10 bg-background">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12 space-y-4 animate-on-scroll">
             <h2 className="text-2xl lg:text-3xl font-bold">
@@ -956,7 +956,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="depoimentos" className="py-16 bg-background">
+      <section id="depoimentos" className="py-10 bg-background">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-2xl lg:text-3xl font-bold">
@@ -1001,7 +1001,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-10 bg-muted/30">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
             <h2 className="text-2xl lg:text-3xl font-bold">
@@ -1023,7 +1023,7 @@ export default function Home() {
       </section>
 
       {/* CTA Form Section */}
-      <section id="orcamento" className="py-16 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white diagonal-section diagonal-top animate-fade-in">
+      <section id="orcamento" className="py-10 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white diagonal-section diagonal-top animate-fade-in">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 space-y-4">
@@ -1098,7 +1098,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contato" className="py-16 bg-background">
+      <section id="contato" className="py-10 bg-background">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-8">

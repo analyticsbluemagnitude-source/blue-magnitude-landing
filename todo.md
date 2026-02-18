@@ -55,3 +55,7 @@
 - [x] Atualizar endereço para Estr. de Pinheiros 480, 2415-776 Leiria
 - [x] Verificar seção de contacto
 - [x] Verificar footer
+
+- [x] Reduzir padding vertical das seções (py-16 para py-10)
+- [x] Reduzir espaçamento entre cards de serviços e benefícios
+- [x] Otimizar espaçamentos gerais da página
