@@ -42,3 +42,10 @@
 - [x] Reduzir tamanho e espaçamento da seção da calculadora
 - [x] Diminuir padding e espaçamentos internos
 - [x] Reduzir tamanhos de fonte e elementos visuais
+
+- [x] Atualizar todos os números de telefone para +351 938 719 773
+- [x] Verificar seção de contacto
+- [x] Verificar footer
+- [x] Verificar links tel:
+
+- [x] Reorganizar cards de serviços para 2 colunas em vez de 3

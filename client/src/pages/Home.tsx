@@ -459,7 +459,7 @@ export default function Home() {
             </p>
           </div>
           <TooltipProvider>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-2 gap-4">
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
@@ -1068,7 +1068,7 @@ export default function Home() {
                       value={formData.phone}
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
                       required
-                      placeholder="+351 912 345 678"
+                      placeholder="+351 938 719 773"
                       className="h-12"
                     />
                   </div>
@@ -1116,8 +1116,8 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="font-bold mb-1">Telefone</div>
-                    <a href="tel:+351999999999" className="text-muted-foreground hover:text-primary transition-colors">
-                      +351 999 999 999
+                    <a href="tel:+351938719773" className="text-muted-foreground hover:text-primary transition-colors">
+                      +351 938 719 773
                     </a>
                   </div>
                 </div>
@@ -1191,7 +1191,7 @@ export default function Home() {
             <div>
               <h4 className="font-bold mb-4">Contacto</h4>
               <ul className="space-y-2 text-sm opacity-80">
-                <li>+351 999 999 999</li>
+                <li>+351 938 719 773</li>
                 <li>contacto@bluemagnitude.pt</li>
                 <li>Lisboa, Portugal</li>
               </ul>
