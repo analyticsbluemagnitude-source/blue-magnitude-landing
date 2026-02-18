@@ -52,6 +52,7 @@ import { useState, useEffect, useCallback } from "react";
 import { toast } from "sonner";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { trpc } from "@/lib/trpc";
+import { FormSuccessDialog } from "@/components/FormSuccessDialog";
 
 export default function Home() {
   // The userAuth hooks provides authentication state
@@ -69,6 +70,8 @@ export default function Home() {
     phone: "",
     city: ""
   });
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
+  const [successDialogType, setSuccessDialogType] = useState<"quote" | "contact">("quote");
   
   // Calculator states
   const [monthlyBill, setMonthlyBill] = useState([150]);
@@ -144,8 +147,9 @@ export default function Home() {
   // tRPC mutations para envio de formulários
   const submitQuoteMutation = trpc.forms.submitQuote.useMutation({
     onSuccess: () => {
-      toast.success("Obrigado! Entraremos em contacto em breve.");
       setFormData({ name: "", email: "", phone: "", city: "" });
+      setSuccessDialogType("quote");
+      setShowSuccessDialog(true);
     },
     onError: (error) => {
       toast.error(error.message || "Erro ao enviar formulário. Por favor, tente novamente.");
@@ -1213,6 +1217,13 @@ export default function Home() {
       >
         <MessageCircle className="w-6 h-6" />
       </a>
+
+      {/* Success Dialog */}
+      <FormSuccessDialog 
+        open={showSuccessDialog} 
+        onOpenChange={setShowSuccessDialog}
+        formType={successDialogType}
+      />
     </div>
   );
 }
