@@ -110,3 +110,8 @@
 - [x] Comparar seções "300 Famílias" e "Veja Como Instalamos"
 - [x] Ajustar padding e espaçamentos da seção social proof
 - [x] Garantir proporções uniformes entre as duas seções
+
+- [x] Adicionar meta tags Open Graph para Facebook/LinkedIn/WhatsApp
+- [x] Adicionar Twitter Cards para compartilhamento no Twitter
+- [x] Adicionar meta tags SEO (description, keywords, author)
+- [x] Testar meta tags com validadores online
