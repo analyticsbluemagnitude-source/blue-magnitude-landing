@@ -348,7 +348,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-black/60"></div>
               <div className="container relative z-10">
                 <div className="max-w-3xl space-y-6 text-white">
-                  <h1 className="text-3xl lg:text-5xl font-bold leading-tight">
+                  <h1 className="text-2xl lg:text-4xl font-bold leading-tight">
                     Energia Solar Para{" "}
                     <span className="text-[#6cca7d] underline decoration-4 underline-offset-8">
                       Empresas
@@ -380,7 +380,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-black/60"></div>
               <div className="container relative z-10">
                 <div className="max-w-3xl space-y-6 text-white">
-                  <h1 className="text-3xl lg:text-5xl font-bold leading-tight">
+                  <h1 className="text-2xl lg:text-4xl font-bold leading-tight">
                     Autoconsumo{" "}
                     <span className="text-[#6cca7d] underline decoration-4 underline-offset-8">
                       Residencial
