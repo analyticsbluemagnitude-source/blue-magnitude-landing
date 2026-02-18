@@ -361,7 +361,7 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-black/60"></div>
               <div className="container relative z-10">
-                <div className="max-w-3xl mx-auto text-center space-y-6 text-white">
+                <div className="max-w-3xl space-y-6 text-white">
                   <h1 className="text-xl lg:text-3xl font-bold leading-tight slide-title">
                     Energia Solar Para{" "}
                     <span className="text-[#6cca7d] underline decoration-4 underline-offset-8">
@@ -393,7 +393,7 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-black/60"></div>
               <div className="container relative z-10">
-                <div className="max-w-3xl mx-auto text-center space-y-6 text-white">
+                <div className="max-w-3xl space-y-6 text-white">
                   <h1 className="text-xl lg:text-3xl font-bold leading-tight slide-title">
                     Autoconsumo{" "}
                     <span className="text-[#6cca7d] underline decoration-4 underline-offset-8">

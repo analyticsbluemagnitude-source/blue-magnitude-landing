@@ -28,3 +28,7 @@
 - [x] Criar animações de fade-in para textos dos slides
 - [x] Aplicar animações escalonadas (título → descrição → botão)
 - [x] Garantir transições suaves entre mudanças de slides
+
+- [x] Remover centralização (mx-auto text-center) dos textos dos banners
+- [x] Manter alinhamento à esquerda como estava originalmente
+- [x] Manter fontes menores já ajustadas
