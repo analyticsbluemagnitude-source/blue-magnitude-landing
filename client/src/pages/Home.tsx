@@ -448,7 +448,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
+                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
                     <Zap className="w-8 h-8 mb-2" />
                     <h3 className="text-lg font-bold">Autoconsumo</h3>
                   </Card>
@@ -460,7 +460,7 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
+                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
                     <Battery className="w-8 h-8 mb-2" />
                     <h3 className="text-lg font-bold">Autoconsumo Com Baterias</h3>
                   </Card>
@@ -472,7 +472,7 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
+                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
                     <Wind className="w-8 h-8 mb-2" />
                     <h3 className="text-lg font-bold">AVAC E Climatização</h3>
                   </Card>
@@ -484,7 +484,7 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
+                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
                     <Wrench className="w-8 h-8 mb-2" />
                     <h3 className="text-lg font-bold">Manutenção</h3>
                   </Card>
@@ -496,7 +496,7 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
+                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
                     <PowerOff className="w-8 h-8 mb-2" />
                     <h3 className="text-lg font-bold">Sistemas OFF-Grid</h3>
                   </Card>
@@ -508,7 +508,7 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#ff9800] to-[#ff6f00] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
+                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
                     <FileText className="w-8 h-8 mb-2" />
                     <h3 className="text-lg font-bold">Consultoria</h3>
                   </Card>
