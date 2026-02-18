@@ -98,3 +98,7 @@
 - [x] Implementar indicadores visuais (dots) para carrossel de testemunhos
 - [x] Implementar indicadores visuais (dots) para carrossel de projetos
 - [x] Testar navegação por clique nos indicadores
+
+- [x] Transformar terceiro slide de projetos em formato consistente
+- [x] Padronizar proporções de todos os slides de projetos
+- [x] Garantir layout uniforme seguindo modelo do Projeto Mata Mourisca

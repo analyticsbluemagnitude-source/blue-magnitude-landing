@@ -965,54 +965,38 @@ export default function Home() {
                 </Card>
               </CarouselItem>
               
-              {/* Projetos Adicionais */}
+              {/* Projeto 3: Instalação Comercial */}
               <CarouselItem>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
-                    <img 
-                      src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/JBfLRaTDPyOmSYTB.jpg"
-                      alt="Telhado Metálico"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-white">
-                      <h3 className="font-bold">Telhado Metálico</h3>
-                      <p className="text-xs">Adaptação para diversos tipos</p>
+                <Card className="p-6 bg-gradient-to-br from-[#d7e028]/10 to-[#6cca7d]/10 border-2 border-[#d7e028]">
+                  <div className="grid lg:grid-cols-2 gap-6 items-center">
+                    <div>
+                      <h3 className="text-xl font-bold mb-3">Instalação Comercial</h3>
+                      <div className="space-y-2 text-sm">
+                        <p className="text-muted-foreground">
+                          <strong className="text-foreground">Sistema:</strong> 15 painéis Aiko 550W + Fox ESS H3-Pro 15.0
+                        </p>
+                        <p className="text-muted-foreground">
+                          <strong className="text-foreground">Armazenamento:</strong> Baterias Fox ESS 9,6 kW
+                        </p>
+                        <p className="text-muted-foreground">
+                          <strong className="text-foreground">Resultado:</strong> Redução de 75% nos custos energéticos
+                        </p>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <img 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/mjIFhCQRvUScOGio.jpg"
+                        alt="Projeto Comercial"
+                        className="rounded-xl shadow-lg w-full h-auto object-cover"
+                      />
+                      <img 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/JBfLRaTDPyOmSYTB.jpg"
+                        alt="Telhado Metálico"
+                        className="rounded-xl shadow-lg w-full h-auto object-cover"
+                      />
                     </div>
                   </div>
-                  <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
-                    <img 
-                      src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/mjIFhCQRvUScOGio.jpg"
-                      alt="Projeto Comercial"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-white">
-                      <h3 className="font-bold">Projeto Comercial</h3>
-                      <p className="text-xs">Soluções para empresas</p>
-                    </div>
-                  </div>
-                  <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
-                    <img 
-                      src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/bJReAHxZrjozkZKi.jpg"
-                      alt="Grande Porte"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-white">
-                      <h3 className="font-bold">Grande Porte</h3>
-                      <p className="text-xs">Alta capacidade</p>
-                    </div>
-                  </div>
-                  <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
-                    <img 
-                      src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/HqZchUXqjPHNOylS.png"
-                      alt="Armazenamento"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-white">
-                      <h3 className="font-bold">Armazenamento</h3>
-                      <p className="text-xs">Baterias de alta capacidade</p>
-                    </div>
-                  </div>
-                </div>
+                </Card>
               </CarouselItem>
             </CarouselContent>
             <CarouselPrevious className="left-4" />
