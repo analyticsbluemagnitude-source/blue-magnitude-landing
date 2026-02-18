@@ -916,8 +916,8 @@ export default function Home() {
             </div>
             <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] kinetic-card">
               <img 
-                src="https://private-us-east-1.manuscdn.com/sessionFile/q5sviWRou2JGIIHcxzxwoX/sandbox/Y6sdo2Ye22CULZfTSGHoLL-img-1_1771418781000_na1fn_YmF0ZXJpYS1hcm1hemVuYW1lbnRvLXNvbGFy.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80"
-                alt="Bateria de Armazenamento"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/HqZchUXqjPHNOylS.png"
+                alt="Bateria Solplanet de Armazenamento"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
