@@ -532,9 +532,9 @@ export default function Home() {
       </Carousel>
 
       {/* Services Section */}
-      <section id="servicos" className="py-10 bg-gradient-to-br from-[#243fad]/5 to-[#3ac6ff]/5">
+      <section id="servicos" className="py-6 bg-gradient-to-br from-[#243fad]/5 to-[#3ac6ff]/5">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4 animate-on-scroll">
+          <div className="text-center max-w-3xl mx-auto mb-6 space-y-4 animate-on-scroll">
             <h2 className="text-2xl lg:text-3xl font-bold">
               Os Nossos Serviços
             </h2>
@@ -543,13 +543,15 @@ export default function Home() {
             </p>
           </div>
           <TooltipProvider>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="flex flex-wrap justify-center items-center gap-8 max-w-5xl mx-auto">
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
-                    <Zap className="w-8 h-8 mb-2" />
-                    <h3 className="text-lg font-bold">Autoconsumo</h3>
-                  </Card>
+                  <div className="flex flex-col items-center gap-2 cursor-pointer group">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
+                      <Zap className="w-8 h-8 text-white" />
+                    </div>
+                    <span className="text-sm font-semibold text-center">Autoconsumo</span>
+                  </div>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">
                   <p>Sistemas fotovoltaicos para consumo próprio, reduzindo a dependência da rede elétrica e a fatura de eletricidade.</p>
@@ -558,10 +560,12 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
-                    <Battery className="w-8 h-8 mb-2" />
-                    <h3 className="text-lg font-bold">Autoconsumo Com Baterias</h3>
-                  </Card>
+                  <div className="flex flex-col items-center gap-2 cursor-pointer group">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
+                      <Battery className="w-8 h-8 text-white" />
+                    </div>
+                    <span className="text-sm font-semibold text-center max-w-[100px]">Autoconsumo Com Baterias</span>
+                  </div>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">
                   <p>Sistemas com armazenamento de energia para uso noturno ou em períodos sem sol, garantindo autonomia total.</p>
@@ -570,10 +574,12 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
-                    <Wind className="w-8 h-8 mb-2" />
-                    <h3 className="text-lg font-bold">AVAC E Climatização</h3>
-                  </Card>
+                  <div className="flex flex-col items-center gap-2 cursor-pointer group">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
+                      <Wind className="w-8 h-8 text-white" />
+                    </div>
+                    <span className="text-sm font-semibold text-center max-w-[100px]">AVAC E Climatização</span>
+                  </div>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">
                   <p>Integração de sistemas de aquecimento, ventilação e ar condicionado alimentados por energia solar.</p>
@@ -582,10 +588,12 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
-                    <Wrench className="w-8 h-8 mb-2" />
-                    <h3 className="text-lg font-bold">Manutenção</h3>
-                  </Card>
+                  <div className="flex flex-col items-center gap-2 cursor-pointer group">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
+                      <Wrench className="w-8 h-8 text-white" />
+                    </div>
+                    <span className="text-sm font-semibold text-center">Manutenção</span>
+                  </div>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">
                   <p>Serviços de manutenção preventiva e corretiva para garantir máxima eficiência do sistema solar.</p>
@@ -594,10 +602,12 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
-                    <PowerOff className="w-8 h-8 mb-2" />
-                    <h3 className="text-lg font-bold">Sistemas OFF-Grid</h3>
-                  </Card>
+                  <div className="flex flex-col items-center gap-2 cursor-pointer group">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
+                      <PowerOff className="w-8 h-8 text-white" />
+                    </div>
+                    <span className="text-sm font-semibold text-center max-w-[100px]">Sistemas OFF-Grid</span>
+                  </div>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">
                   <p>Soluções autónomas para locais sem acesso à rede elétrica, com baterias de grande capacidade.</p>
@@ -606,10 +616,12 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Card className="p-4 kinetic-card hover:shadow-2xl bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] text-white cursor-pointer transition-all duration-300 hover:scale-105 animate-scale">
-                    <FileText className="w-8 h-8 mb-2" />
-                    <h3 className="text-lg font-bold">Consultoria</h3>
-                  </Card>
+                  <div className="flex flex-col items-center gap-2 cursor-pointer group">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
+                      <FileText className="w-8 h-8 text-white" />
+                    </div>
+                    <span className="text-sm font-semibold text-center">Consultoria</span>
+                  </div>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">
                   <p>Análise técnica e económica personalizada para identificar a melhor solução solar para o seu caso.</p>

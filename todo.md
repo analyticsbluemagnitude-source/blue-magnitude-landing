@@ -136,3 +136,12 @@
 - [x] Implementar auto-play no carrossel de projetos (5 segundos)
 - [x] Adicionar pausa ao hover em todos os carrosséis
 - [x] Testar transições automáticas
+
+- [ ] Adicionar CSS para efeito de fade nos carrosséis
+- [ ] Aplicar transição de opacidade suave
+- [ ] Testar fade em hero, testemunhos e projetos
+
+- [x] Transformar cards de serviços em ícones compactos
+- [x] Adicionar tooltips com explicações ao hover
+- [x] Reduzir espaço vertical da seção de serviços
+- [x] Testar interação dos tooltips
