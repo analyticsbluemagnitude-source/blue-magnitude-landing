@@ -361,8 +361,8 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-black/60"></div>
               <div className="container relative z-10">
-                <div className="max-w-3xl space-y-6 text-white">
-                  <h1 className="text-2xl lg:text-4xl font-bold leading-tight">
+                <div className="max-w-3xl mx-auto text-center space-y-6 text-white">
+                  <h1 className="text-xl lg:text-3xl font-bold leading-tight">
                     Energia Solar Para{" "}
                     <span className="text-[#6cca7d] underline decoration-4 underline-offset-8">
                       Empresas
@@ -393,15 +393,15 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-black/60"></div>
               <div className="container relative z-10">
-                <div className="max-w-3xl space-y-6 text-white">
-                  <h1 className="text-2xl lg:text-4xl font-bold leading-tight">
+                <div className="max-w-3xl mx-auto text-center space-y-6 text-white">
+                  <h1 className="text-xl lg:text-3xl font-bold leading-tight">
                     Autoconsumo{" "}
                     <span className="text-[#6cca7d] underline decoration-4 underline-offset-8">
                       Residencial
                     </span>
                   </h1>
                   <p className="text-base lg:text-lg leading-relaxed">
-                    Descobre as nossas soluções completas para autoconsumo com painéis solares fotovoltaicos. Reduz a tua conta de eletricidade até 70%. Vamos começar o teu projeto?
+                    Descobre as nossas soluções completas para autoconsumo com painéis solares fotovoltaicos. Reduz a tua conta de eletricidade até 80%. Vamos começar o teu projeto?
                   </p>
                   <div>
                     <Button size="lg" className="energy-glow text-white text-base h-12 px-6">

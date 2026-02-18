@@ -19,3 +19,8 @@
 - [x] Garantir que texto fique perfeitamente visível e centralizado
 
 - [x] Reduzir tamanho da fonte do botão "Receber Orçamento Gratuito"
+
+- [x] Centralizar título "Energia Solar Para Empresas" no slide
+- [x] Reduzir fonte do título se necessário para melhor centralização
+
+- [x] Alterar porcentagem de 70% para 80% no slide Autoconsumo Residencial
