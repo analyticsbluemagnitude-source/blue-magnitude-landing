@@ -215,3 +215,8 @@
 - [x] Forçar altura fixa idêntica em todas as 6 imagens (3 projetos x 2 imagens)
 - [x] Garantir consistência visual perfeita no carrossel de projetos
 - [x] Alterar "Mais de 300 Famílias" para "+300 Famílias" para visual mais moderno
+- [x] Aumentar tamanho da logo de h-20 para h-24
+- [x] Ajustar padding do header para manter altura total
+- [x] Garantir que logo maior não aumenta altura do cabeçalho
+- [x] Ajustar object-position do vídeo de depoimentos para trazer conteúdo mais para frente
+- [x] Reduzir barras pretas laterais mostrando melhor a pessoa trabalhando

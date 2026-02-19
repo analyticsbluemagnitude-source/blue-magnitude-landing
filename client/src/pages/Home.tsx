@@ -356,7 +356,7 @@ export default function Home() {
               <img 
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/giWuxHpzJpBsYoQy.png" 
                 alt="Blue Magnitude" 
-                className="h-20 w-auto py-2"
+                className="h-24 w-auto py-1"
               />
             </div>
             
@@ -1095,7 +1095,7 @@ export default function Home() {
                   <div className="rounded-xl overflow-hidden shadow-2xl h-[350px]">
                     <video
                       className="w-full h-full object-cover"
-                      style={{ objectPosition: 'center 35%' }}
+                      style={{ objectPosition: 'center 45%' }}
                       controls
                       poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/aSoVwIwDLKcGIJXi.png"
                     >
