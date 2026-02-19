@@ -198,3 +198,6 @@
 - [x] Centralizar vídeo mostrando conteúdo principal sem crop excessivo
 - [x] Ajustar object-position para equilíbrio entre título e pessoas
 - [x] Mostrar título levemente para baixo sem cortar equipa
+- [x] Aplicar object-fit cover no vídeo dos depoimentos
+- [x] Aplicar object-position para equilibrar título e pessoas no vídeo de depoimentos
+- [x] Remover barras pretas do vídeo de depoimentos

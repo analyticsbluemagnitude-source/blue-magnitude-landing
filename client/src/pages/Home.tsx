@@ -1092,9 +1092,10 @@ export default function Home() {
               <CarouselContent>
                 {/* Video Testimonial Slide */}
                 <CarouselItem>
-                  <div className="rounded-xl overflow-hidden shadow-2xl">
+                  <div className="rounded-xl overflow-hidden shadow-2xl h-[350px]">
                     <video
-                      className="w-full h-auto max-h-[350px]"
+                      className="w-full h-full object-cover"
+                      style={{ objectPosition: 'center 35%' }}
                       controls
                       poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/aSoVwIwDLKcGIJXi.png"
                     >
