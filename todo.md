@@ -208,3 +208,6 @@
 - [x] Reduzir tamanho da fonte do depoimento do Tiago Pinto
 - [x] Garantir que todo o texto do depoimento caiba no card sem scroll
 - [x] Igualar comportamento visual com depoimento da Maria Costa
+- [x] Igualar altura das duas imagens do projeto Instalação Residencial
+- [x] Aplicar max-h-[160px] em ambas as imagens da Instalação Residencial
+- [x] Garantir consistência visual entre todas as imagens dos projetos
