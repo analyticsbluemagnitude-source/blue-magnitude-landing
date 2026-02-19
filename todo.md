@@ -182,3 +182,4 @@
 - [x] Adicionar animações sutis de hover e transição
 - [ ] Aplicar classes premium nos componentes principais
 - [ ] Testar visual premium em todos os cards e seções
+- [x] Mover seção "Solicite Seu Orçamento" para após FAQ (antes de Contacto)
