@@ -1174,7 +1174,7 @@ export default function Home() {
       </section>
 
       {/* CTA Form Section */}
-      <section id="orcamento" className="py-4 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white diagonal-section diagonal-top animate-fade-in">
+      <section id="orcamento" className="py-8 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white animate-fade-in">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <Card className="p-3 lg:p-4 glass-card">

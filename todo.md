@@ -189,3 +189,5 @@
 - [x] Reduzir altura do formulário de orçamento para não sobrepor FAQ
 - [x] Ajustar padding e espaçamentos do formulário
 - [x] Verificar que última pergunta do FAQ fica visível
+- [x] Remover efeito diagonal do formulário que causa sobreposição no FAQ
+- [x] Garantir espaçamento adequado entre FAQ e formulário
