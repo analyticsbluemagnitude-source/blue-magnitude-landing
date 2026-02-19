@@ -186,3 +186,6 @@
 - [x] Aplicar classe .glass-card no card da calculadora
 - [x] Aplicar classe .glass-card no card do formulário de orçamento
 - [x] Aplicar classe .glass-card nos 3 cards de projetos do carrossel
+- [x] Reduzir altura do formulário de orçamento para não sobrepor FAQ
+- [x] Ajustar padding e espaçamentos do formulário
+- [x] Verificar que última pergunta do FAQ fica visível
