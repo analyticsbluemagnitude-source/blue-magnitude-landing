@@ -203,3 +203,5 @@
 - [x] Remover barras pretas do vídeo de depoimentos
 - [x] Centralizar texto do depoimento do Tiago Pinto
 - [x] Adicionar items-center no card dos depoimentos
+- [x] Reduzir altura da primeira imagem do projeto Autoconsumo Alto Desempenho
+- [x] Igualar tamanho de todas as imagens dos projetos para consistência visual
