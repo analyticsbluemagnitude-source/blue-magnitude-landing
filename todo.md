@@ -196,3 +196,5 @@
 - [x] Garantir que vídeo preenche todo o espaço disponível
 - [x] Ajustar object-position do vídeo para não cortar título no topo
 - [x] Centralizar vídeo mostrando conteúdo principal sem crop excessivo
+- [x] Ajustar object-position para equilíbrio entre título e pessoas
+- [x] Mostrar título levemente para baixo sem cortar equipa
