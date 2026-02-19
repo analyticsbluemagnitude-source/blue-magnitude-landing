@@ -1304,6 +1304,7 @@ export default function Home() {
             <div className="relative rounded-2xl overflow-hidden shadow-xl h-[300px]">
               <video
                 className="w-full h-full object-cover"
+                style={{ objectPosition: 'center top' }}
                 controls
                 preload="metadata"
               >

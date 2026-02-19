@@ -194,3 +194,5 @@
 - [x] Aplicar object-fit cover no vídeo da seção de contacto
 - [x] Remover barras pretas laterais do vídeo
 - [x] Garantir que vídeo preenche todo o espaço disponível
+- [x] Ajustar object-position do vídeo para não cortar título no topo
+- [x] Centralizar vídeo mostrando conteúdo principal sem crop excessivo
