@@ -211,3 +211,6 @@
 - [x] Igualar altura das duas imagens do projeto Instalação Residencial
 - [x] Aplicar max-h-[160px] em ambas as imagens da Instalação Residencial
 - [x] Garantir consistência visual entre todas as imagens dos projetos
+- [x] Substituir max-h-[160px] por h-[160px] em todas as imagens dos projetos
+- [x] Forçar altura fixa idêntica em todas as 6 imagens (3 projetos x 2 imagens)
+- [x] Garantir consistência visual perfeita no carrossel de projetos
