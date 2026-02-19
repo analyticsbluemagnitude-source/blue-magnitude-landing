@@ -675,7 +675,7 @@ export default function Home() {
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <Card className="p-4 lg:p-6 kinetic-card border-2 border-[#6cca7d] animate-scale">
+            <Card className="p-4 lg:p-6 glass-card border-2 border-[#6cca7d] animate-scale">
               <div className="grid lg:grid-cols-2 gap-6">
                 {/* Input Section */}
                 <div className="space-y-4">
@@ -943,7 +943,7 @@ export default function Home() {
             <CarouselContent>
               {/* Projeto 1: Mata Mourisca */}
               <CarouselItem>
-                <Card className="p-6 bg-gradient-to-br from-[#243fad]/10 to-[#3ac6ff]/10 border-2 border-[#3ac6ff]">
+                <Card className="p-6 glass-card bg-gradient-to-br from-[#243fad]/10 to-[#3ac6ff]/10 border-2 border-[#3ac6ff]">
                   <div className="grid lg:grid-cols-2 gap-6 items-center">
                     <div>
                       <h3 className="text-xl font-bold mb-3">Projeto Mata Mourisca</h3>
@@ -979,7 +979,7 @@ export default function Home() {
               
               {/* Projeto 2: Autoconsumo Alto Desempenho */}
               <CarouselItem>
-                <Card className="p-6 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10 border-2 border-[#6cca7d]">
+                <Card className="p-6 glass-card bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10 border-2 border-[#6cca7d]">
                   <div className="grid lg:grid-cols-2 gap-6 items-center">
                     <div>
                       <h3 className="text-xl font-bold mb-3">Autoconsumo Alto Desempenho</h3>
@@ -1015,7 +1015,7 @@ export default function Home() {
               
               {/* Projeto 3: Instalação Comercial */}
               <CarouselItem>
-                <Card className="p-6 bg-gradient-to-br from-[#d7e028]/10 to-[#6cca7d]/10 border-2 border-[#d7e028]">
+                <Card className="p-6 glass-card bg-gradient-to-br from-[#d7e028]/10 to-[#6cca7d]/10 border-2 border-[#d7e028]">
                   <div className="grid lg:grid-cols-2 gap-6 items-center">
                     <div>
                       <h3 className="text-xl font-bold mb-3">Instalação Comercial</h3>
@@ -1177,7 +1177,7 @@ export default function Home() {
       <section id="orcamento" className="py-6 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white diagonal-section diagonal-top animate-fade-in">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <Card className="p-4 lg:p-6">
+            <Card className="p-4 lg:p-6 glass-card">
               <div className="text-center mb-3 space-y-0.5">
                 <h2 className="text-lg lg:text-xl font-bold text-foreground">
                   Solicite o Seu Orçamento Gratuito

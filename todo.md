@@ -183,3 +183,6 @@
 - [ ] Aplicar classes premium nos componentes principais
 - [ ] Testar visual premium em todos os cards e seções
 - [x] Mover seção "Solicite Seu Orçamento" para após FAQ (antes de Contacto)
+- [x] Aplicar classe .glass-card no card da calculadora
+- [x] Aplicar classe .glass-card no card do formulário de orçamento
+- [x] Aplicar classe .glass-card nos 3 cards de projetos do carrossel
