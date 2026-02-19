@@ -201,3 +201,5 @@
 - [x] Aplicar object-fit cover no vídeo dos depoimentos
 - [x] Aplicar object-position para equilibrar título e pessoas no vídeo de depoimentos
 - [x] Remover barras pretas do vídeo de depoimentos
+- [x] Centralizar texto do depoimento do Tiago Pinto
+- [x] Adicionar items-center no card dos depoimentos

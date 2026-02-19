@@ -1108,7 +1108,7 @@ export default function Home() {
                 {/* Text Testimonials Slides */}
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem key={index}>
-                    <Card className="p-6 kinetic-card flex flex-col justify-center" style={{minHeight: '350px', maxHeight: '350px'}}>
+                    <Card className="p-6 kinetic-card flex flex-col justify-center items-center" style={{minHeight: '350px', maxHeight: '350px'}}>
                       <div className="flex gap-1 mb-3 justify-center">
                         {[...Array(testimonial.rating)].map((_, i) => (
                           <Sun key={i} className="w-4 h-4 fill-[#d7e028] text-[#d7e028]" />
