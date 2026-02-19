@@ -205,3 +205,6 @@
 - [x] Adicionar items-center no card dos depoimentos
 - [x] Reduzir altura da primeira imagem do projeto Autoconsumo Alto Desempenho
 - [x] Igualar tamanho de todas as imagens dos projetos para consistência visual
+- [x] Reduzir tamanho da fonte do depoimento do Tiago Pinto
+- [x] Garantir que todo o texto do depoimento caiba no card sem scroll
+- [x] Igualar comportamento visual com depoimento da Maria Costa
