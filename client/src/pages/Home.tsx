@@ -370,7 +370,7 @@ export default function Home() {
             
             {/* Desktop CTA Button */}
             <Button asChild className="hidden md:flex energy-glow">
-              <a href="#orcamento">Solicitar Orçamento</a>
+              <a href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20energia%20solar." target="_blank" rel="noopener noreferrer">Solicitar Orçamento</a>
             </Button>
             
             {/* Mobile Menu Button */}
@@ -417,7 +417,7 @@ export default function Home() {
                 Contacto
               </a>
               <Button asChild className="energy-glow w-full" onClick={() => setMobileMenuOpen(false)}>
-                <a href="#orcamento">Solicitar Orçamento</a>
+                <a href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20energia%20solar." target="_blank" rel="noopener noreferrer">Solicitar Orçamento</a>
               </Button>
             </nav>
           </div>
@@ -456,8 +456,10 @@ export default function Home() {
                     Na Blue Magnitude, criamos soluções de energia solar feitas à medida para o teu negócio. Reduz a tua fatura de eletricidade e junta-te às inúmeras empresas que já se conectaram ao sol com as nossas soluções sustentáveis.
                   </p>
                   <div className="slide-button">
-                    <Button size="lg" className="energy-glow text-white text-base h-12 px-6">
-                      Pedir Proposta
+                    <Button asChild size="lg" className="energy-glow text-white text-base h-12 px-6">
+                      <a href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20pedir%20uma%20proposta%20para%20energia%20solar." target="_blank" rel="noopener noreferrer">
+                        Pedir Proposta
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -488,8 +490,10 @@ export default function Home() {
                     Descobre as nossas soluções completas para autoconsumo com painéis solares fotovoltaicos. Reduz a tua conta de eletricidade até 80%. Vamos começar o teu projeto?
                   </p>
                   <div className="slide-button">
-                    <Button size="lg" className="energy-glow text-white text-base h-12 px-6">
-                      Pedir Proposta
+                    <Button asChild size="lg" className="energy-glow text-white text-base h-12 px-6">
+                      <a href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20pedir%20uma%20proposta%20para%20energia%20solar." target="_blank" rel="noopener noreferrer">
+                        Pedir Proposta
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -647,7 +651,7 @@ export default function Home() {
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               return (
-                <div key={index} className="flex items-start gap-3 p-4 rounded-lg hover:bg-muted/50 transition-colors duration-300">
+                <div key={index} className="flex items-start gap-3 p-3 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-[#6cca7d]/30 cursor-pointer hover-card">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#3ac6ff] to-[#6cca7d] flex items-center justify-center">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
@@ -770,7 +774,7 @@ export default function Home() {
                   </div>
                   
                   <Button asChild className="w-full energy-glow" size="default">
-                    <a href="#orcamento">Solicitar Orçamento Personalizado</a>
+                    <a href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20personalizado%20para%20energia%20solar." target="_blank" rel="noopener noreferrer">Solicitar Orçamento Personalizado</a>
                   </Button>
                 </div>
               </div>
@@ -943,7 +947,7 @@ export default function Home() {
             <CarouselContent>
               {/* Projeto 1: Mata Mourisca */}
               <CarouselItem>
-                <Card className="p-6 glass-card bg-gradient-to-br from-[#243fad]/10 to-[#3ac6ff]/10 border-2 border-[#3ac6ff]">
+                <Card className="p-6 glass-card bg-gradient-to-br from-[#3ac6ff]/10 to-[#6cca7d]/10 border-2 border-[#3ac6ff] hover-card">
                   <div className="grid lg:grid-cols-2 gap-6 items-center">
                     <div>
                       <h3 className="text-xl font-bold mb-3">Projeto Mata Mourisca</h3>
@@ -979,7 +983,7 @@ export default function Home() {
               
               {/* Projeto 2: Autoconsumo Alto Desempenho */}
               <CarouselItem>
-                <Card className="p-6 glass-card bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10 border-2 border-[#6cca7d]">
+                <Card className="p-6 glass-card bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10 border-2 border-[#6cca7d] hover-card">
                   <div className="grid lg:grid-cols-2 gap-6 items-center">
                     <div>
                       <h3 className="text-xl font-bold mb-3">Autoconsumo Alto Desempenho</h3>
@@ -1015,7 +1019,7 @@ export default function Home() {
               
               {/* Projeto 3: Instalação Comercial */}
               <CarouselItem>
-                <Card className="p-6 glass-card bg-gradient-to-br from-[#d7e028]/10 to-[#6cca7d]/10 border-2 border-[#d7e028]">
+                <Card className="p-6 glass-card bg-gradient-to-br from-[#d7e028]/10 to-[#6cca7d]/10 border-2 border-[#d7e028] hover-card">
                   <div className="grid lg:grid-cols-2 gap-6 items-center">
                     <div>
                       <h3 className="text-xl font-bold mb-3">Instalação Comercial</h3>

@@ -223,3 +223,9 @@
 - [x] Ajustar backgroundSize dos slides do hero de 120%/130% para cover
 - [x] Ajustar backgroundPosition para center center para mostrar foto completa
 - [x] Garantir que todas as fotos de fundo apareçam completas sem cortes excessivos
+- [ ] Adicionar animação hover scale(1.02) nos cards de benefícios
+- [ ] Adicionar animação hover nos cards de serviços
+- [ ] Adicionar animação hover nos cards de projetos
+- [ ] Implementar transições suaves (200-300ms) e elevação de sombra
+- [ ] Configurar botões Pedir Proposta/Solicitar Orçamento para abrir WhatsApp
+- [ ] Criar link WhatsApp com mensagem pré-definida (+351 938 719 773)
