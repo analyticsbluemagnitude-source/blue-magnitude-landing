@@ -872,7 +872,7 @@ export default function Home() {
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-6 space-y-2">
             <h2 className="text-xl lg:text-2xl font-bold">
-              Mais de 300 Famílias Já Poupam Connosco
+              +300 Famílias Já Poupam Connosco
             </h2>
             <p className="text-sm text-muted-foreground">
               Junte-se às centenas de portugueses que já transformaram as suas casas em centrais de energia limpa.

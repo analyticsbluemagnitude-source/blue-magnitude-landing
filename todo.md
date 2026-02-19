@@ -214,3 +214,4 @@
 - [x] Substituir max-h-[160px] por h-[160px] em todas as imagens dos projetos
 - [x] Forçar altura fixa idêntica em todas as 6 imagens (3 projetos x 2 imagens)
 - [x] Garantir consistência visual perfeita no carrossel de projetos
+- [x] Alterar "Mais de 300 Famílias" para "+300 Famílias" para visual mais moderno
