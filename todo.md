@@ -220,3 +220,6 @@
 - [x] Garantir que logo maior não aumenta altura do cabeçalho
 - [x] Ajustar object-position do vídeo de depoimentos para trazer conteúdo mais para frente
 - [x] Reduzir barras pretas laterais mostrando melhor a pessoa trabalhando
+- [x] Ajustar backgroundSize dos slides do hero de 120%/130% para cover
+- [x] Ajustar backgroundPosition para center center para mostrar foto completa
+- [x] Garantir que todas as fotos de fundo apareçam completas sem cortes excessivos
