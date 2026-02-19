@@ -1301,9 +1301,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-xl max-h-[300px]">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl h-[300px]">
               <video
-                className="w-full h-auto max-h-[300px]"
+                className="w-full h-full object-cover"
                 controls
                 preload="metadata"
               >

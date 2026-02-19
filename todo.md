@@ -191,3 +191,6 @@
 - [x] Verificar que última pergunta do FAQ fica visível
 - [x] Remover efeito diagonal do formulário que causa sobreposição no FAQ
 - [x] Garantir espaçamento adequado entre FAQ e formulário
+- [x] Aplicar object-fit cover no vídeo da seção de contacto
+- [x] Remover barras pretas laterais do vídeo
+- [x] Garantir que vídeo preenche todo o espaço disponível
