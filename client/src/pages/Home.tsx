@@ -1262,7 +1262,7 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contato" className="py-6 bg-background">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:items-center">
             <div className="space-y-4">
               <h2 className="text-xl lg:text-2xl font-bold">
                 Entre em Contacto
@@ -1312,7 +1312,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-xl h-[300px]">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl h-[300px] lg:h-[400px] flex items-center justify-center">
               <video
                 className="w-full h-full object-cover"
                 style={{ objectPosition: 'center 35%' }}

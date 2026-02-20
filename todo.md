@@ -240,3 +240,9 @@
 - [x] Adicionar notificações de sucesso ao enviar formulário
 - [x] Adicionar notificações de erro com mensagens claras
 - [x] Configurar posição e duração das notificações
+- [ ] Pesquisar solução para feed de Instagram (widget embed ou API)
+- [ ] Criar seção de Instagram na página inicial
+- [ ] Implementar grid responsivo para posts do Instagram
+- [ ] Adicionar link para perfil do Instagram
+- [ ] Testar feed de Instagram no navegador
+- [x] Centralizar vídeo de testemunho no layout para computador
