@@ -270,3 +270,11 @@
 - [x] Proteger dashboard com autenticação
 - [x] Adicionar navegação no header para dashboard
 - [x] Testar funcionalidade completa
+
+## Melhorias de Conteúdo
+- [x] Adicionar benefício sobre autonomia energética (baterias + energia durante apagões/noite)
+- [x] Corrigir tooltips mobile na secção "Nossos Serviços"
+- [x] Reduzir redundância: "Instalação em 3 dias" (múltiplas ocorrências)
+- [x] Reduzir redundância: "Como funciona" vs "Veja como instalamos"
+- [x] Reduzir redundância: "+300 famílias já poupam" (repetido)
+- [x] Tornar textos mais variados e menos repetitivos

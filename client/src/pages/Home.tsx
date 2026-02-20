@@ -328,6 +328,11 @@ export default function Home() {
       icon: Zap,
       title: "Tecnologia Avançada",
       description: "Painéis de última geração com monitoramento inteligente em tempo real."
+    },
+    {
+      icon: Battery,
+      title: "Autonomia Energética",
+      description: "Com baterias, tenha energia mesmo durante apagões ou à noite. Independência total da rede elétrica."
     }
   ];
 
@@ -345,7 +350,7 @@ export default function Home() {
     {
       number: "03",
       title: "Instalação Profissional",
-      description: "Equipe certificada realiza a instalação completa em até 3 dias."
+      description: "Equipe certificada com anos de experiência garante trabalho de excelência."
     },
     {
       number: "04",
@@ -656,7 +661,7 @@ export default function Home() {
             <div className="flex flex-wrap justify-center items-center gap-8 max-w-5xl mx-auto">
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <div className="flex flex-col items-center gap-2 cursor-pointer group">
+                  <div className="flex flex-col items-center gap-2 cursor-pointer group" onClick={(e) => e.preventDefault()}>
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
                       <Zap className="w-8 h-8 text-white" />
                     </div>
@@ -670,7 +675,7 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <div className="flex flex-col items-center gap-2 cursor-pointer group">
+                  <div className="flex flex-col items-center gap-2 cursor-pointer group" onClick={(e) => e.preventDefault()}>
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
                       <Battery className="w-8 h-8 text-white" />
                     </div>
@@ -684,7 +689,7 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <div className="flex flex-col items-center gap-2 cursor-pointer group">
+                  <div className="flex-col items-center gap-2 cursor-pointer group" onClick={(e) => e.preventDefault()}>
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
                       <Wind className="w-8 h-8 text-white" />
                     </div>
@@ -698,7 +703,7 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <div className="flex flex-col items-center gap-2 cursor-pointer group">
+                  <div className="flex flex-col items-center gap-2 cursor-pointer group" onClick={(e) => e.preventDefault()}>
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
                       <Wrench className="w-8 h-8 text-white" />
                     </div>
@@ -712,7 +717,7 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <div className="flex flex-col items-center gap-2 cursor-pointer group">
+                  <div className="flex flex-col items-center gap-2 cursor-pointer group" onClick={(e) => e.preventDefault()}>
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
                       <PowerOff className="w-8 h-8 text-white" />
                     </div>
@@ -726,7 +731,7 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <div className="flex flex-col items-center gap-2 cursor-pointer group">
+                  <div className="flex flex-col items-center gap-2 cursor-pointer group" onClick={(e) => e.preventDefault()}>
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
                       <FileText className="w-8 h-8 text-white" />
                     </div>
@@ -970,8 +975,8 @@ export default function Home() {
                   <CheckCircle2 className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold mb-0.5">Instalação Rápida</h4>
-                  <p className="text-xs text-muted-foreground">Sistema completo operacional em até 3 dias</p>
+                  <h4 className="text-sm font-bold mb-0.5">Processo Eficiente</h4>
+                  <p className="text-xs text-muted-foreground">Da avaliação à ativação sem complicações</p>
                 </div>
               </div>
             </div>
@@ -997,10 +1002,10 @@ export default function Home() {
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-6 space-y-2">
             <h2 className="text-xl lg:text-2xl font-bold">
-              +300 Famílias Já Poupam Connosco
+              Clientes Satisfeitos em Todo o País
             </h2>
             <p className="text-sm text-muted-foreground">
-              Junte-se às centenas de portugueses que já transformaram as suas casas em centrais de energia limpa.
+              Junte-se aos portugueses que já transformaram as suas casas em centrais de energia limpa e estão a poupar todos os meses.
             </p>
           </div>
           <div className="grid lg:grid-cols-3 gap-6 items-start">
@@ -1010,8 +1015,8 @@ export default function Home() {
                   <CheckCircle2 className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold mb-0.5">Instalação Rápida</h4>
-                  <p className="text-xs text-muted-foreground">Sistema completo instalado em até 3 dias úteis</p>
+                  <h4 className="text-sm font-bold mb-0.5">Execução Ágil</h4>
+                  <p className="text-xs text-muted-foreground">Minimizamos interrupções na sua rotina</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -1053,7 +1058,7 @@ export default function Home() {
               Projetos de Clientes
             </h2>
             <p className="text-sm text-muted-foreground">
-              Conheça algumas das mais de 300 instalações solares que já realizamos em Portugal.
+              Projetos residenciais e comerciais com resultados comprovados.
             </p>
           </div>
           
