@@ -326,6 +326,16 @@
   .transition-premium {
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
+  
+  /* Hover Card Animation */
+  .hover-card {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .hover-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(36, 63, 173, 0.15), 0 4px 16px rgba(36, 63, 173, 0.08);
+  }
 }
 
 /* Smooth Scroll */
