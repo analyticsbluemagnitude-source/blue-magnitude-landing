@@ -246,3 +246,4 @@
 - [ ] Adicionar link para perfil do Instagram
 - [ ] Testar feed de Instagram no navegador
 - [x] Centralizar vídeo de testemunho no layout para computador
+- [x] Ajustar object-position do vídeo para não cortar cabeças no formato desktop
