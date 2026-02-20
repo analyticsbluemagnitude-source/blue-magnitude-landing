@@ -282,3 +282,7 @@
 ## Correção de Alinhamento
 - [x] Corrigir alinhamento dos ícones de serviços (grelha uniforme)
 - [x] Garantir espaçamento consistente entre todos os itens
+
+## Melhorias nos Testemunhos
+- [x] Remover auto-play do carousel de testemunhos (só muda com clique)
+- [x] Adicionar animação nas setas para indicar mais conteúdo

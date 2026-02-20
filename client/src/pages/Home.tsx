@@ -72,7 +72,6 @@ export default function Home() {
   const [isPaused, setIsPaused] = useState(false);
   const [testimonialsApi, setTestimonialsApi] = useState<CarouselApi>();
   const [currentTestimonialSlide, setCurrentTestimonialSlide] = useState(0);
-  const [isTestimonialsPaused, setIsTestimonialsPaused] = useState(false);
   const [projectsApi, setProjectsApi] = useState<CarouselApi>();
   const [currentProjectSlide, setCurrentProjectSlide] = useState(0);
   const [isProjectsPaused, setIsProjectsPaused] = useState(false);
@@ -161,16 +160,7 @@ export default function Home() {
     };
   }, [projectsApi]);
 
-  // Auto-play testimonials carousel
-  useEffect(() => {
-    if (!testimonialsApi || isTestimonialsPaused) return;
-
-    const autoplay = setInterval(() => {
-      testimonialsApi.scrollNext();
-    }, 5000); // 5 seconds
-
-    return () => clearInterval(autoplay);
-  }, [testimonialsApi, isTestimonialsPaused]);
+  // Testimonials carousel - NO auto-play (user must click arrows)
 
   // Auto-play projects carousel
   useEffect(() => {
@@ -1216,8 +1206,6 @@ export default function Home() {
               className="w-full" 
               opts={{ loop: true }} 
               setApi={setTestimonialsApi}
-              onMouseEnter={() => setIsTestimonialsPaused(true)}
-              onMouseLeave={() => setIsTestimonialsPaused(false)}
             >
               <CarouselContent>
                 {/* Video Testimonial Slide */}
@@ -1253,8 +1241,8 @@ export default function Home() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-4" />
-              <CarouselNext className="right-4" />
+              <CarouselPrevious className="left-4 animate-pulse hover:animate-none" />
+              <CarouselNext className="right-4 animate-pulse hover:animate-none" />
             </Carousel>
             
             {/* Dots Indicators */}
