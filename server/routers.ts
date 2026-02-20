@@ -1,10 +1,11 @@
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
-import { publicProcedure, router } from "./_core/trpc";
+import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { notifyOwner } from "./_core/notification";
 import { z } from "zod";
 import { sendQuoteEmail } from "./email";
+import { createQuote, getAllQuotes, getQuoteById, updateQuoteStatus, searchQuotes } from "./db";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -31,6 +32,15 @@ export const appRouter = router({
         })
       )
       .mutation(async ({ input }) => {
+        // Salvar na base de dados
+        const quote = await createQuote({
+          name: input.name,
+          email: input.email,
+          phone: input.phone,
+          city: input.city,
+          status: "new",
+        });
+        
         // Enviar email via Resend
         const emailSuccess = await sendQuoteEmail(input);
         
@@ -57,7 +67,7 @@ Enviado através do formulário de orçamento do site.
           throw new Error("Falha ao enviar notificação. Por favor, tente novamente.");
         }
 
-        return { success: true };
+        return { success: true, quoteId: quote.id };
       }),
 
     submitContact: publicProcedure
@@ -96,12 +106,36 @@ Enviado através do formulário de contacto do site.
       }),
   }),
 
-  // TODO: add feature routers here, e.g.
-  // todo: router({
-  //   list: protectedProcedure.query(({ ctx }) =>
-  //     db.getUserTodos(ctx.user.id)
-  //   ),
-  // }),
+  quotes: router({
+    list: protectedProcedure.query(async () => {
+      return await getAllQuotes();
+    }),
+
+    getById: protectedProcedure
+      .input(z.object({ id: z.number() }))
+      .query(async ({ input }) => {
+        return await getQuoteById(input.id);
+      }),
+
+    updateStatus: protectedProcedure
+      .input(
+        z.object({
+          id: z.number(),
+          status: z.enum(["new", "contacted", "converted", "archived"]),
+          notes: z.string().optional(),
+        })
+      )
+      .mutation(async ({ input }) => {
+        await updateQuoteStatus(input.id, input.status, input.notes);
+        return { success: true };
+      }),
+
+    search: protectedProcedure
+      .input(z.object({ term: z.string() }))
+      .query(async ({ input }) => {
+        return await searchQuotes(input.term);
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;

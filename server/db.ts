@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm";
+import { desc, eq, like, or } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, users, quotes, InsertQuote, Quote } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -89,4 +89,71 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+// Quotes (Lead Management)
+
+export async function createQuote(quote: InsertQuote): Promise<Quote> {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  const result = await db.insert(quotes).values(quote);
+  const insertedId = Number(result[0].insertId);
+  
+  const inserted = await db.select().from(quotes).where(eq(quotes.id, insertedId)).limit(1);
+  return inserted[0];
+}
+
+export async function getAllQuotes(): Promise<Quote[]> {
+  const db = await getDb();
+  if (!db) {
+    return [];
+  }
+
+  return await db.select().from(quotes).orderBy(desc(quotes.createdAt));
+}
+
+export async function getQuoteById(id: number): Promise<Quote | undefined> {
+  const db = await getDb();
+  if (!db) {
+    return undefined;
+  }
+
+  const result = await db.select().from(quotes).where(eq(quotes.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function updateQuoteStatus(id: number, status: Quote["status"], notes?: string): Promise<void> {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  const updateData: Partial<Quote> = { status };
+  if (notes !== undefined) {
+    updateData.notes = notes;
+  }
+
+  await db.update(quotes).set(updateData).where(eq(quotes.id, id));
+}
+
+export async function searchQuotes(searchTerm: string): Promise<Quote[]> {
+  const db = await getDb();
+  if (!db) {
+    return [];
+  }
+
+  const searchPattern = `%${searchTerm}%`;
+  return await db
+    .select()
+    .from(quotes)
+    .where(
+      or(
+        like(quotes.name, searchPattern),
+        like(quotes.email, searchPattern),
+        like(quotes.phone, searchPattern),
+        like(quotes.city, searchPattern)
+      )
+    )
+    .orderBy(desc(quotes.createdAt));
+}

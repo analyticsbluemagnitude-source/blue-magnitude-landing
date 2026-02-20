@@ -412,6 +412,9 @@ export default function Home() {
               <a href="#como-funciona" className="text-sm font-medium hover:text-primary transition-colors">Como Funciona</a>
               <a href="#depoimentos" className="text-sm font-medium hover:text-primary transition-colors">Testemunhos</a>
               <a href="#contato" className="text-sm font-medium hover:text-primary transition-colors">Contacto</a>
+              {isAuthenticated && (
+                <a href="/dashboard" className="text-sm font-medium hover:text-primary transition-colors">Dashboard</a>
+              )}
             </nav>
             
             {/* Desktop CTA Button */}

@@ -260,3 +260,13 @@
 - [x] Criar template de email profissional com dados do formulário
 - [x] Configurar email de destino: analytics.bluemagnitude@gmail.com
 - [x] Testar envio de emails
+
+## Dashboard de Leads
+- [x] Criar schema de base de dados para leads (quotes table)
+- [x] Implementar procedures tRPC para listar/visualizar leads
+- [x] Criar página de dashboard com tabela de leads
+- [x] Adicionar filtros (data, status, pesquisa)
+- [x] Adicionar estatísticas (total leads, leads por mês)
+- [x] Proteger dashboard com autenticação
+- [x] Adicionar navegação no header para dashboard
+- [x] Testar funcionalidade completa
