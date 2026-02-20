@@ -34,6 +34,162 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet" />
     
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://bluemagnitude.manus.space/#organization",
+          "name": "Blue Magnitude",
+          "description": "Empresa especializada em soluções de energia solar fotovoltaica em Portugal. Instalação profissional, equipamentos premium e suporte vitalício.",
+          "url": "https://bluemagnitude.manus.space",
+          "logo": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/giWuxHpzJpBsYoQy.png",
+          "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/giWuxHpzJpBsYoQy.png",
+          "telephone": "+351938719773",
+          "email": "geral@bluemagnitude.pt",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Estr. de Pinheiros 480",
+            "addressLocality": "Leiria",
+            "postalCode": "2415-776",
+            "addressCountry": "PT"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.7437",
+            "longitude": "-8.8071"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          ],
+          "priceRange": "€€€",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Portugal"
+          },
+          "sameAs": [
+            "https://www.facebook.com/bluemagnitude",
+            "https://www.instagram.com/bluemagnitude"
+          ]
+        },
+        {
+          "@type": "Service",
+          "@id": "https://bluemagnitude.manus.space/#service",
+          "serviceType": "Instalação de Energia Solar Fotovoltaica",
+          "provider": {
+            "@id": "https://bluemagnitude.manus.space/#organization"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Portugal"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Serviços de Energia Solar",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Autoconsumo Residencial",
+                  "description": "Sistemas de painéis solares para residências com até 80% de poupança na fatura de eletricidade"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Autoconsumo com Baterias",
+                  "description": "Sistemas solares com armazenamento de energia para autonomia total 24h"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Sistemas OFF-Grid",
+                  "description": "Soluções de energia solar totalmente independentes da rede elétrica"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Manutenção e Suporte",
+                  "description": "Suporte técnico vitalício e manutenção preventiva de sistemas fotovoltaicos"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://bluemagnitude.manus.space/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Quanto tempo dura um sistema de energia solar?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Os painéis solares têm vida útil de 25 a 30 anos, mantendo mais de 80% da eficiência. Os inversores duram de 10 a 15 anos."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O sistema funciona em dias nublados?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim! Mesmo em dias nublados os painéis captam luz difusa e geram energia, embora com eficiência reduzida."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Qual o prazo de retorno do investimento?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Em média, o retorno ocorre entre 4 a 6 anos, dependendo do consumo e da tarifa local de eletricidade."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Preciso fazer manutenção constante?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A manutenção é mínima. Recomendamos limpeza semestral dos painéis e inspeção anual do sistema."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Posso vender energia excedente?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim! Através do sistema de compensação de energia, créditos são gerados e abatidos nas próximas faturas."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://bluemagnitude.manus.space/#website",
+          "url": "https://bluemagnitude.manus.space",
+          "name": "Blue Magnitude - Energia Solar",
+          "description": "Soluções completas de energia solar fotovoltaica em Portugal",
+          "publisher": {
+            "@id": "https://bluemagnitude.manus.space/#organization"
+          },
+          "inLanguage": "pt-PT"
+        }
+      ]
+    }
+    </script>
+    
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRPZWZFKF3"></script>
     <script>

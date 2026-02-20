@@ -232,3 +232,7 @@
 - [x] Ajustar vídeo de depoimento para ocupar espaço de forma mais proeminente sem cortar conteúdo
 - [x] Ajustar object-position do vídeo para não cortar cabeça da entrevistadora
 - [x] Escurecer números da seção Como Funciona para melhorar visibilidade
+- [x] Configurar meta tags básicas (title otimizado, description)
+- [x] Adicionar Open Graph tags para redes sociais (og:title, og:description, og:image)
+- [x] Implementar JSON-LD structured data (LocalBusiness, Service, FAQPage, WebSite)
+- [x] Adicionar meta tags adicionais (keywords, author, viewport, robots, canonical)
