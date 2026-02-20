@@ -356,7 +356,7 @@ export default function Home() {
               <img 
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/giWuxHpzJpBsYoQy.png" 
                 alt="Blue Magnitude" 
-                className="h-24 w-auto py-1"
+                className="h-20 w-auto py-2"
               />
             </div>
             
@@ -370,7 +370,7 @@ export default function Home() {
             
             {/* Desktop CTA Button */}
             <Button asChild className="hidden md:flex energy-glow">
-              <a href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20energia%20solar." target="_blank" rel="noopener noreferrer">Solicitar Orçamento</a>
+              <a href="#orcamento">Solicitar Orçamento</a>
             </Button>
             
             {/* Mobile Menu Button */}
@@ -417,7 +417,7 @@ export default function Home() {
                 Contacto
               </a>
               <Button asChild className="energy-glow w-full" onClick={() => setMobileMenuOpen(false)}>
-                <a href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20energia%20solar." target="_blank" rel="noopener noreferrer">Solicitar Orçamento</a>
+                <a href="#orcamento">Solicitar Orçamento</a>
               </Button>
             </nav>
           </div>
@@ -439,8 +439,8 @@ export default function Home() {
               className="relative h-[60vh] flex items-center pt-20 overflow-hidden"
               style={{
                 backgroundImage: `url('https://private-us-east-1.manuscdn.com/sessionFile/q5sviWRou2JGIIHcxzxwoX/sandbox/REFC4GPOzcnFnppBcZZ4PK-img-1_1771368547000_na1fn_aGVyby1zbGlkZS1lbXByZXNhcw.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcTVzdmlXUm91MkpHSUlIY3h6eHdvWC9zYW5kYm94L1JFRkM0R1BPemNuRm5wcEJjWlo0UEstaW1nLTFfMTc3MTM2ODU0NzAwMF9uYTFmbl9hR1Z5YnkxemJHbGtaUzFsYlhCeVpYTmhjdy5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=kqFYNL84SMuooRgeCk5pOajXXRXeItwClRA8Gzs4zDclE8ckZI3Q1C5Bk7XXFYMOpgHOBxbczWR3VT~Sgmq1uCyNUeiB4Hmw3K0a~9cNr2RbPST0Os3sWk2NMPYUC-SUW7awmyUHjgGdVEGMvdHYRTgrrOY7w9r1TTgEmXdlfWbRT~-hQsc6lNkCKIISmoXAhbIVe3kgluv3rbiHgyFb4CzpSdqEkpgzkx07bRfWum5su3iz416ZA2ty~KB2AjzyE6Nv4wpT7oR4mGVOtaxosxwAiySieR1k9qiSI8ZdSD-q7F25-JG19kefT1lyxktqKA2qAfPNm4d9-zefIPS~lg__')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center center'
+                backgroundSize: '120%',
+                backgroundPosition: 'center 40%'
               }}
             >
               <div className="absolute inset-0 bg-black/60"></div>
@@ -456,10 +456,8 @@ export default function Home() {
                     Na Blue Magnitude, criamos soluções de energia solar feitas à medida para o teu negócio. Reduz a tua fatura de eletricidade e junta-te às inúmeras empresas que já se conectaram ao sol com as nossas soluções sustentáveis.
                   </p>
                   <div className="slide-button">
-                    <Button asChild size="lg" className="energy-glow text-white text-base h-12 px-6">
-                      <a href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20pedir%20uma%20proposta%20para%20energia%20solar." target="_blank" rel="noopener noreferrer">
-                        Pedir Proposta
-                      </a>
+                    <Button size="lg" className="energy-glow text-white text-base h-12 px-6">
+                      Pedir Proposta
                     </Button>
                   </div>
                 </div>
@@ -473,8 +471,8 @@ export default function Home() {
               className="relative h-[60vh] flex items-center pt-20 overflow-hidden"
               style={{
                 backgroundImage: `url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/kLqSkJQspwvNxSOz.jpg')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center center'
+                backgroundSize: '130%',
+                backgroundPosition: 'center 35%'
               }}
             >
               <div className="absolute inset-0 bg-black/60"></div>
@@ -490,10 +488,8 @@ export default function Home() {
                     Descobre as nossas soluções completas para autoconsumo com painéis solares fotovoltaicos. Reduz a tua conta de eletricidade até 80%. Vamos começar o teu projeto?
                   </p>
                   <div className="slide-button">
-                    <Button asChild size="lg" className="energy-glow text-white text-base h-12 px-6">
-                      <a href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20pedir%20uma%20proposta%20para%20energia%20solar." target="_blank" rel="noopener noreferrer">
-                        Pedir Proposta
-                      </a>
+                    <Button size="lg" className="energy-glow text-white text-base h-12 px-6">
+                      Pedir Proposta
                     </Button>
                   </div>
                 </div>
@@ -651,7 +647,7 @@ export default function Home() {
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               return (
-                <div key={index} className="flex items-start gap-3 p-3 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-[#6cca7d]/30 cursor-pointer hover-card">
+                <div key={index} className="flex items-start gap-3 p-4 rounded-lg hover:bg-muted/50 transition-colors duration-300">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#3ac6ff] to-[#6cca7d] flex items-center justify-center">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
@@ -679,7 +675,7 @@ export default function Home() {
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <Card className="p-4 lg:p-6 glass-card border-2 border-[#6cca7d] animate-scale">
+            <Card className="p-4 lg:p-6 kinetic-card border-2 border-[#6cca7d] animate-scale">
               <div className="grid lg:grid-cols-2 gap-6">
                 {/* Input Section */}
                 <div className="space-y-4">
@@ -774,7 +770,7 @@ export default function Home() {
                   </div>
                   
                   <Button asChild className="w-full energy-glow" size="default">
-                    <a href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20personalizado%20para%20energia%20solar." target="_blank" rel="noopener noreferrer">Solicitar Orçamento Personalizado</a>
+                    <a href="#orcamento">Solicitar Orçamento Personalizado</a>
                   </Button>
                 </div>
               </div>
@@ -876,7 +872,7 @@ export default function Home() {
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-6 space-y-2">
             <h2 className="text-xl lg:text-2xl font-bold">
-              +300 Famílias Já Poupam Connosco
+              Mais de 300 Famílias Já Poupam Connosco
             </h2>
             <p className="text-sm text-muted-foreground">
               Junte-se às centenas de portugueses que já transformaram as suas casas em centrais de energia limpa.
@@ -947,7 +943,7 @@ export default function Home() {
             <CarouselContent>
               {/* Projeto 1: Mata Mourisca */}
               <CarouselItem>
-                <Card className="p-6 glass-card bg-gradient-to-br from-[#3ac6ff]/10 to-[#6cca7d]/10 border-2 border-[#3ac6ff] hover-card">
+                <Card className="p-6 bg-gradient-to-br from-[#243fad]/10 to-[#3ac6ff]/10 border-2 border-[#3ac6ff]">
                   <div className="grid lg:grid-cols-2 gap-6 items-center">
                     <div>
                       <h3 className="text-xl font-bold mb-3">Projeto Mata Mourisca</h3>
@@ -967,13 +963,13 @@ export default function Home() {
                       <img 
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/wzfZTzfswIpbfnoS.jpg"
                         alt="Projeto Mata Mourisca - Depois"
-                        className="rounded-xl shadow-lg w-full h-[160px] object-cover"
+                        className="rounded-xl shadow-lg w-full h-auto object-cover"
                         loading="lazy"
                       />
                       <img 
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/runBWVaITLbvTBCm.jpg"
                         alt="Projeto Mata Mourisca - Antes"
-                        className="rounded-xl shadow-lg w-full h-[160px] object-cover"
+                        className="rounded-xl shadow-lg w-full h-auto object-cover"
                         loading="lazy"
                       />
                     </div>
@@ -983,7 +979,7 @@ export default function Home() {
               
               {/* Projeto 2: Autoconsumo Alto Desempenho */}
               <CarouselItem>
-                <Card className="p-6 glass-card bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10 border-2 border-[#6cca7d] hover-card">
+                <Card className="p-6 bg-gradient-to-br from-[#6cca7d]/10 to-[#d7e028]/10 border-2 border-[#6cca7d]">
                   <div className="grid lg:grid-cols-2 gap-6 items-center">
                     <div>
                       <h3 className="text-xl font-bold mb-3">Autoconsumo Alto Desempenho</h3>
@@ -1003,13 +999,13 @@ export default function Home() {
                       <img 
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/WVgFGcHSCvZpgfeD.jpg"
                         alt="Projeto Autoconsumo"
-                        className="rounded-xl shadow-lg w-full h-[160px] object-cover"
+                        className="rounded-xl shadow-lg w-full h-auto max-h-[200px] object-cover"
                         loading="lazy"
                       />
                       <img 
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/aKenSoiHHZUobuqN.jpg"
                         alt="Projeto Autoconsumo - Painéis"
-                        className="rounded-xl shadow-lg w-full h-[160px] object-cover"
+                        className="rounded-xl shadow-lg w-full h-auto max-h-[200px] object-cover"
                         loading="lazy"
                       />
                     </div>
@@ -1019,7 +1015,7 @@ export default function Home() {
               
               {/* Projeto 3: Instalação Comercial */}
               <CarouselItem>
-                <Card className="p-6 glass-card bg-gradient-to-br from-[#d7e028]/10 to-[#6cca7d]/10 border-2 border-[#d7e028] hover-card">
+                <Card className="p-6 bg-gradient-to-br from-[#d7e028]/10 to-[#6cca7d]/10 border-2 border-[#d7e028]">
                   <div className="grid lg:grid-cols-2 gap-6 items-center">
                     <div>
                       <h3 className="text-xl font-bold mb-3">Instalação Comercial</h3>
@@ -1096,10 +1092,10 @@ export default function Home() {
               <CarouselContent>
                 {/* Video Testimonial Slide */}
                 <CarouselItem>
-                  <div className="rounded-xl overflow-hidden shadow-2xl h-[350px]">
+                  <div className="rounded-xl overflow-hidden shadow-2xl" style={{height: '350px'}}>
                     <video
                       className="w-full h-full object-cover"
-                      style={{ objectPosition: 'center 45%' }}
+                      style={{objectPosition: 'center 30%'}}
                       controls
                       poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/aSoVwIwDLKcGIJXi.png"
                     >
@@ -1112,13 +1108,13 @@ export default function Home() {
                 {/* Text Testimonials Slides */}
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem key={index}>
-                    <Card className="p-6 kinetic-card flex flex-col justify-center items-center" style={{minHeight: '350px', maxHeight: '350px'}}>
+                    <Card className="p-6 kinetic-card flex flex-col justify-center" style={{minHeight: '350px', maxHeight: '350px'}}>
                       <div className="flex gap-1 mb-3 justify-center">
                         {[...Array(testimonial.rating)].map((_, i) => (
                           <Sun key={i} className="w-4 h-4 fill-[#d7e028] text-[#d7e028]" />
                         ))}
                       </div>
-                      <p className="text-sm mb-4 leading-relaxed italic text-center">"{testimonial.text}"</p>
+                      <p className="text-base mb-4 leading-relaxed italic text-center">"{testimonial.text}"</p>
                       <div className="text-center">
                         <div className="font-semibold text-sm">{testimonial.name}</div>
                         <div className="text-xs text-muted-foreground">{testimonial.role}</div>
@@ -1179,11 +1175,11 @@ export default function Home() {
       </section>
 
       {/* CTA Form Section */}
-      <section id="orcamento" className="py-8 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white animate-fade-in">
+      <section id="orcamento" className="py-6 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white diagonal-section diagonal-top animate-fade-in">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <Card className="p-3 lg:p-4 glass-card">
-              <div className="text-center mb-2 space-y-0.5">
+            <Card className="p-4 lg:p-6">
+              <div className="text-center mb-3 space-y-0.5">
                 <h2 className="text-lg lg:text-xl font-bold text-foreground">
                   Solicite o Seu Orçamento Gratuito
                 </h2>
@@ -1191,9 +1187,9 @@ export default function Home() {
                   Preencha o formulário e receba uma proposta personalizada em até 24 horas.
                 </p>
               </div>
-              <form onSubmit={handleSubmit} className="space-y-2">
-                <div className="grid md:grid-cols-2 gap-2.5">
-                  <div className="space-y-1">
+              <form onSubmit={handleSubmit} className="space-y-2.5">
+                <div className="grid md:grid-cols-2 gap-3">
+                  <div className="space-y-1.5">
                     <Label className="text-sm" htmlFor="name">Nome e Apelido *</Label>
                     <Input 
                       id="name"
@@ -1204,7 +1200,7 @@ export default function Home() {
                       className="h-9 text-sm"
                     />
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1.5">
                     <Label className="text-sm" htmlFor="email">E-mail *</Label>
                     <Input 
                       id="email"
@@ -1216,7 +1212,7 @@ export default function Home() {
                       className="h-9 text-sm"
                     />
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1.5">
                     <Label className="text-sm" htmlFor="phone">Telefone/WhatsApp *</Label>
                     <Input 
                       id="phone"
@@ -1228,7 +1224,7 @@ export default function Home() {
                       className="h-9 text-sm"
                     />
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1.5">
                     <Label className="text-sm" htmlFor="city">Localidade *</Label>
                     <Input 
                       id="city"
@@ -1240,7 +1236,7 @@ export default function Home() {
                     />
                   </div>
                 </div>
-                <Button type="submit" className="w-full h-9 text-sm font-semibold energy-glow text-white flex items-center justify-center gap-2 px-6">
+                <Button type="submit" className="w-full h-10 text-sm font-semibold energy-glow text-white flex items-center justify-center gap-2 px-6">
                   <span>Receber Orçamento Gratuito</span>
                   <ArrowRight className="w-4 h-4" />
                 </Button>
@@ -1306,10 +1302,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-xl h-[300px]">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl max-h-[300px]">
               <video
-                className="w-full h-full object-cover"
-                style={{ objectPosition: 'center 35%' }}
+                className="w-full h-auto max-h-[300px]"
                 controls
                 preload="metadata"
               >
