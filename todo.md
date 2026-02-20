@@ -230,3 +230,4 @@
 - [ ] Configurar botões Pedir Proposta/Solicitar Orçamento para abrir WhatsApp
 - [ ] Criar link WhatsApp com mensagem pré-definida (+351 938 719 773)
 - [x] Ajustar vídeo de depoimento para ocupar espaço de forma mais proeminente sem cortar conteúdo
+- [x] Ajustar object-position do vídeo para não cortar cabeça da entrevistadora
