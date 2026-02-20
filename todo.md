@@ -286,3 +286,7 @@
 ## Melhorias nos Testemunhos
 - [x] Remover auto-play do carousel de testemunhos (só muda com clique)
 - [x] Adicionar animação nas setas para indicar mais conteúdo
+
+## Alteração de Email de Destino
+- [x] Alterar email de analytics.bluemagnitude@gmail.com para geral@bluemagnitude.pt
+- [x] Informar utilizador sobre necessidade de verificar domínio no Resend
