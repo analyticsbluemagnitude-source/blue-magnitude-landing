@@ -248,3 +248,8 @@
 - [x] Centralizar vídeo de testemunho no layout para computador
 - [x] Ajustar object-position do vídeo para não cortar cabeças no formato desktop
 - [x] Aumentar object-position para 50% para mostrar completamente as cabeças
+- [x] Remover código Facebook Pixel do index.html e Home.tsx
+- [x] Adicionar eventos GA4 em todos os botões WhatsApp (hero slides, header, calculadora)
+- [x] Implementar scroll depth tracking GA4 (25%, 50%, 75%, 100%)
+- [x] Criar declarações TypeScript para window.gtag
+- [x] Testar eventos GA4 no browser console

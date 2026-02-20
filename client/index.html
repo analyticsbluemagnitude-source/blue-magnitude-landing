@@ -191,13 +191,23 @@
     </script>
     
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRPZWZFKF3"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-LRPZWZFKF3');
+      window.GA4_ID = '%VITE_GA4_ID%';
+      if (window.GA4_ID && window.GA4_ID !== '%VITE_GA4_ID%') {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA4_ID;
+        document.head.appendChild(script);
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', window.GA4_ID);
+      }
     </script>
+    
+
   </head>
 
   <body>

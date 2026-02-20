@@ -219,12 +219,52 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  // Scroll depth tracking for Google Analytics
+  useEffect(() => {
+    const scrollDepths = [25, 50, 75, 100];
+    const triggered = new Set<number>();
+
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight - windowHeight;
+      const scrolled = window.scrollY;
+      const scrollPercent = (scrolled / documentHeight) * 100;
+
+      scrollDepths.forEach(depth => {
+        if (scrollPercent >= depth && !triggered.has(depth)) {
+          triggered.add(depth);
+          
+          // Google Analytics 4 Event
+          if (typeof window !== 'undefined' && window.gtag) {
+            window.gtag('event', 'scroll', {
+              event_category: 'engagement',
+              event_label: `scroll_depth_${depth}`,
+              value: depth
+            });
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // tRPC mutations para envio de formulários
   const submitQuoteMutation = trpc.forms.submitQuote.useMutation({
     onSuccess: () => {
       setFormData({ name: "", email: "", phone: "", city: "" });
       setSuccessDialogType("quote");
       setShowSuccessDialog(true);
+      
+      // Google Analytics 4 Event
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'generate_lead', {
+          event_category: 'engagement',
+          event_label: 'quote_form_submission',
+          value: 1
+        });
+      }
       
       toast.success("✅ Orçamento enviado com sucesso!", {
         description: "Entraremos em contacto em até 24 horas. Obrigado!"
@@ -376,7 +416,22 @@ export default function Home() {
             
             {/* Desktop CTA Button */}
             <Button asChild className="hidden md:flex energy-glow">
-              <a href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20energia%20solar." target="_blank" rel="noopener noreferrer">Solicitar Orçamento</a>
+              <a 
+                href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20energia%20solar." 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'click', {
+                      event_category: 'engagement',
+                      event_label: 'whatsapp_header_desktop',
+                      value: 1
+                    });
+                  }
+                }}
+              >
+                Solicitar Orçamento
+              </a>
             </Button>
             
             {/* Mobile Menu Button */}
@@ -422,8 +477,24 @@ export default function Home() {
               >
                 Contacto
               </a>
-              <Button asChild className="energy-glow w-full" onClick={() => setMobileMenuOpen(false)}>
-                <a href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20energia%20solar." target="_blank" rel="noopener noreferrer">Solicitar Orçamento</a>
+              <Button asChild className="energy-glow w-full">
+                <a 
+                  href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20energia%20solar." 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    if (typeof window !== 'undefined' && window.gtag) {
+                      window.gtag('event', 'click', {
+                        event_category: 'engagement',
+                        event_label: 'whatsapp_header_mobile',
+                        value: 1
+                      });
+                    }
+                  }}
+                >
+                  Solicitar Orçamento
+                </a>
               </Button>
             </nav>
           </div>
@@ -463,7 +534,20 @@ export default function Home() {
                   </p>
                   <div className="slide-button">
                     <Button asChild size="lg" className="energy-glow text-white text-base h-12 px-6">
-                      <a href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20pedir%20uma%20proposta%20para%20energia%20solar." target="_blank" rel="noopener noreferrer">
+                      <a 
+                        href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20pedir%20uma%20proposta%20para%20energia%20solar." 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        onClick={() => {
+                          if (typeof window !== 'undefined' && window.gtag) {
+                            window.gtag('event', 'click', {
+                              event_category: 'engagement',
+                              event_label: 'whatsapp_hero_slide',
+                              value: 1
+                            });
+                          }
+                        }}
+                      >
                         Pedir Proposta
                       </a>
                     </Button>
@@ -497,7 +581,20 @@ export default function Home() {
                   </p>
                   <div className="slide-button">
                     <Button asChild size="lg" className="energy-glow text-white text-base h-12 px-6">
-                      <a href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20pedir%20uma%20proposta%20para%20energia%20solar." target="_blank" rel="noopener noreferrer">
+                      <a 
+                        href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20pedir%20uma%20proposta%20para%20energia%20solar." 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        onClick={() => {
+                          if (typeof window !== 'undefined' && window.gtag) {
+                            window.gtag('event', 'click', {
+                              event_category: 'engagement',
+                              event_label: 'whatsapp_hero_slide',
+                              value: 1
+                            });
+                          }
+                        }}
+                      >
                         Pedir Proposta
                       </a>
                     </Button>
@@ -780,7 +877,22 @@ export default function Home() {
                   </div>
                   
                   <Button asChild className="w-full energy-glow" size="default">
-                    <a href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20personalizado%20para%20energia%20solar." target="_blank" rel="noopener noreferrer">Solicitar Orçamento Personalizado</a>
+                    <a 
+                      href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20personalizado%20para%20energia%20solar." 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      onClick={() => {
+                        if (typeof window !== 'undefined' && window.gtag) {
+                          window.gtag('event', 'click', {
+                            event_category: 'engagement',
+                            event_label: 'whatsapp_calculator',
+                            value: 1
+                          });
+                        }
+                      }}
+                    >
+                      Solicitar Orçamento Personalizado
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -1406,11 +1518,11 @@ export default function Home() {
             description: "Vamos conversar sobre a sua solução de energia solar!"
           });
           
-          // Google Analytics 4 event
-          if (typeof window !== 'undefined' && (window as any).gtag) {
-            (window as any).gtag('event', 'click', {
-              event_category: 'WhatsApp',
-              event_label: 'Botão Flutuante',
+          // Google Analytics 4 Event
+          if (typeof window !== 'undefined' && window.gtag) {
+            window.gtag('event', 'click', {
+              event_category: 'engagement',
+              event_label: 'whatsapp_floating_button',
               value: 1
             });
           }
