@@ -294,3 +294,9 @@
 ## Atualização de API Key do Resend
 - [x] Atualizar RESEND_API_KEY para nova conta (geral@bluemagnitude.pt)
 - [x] Testar envio de email com nova configuração
+
+## Debug: Emails Não Chegam
+- [x] Verificar logs do servidor para erros
+- [ ] Testar formulário e verificar se dados são salvos na BD
+- [ ] Identificar causa do problema
+- [ ] Corrigir e validar envio de emails
