@@ -658,14 +658,14 @@ export default function Home() {
             </p>
           </div>
           <TooltipProvider>
-            <div className="flex flex-wrap justify-center items-center gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <div className="flex flex-col items-center gap-2 cursor-pointer group" onClick={(e) => e.preventDefault()}>
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
-                      <Zap className="w-8 h-8 text-white" />
+                  <div className="flex flex-col items-center gap-3 cursor-pointer group" onClick={(e) => e.preventDefault()}>
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
+                      <Zap className="w-10 h-10 text-white" />
                     </div>
-                    <span className="text-sm font-semibold text-center">Autoconsumo</span>
+                    <span className="text-sm font-semibold text-center min-h-[40px] flex items-center">Autoconsumo</span>
                   </div>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">
@@ -675,11 +675,11 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <div className="flex flex-col items-center gap-2 cursor-pointer group" onClick={(e) => e.preventDefault()}>
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
-                      <Battery className="w-8 h-8 text-white" />
+                  <div className="flex flex-col items-center gap-3 cursor-pointer group" onClick={(e) => e.preventDefault()}>
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
+                      <Battery className="w-10 h-10 text-white" />
                     </div>
-                    <span className="text-sm font-semibold text-center max-w-[100px]">Autoconsumo Com Baterias</span>
+                    <span className="text-sm font-semibold text-center min-h-[40px] flex items-center">Autoconsumo Com Baterias</span>
                   </div>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">
@@ -689,11 +689,11 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <div className="flex-col items-center gap-2 cursor-pointer group" onClick={(e) => e.preventDefault()}>
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
-                      <Wind className="w-8 h-8 text-white" />
+                  <div className="flex flex-col items-center gap-3 cursor-pointer group" onClick={(e) => e.preventDefault()}>
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
+                      <Wind className="w-10 h-10 text-white" />
                     </div>
-                    <span className="text-sm font-semibold text-center max-w-[100px]">AVAC E Climatização</span>
+                    <span className="text-sm font-semibold text-center min-h-[40px] flex items-center">AVAC E Climatização</span>
                   </div>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">
@@ -703,11 +703,11 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <div className="flex flex-col items-center gap-2 cursor-pointer group" onClick={(e) => e.preventDefault()}>
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
-                      <Wrench className="w-8 h-8 text-white" />
+                  <div className="flex flex-col items-center gap-3 cursor-pointer group" onClick={(e) => e.preventDefault()}>
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
+                      <Wrench className="w-10 h-10 text-white" />
                     </div>
-                    <span className="text-sm font-semibold text-center">Manutenção</span>
+                    <span className="text-sm font-semibold text-center min-h-[40px] flex items-center">Manutenção</span>
                   </div>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">
@@ -717,11 +717,11 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <div className="flex flex-col items-center gap-2 cursor-pointer group" onClick={(e) => e.preventDefault()}>
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
-                      <PowerOff className="w-8 h-8 text-white" />
+                  <div className="flex flex-col items-center gap-3 cursor-pointer group" onClick={(e) => e.preventDefault()}>
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
+                      <PowerOff className="w-10 h-10 text-white" />
                     </div>
-                    <span className="text-sm font-semibold text-center max-w-[100px]">Sistemas OFF-Grid</span>
+                    <span className="text-sm font-semibold text-center min-h-[40px] flex items-center">Sistemas OFF-Grid</span>
                   </div>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">
@@ -731,11 +731,11 @@ export default function Home() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <div className="flex flex-col items-center gap-2 cursor-pointer group" onClick={(e) => e.preventDefault()}>
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
-                      <FileText className="w-8 h-8 text-white" />
+                  <div className="flex flex-col items-center gap-3 cursor-pointer group" onClick={(e) => e.preventDefault()}>
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#6cca7d] to-[#5bb96d] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6cca7d]/50">
+                      <FileText className="w-10 h-10 text-white" />
                     </div>
-                    <span className="text-sm font-semibold text-center">Consultoria</span>
+                    <span className="text-sm font-semibold text-center min-h-[40px] flex items-center">Consultoria</span>
                   </div>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="max-w-xs p-4">

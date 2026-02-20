@@ -278,3 +278,7 @@
 - [x] Reduzir redundância: "Como funciona" vs "Veja como instalamos"
 - [x] Reduzir redundância: "+300 famílias já poupam" (repetido)
 - [x] Tornar textos mais variados e menos repetitivos
+
+## Correção de Alinhamento
+- [x] Corrigir alinhamento dos ícones de serviços (grelha uniforme)
+- [x] Garantir espaçamento consistente entre todos os itens
