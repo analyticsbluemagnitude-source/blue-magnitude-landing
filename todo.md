@@ -290,3 +290,7 @@
 ## Alteração de Email de Destino
 - [x] Alterar email de analytics.bluemagnitude@gmail.com para geral@bluemagnitude.pt
 - [x] Informar utilizador sobre necessidade de verificar domínio no Resend
+
+## Atualização de API Key do Resend
+- [x] Atualizar RESEND_API_KEY para nova conta (geral@bluemagnitude.pt)
+- [x] Testar envio de email com nova configuração
