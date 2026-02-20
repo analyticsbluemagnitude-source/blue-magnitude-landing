@@ -226,6 +226,10 @@ export default function Home() {
       setSuccessDialogType("quote");
       setShowSuccessDialog(true);
       
+      toast.success("✅ Orçamento enviado com sucesso!", {
+        description: "Entraremos em contacto em até 24 horas. Obrigado!"
+      });
+      
       // Google Analytics 4 event
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'generate_lead', {
@@ -236,7 +240,9 @@ export default function Home() {
       }
     },
     onError: (error) => {
-      toast.error(error.message || "Erro ao enviar formulário. Por favor, tente novamente.");
+      toast.error("❌ Erro ao enviar formulário", {
+        description: error.message || "Por favor, verifique os dados e tente novamente."
+      });
     },
   });
 
@@ -1396,6 +1402,10 @@ export default function Home() {
         className="fixed right-3 top-1/2 -translate-y-1/2 z-50 bg-[#25D366] hover:bg-[#1eaa50] text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 whatsapp-button"
         aria-label="Contacte-nos pelo WhatsApp"
         onClick={() => {
+          toast.success("💬 Abrindo WhatsApp...", {
+            description: "Vamos conversar sobre a sua solução de energia solar!"
+          });
+          
           // Google Analytics 4 event
           if (typeof window !== 'undefined' && (window as any).gtag) {
             (window as any).gtag('event', 'click', {
