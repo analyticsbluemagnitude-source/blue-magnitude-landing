@@ -1315,7 +1315,7 @@ export default function Home() {
             <div className="relative rounded-2xl overflow-hidden shadow-xl h-[300px] lg:h-[400px] flex items-center justify-center">
               <video
                 className="w-full h-full object-cover"
-                style={{ objectPosition: 'center 45%' }}
+                style={{ objectPosition: 'center 50%' }}
                 controls
                 preload="metadata"
               >

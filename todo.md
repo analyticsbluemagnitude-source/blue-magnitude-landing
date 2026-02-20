@@ -247,3 +247,4 @@
 - [ ] Testar feed de Instagram no navegador
 - [x] Centralizar vídeo de testemunho no layout para computador
 - [x] Ajustar object-position do vídeo para não cortar cabeças no formato desktop
+- [x] Aumentar object-position para 50% para mostrar completamente as cabeças
