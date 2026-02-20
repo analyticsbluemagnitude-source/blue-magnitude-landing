@@ -1099,7 +1099,7 @@ export default function Home() {
                   <div className="rounded-xl overflow-hidden shadow-2xl h-[350px]">
                     <video
                       className="w-full h-full object-cover"
-                      style={{ objectPosition: 'center 45%' }}
+                      style={{ objectPosition: 'center 35%' }}
                       controls
                       poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663364459713/aSoVwIwDLKcGIJXi.png"
                     >
