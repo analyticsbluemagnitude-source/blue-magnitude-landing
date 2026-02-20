@@ -300,3 +300,9 @@
 - [ ] Testar formulário e verificar se dados são salvos na BD
 - [ ] Identificar causa do problema
 - [ ] Corrigir e validar envio de emails
+
+## Configuração Google Analytics 4
+- [x] Configurar VITE_GA4_ID com G-LRPZWZFKF3
+- [x] Verificar evento de conversão no formulário (já implementado)
+- [x] Verificar eventos nos botões WhatsApp (já implementados)
+- [x] Testar tracking de eventos no GA4
