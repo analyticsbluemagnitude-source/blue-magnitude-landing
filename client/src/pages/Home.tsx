@@ -798,7 +798,7 @@ export default function Home() {
             {process.map((step, index) => (
               <div key={index} className="relative">
                 <div className="space-y-2">
-                  <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#3ac6ff] to-[#d7e028] opacity-20">
+                  <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#3ac6ff] to-[#d7e028] opacity-40">
                     {step.number}
                   </div>
                   <h3 className="text-base font-bold">{step.title}</h3>
