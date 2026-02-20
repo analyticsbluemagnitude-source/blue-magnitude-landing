@@ -253,3 +253,10 @@
 - [x] Implementar scroll depth tracking GA4 (25%, 50%, 75%, 100%)
 - [x] Criar declarações TypeScript para window.gtag
 - [x] Testar eventos GA4 no browser console
+
+## Sistema de Email para Formulários
+- [x] Pesquisar melhor solução de email (Resend, Nodemailer, etc)
+- [x] Implementar integração de email no backend
+- [x] Criar template de email profissional com dados do formulário
+- [x] Configurar email de destino: analytics.bluemagnitude@gmail.com
+- [x] Testar envio de emails
