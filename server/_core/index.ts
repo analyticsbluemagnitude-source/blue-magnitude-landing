@@ -43,13 +43,6 @@ async function startServer() {
   app.get("/api/export/leads", async (req, res) => {
     try {
       // Verify authentication
-      const cookieHeader = req.headers.cookie || "";
-      const cookies = Object.fromEntries(
-        cookieHeader.split(";").map(c => {
-          const [k, ...v] = c.trim().split("=");
-          return [k, v.join("=")];
-        })
-      );
       let user;
       try {
         user = await sdk.authenticateRequest(req);
@@ -58,6 +51,11 @@ async function startServer() {
       }
       if (!user) {
         return res.status(401).json({ error: "Não autorizado" });
+      }
+
+      // Verify admin role
+      if (user.role !== "admin") {
+        return res.status(403).json({ error: "Acesso negado. Apenas administradores podem exportar leads." });
       }
 
       // Get all leads

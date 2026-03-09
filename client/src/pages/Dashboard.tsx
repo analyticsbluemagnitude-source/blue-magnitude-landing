@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useAuth } from "@/_core/hooks/useAuth";
 import { trpc } from "@/lib/trpc";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -23,6 +24,7 @@ import { Search, Mail, Phone, MapPin, Calendar, TrendingUp, Users, CheckCircle2,
 import { toast } from "sonner";
 
 export default function Dashboard() {
+  const { user } = useAuth();
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState<string>("all");
   const [isExporting, setIsExporting] = useState(false);
@@ -96,7 +98,13 @@ export default function Dashboard() {
       setIsExporting(true);
       const response = await fetch("/api/export/leads");
       if (!response.ok) {
-        throw new Error("Erro ao exportar leads");
+        const errorData = await response.json();
+        if (response.status === 403) {
+          toast.error("Acesso negado. Apenas administradores podem exportar leads.");
+        } else {
+          throw new Error(errorData.error || "Erro ao exportar leads");
+        }
+        return;
       }
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
@@ -126,23 +134,26 @@ export default function Dashboard() {
             <p className="text-slate-600 mt-1">Gerir pedidos de orçamento</p>
           </div>
           <div className="flex gap-3">
-            <Button 
-              onClick={handleExportExcel} 
-              disabled={isExporting || !quotes || quotes.length === 0}
-              className="bg-green-600 hover:bg-green-700"
-            >
-              {isExporting ? (
-                <>
-                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                  A exportar...
-                </>
-              ) : (
-                <>
-                  <Download className="w-4 h-4 mr-2" />
-                  Exportar Excel
-                </>
-              )}
-            </Button>
+            {user?.role === "admin" && (
+              <Button 
+                onClick={handleExportExcel} 
+                disabled={isExporting || !quotes || quotes.length === 0}
+                className="bg-green-600 hover:bg-green-700"
+                title="Apenas administradores podem exportar leads"
+              >
+                {isExporting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    A exportar...
+                  </>
+                ) : (
+                  <>
+                    <Download className="w-4 h-4 mr-2" />
+                    Exportar Excel
+                  </>
+                )}
+              </Button>
+            )}
             <Button asChild variant="outline">
               <a href="/">← Voltar ao Site</a>
             </Button>
