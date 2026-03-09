@@ -19,12 +19,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import { Search, Mail, Phone, MapPin, Calendar, TrendingUp, Users, CheckCircle2, Archive } from "lucide-react";
+import { Search, Mail, Phone, MapPin, Calendar, TrendingUp, Users, CheckCircle2, Archive, Download, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 export default function Dashboard() {
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState<string>("all");
+  const [isExporting, setIsExporting] = useState(false);
 
   const { data: quotes, isLoading, refetch } = trpc.quotes.list.useQuery();
   const updateStatusMutation = trpc.quotes.updateStatus.useMutation({
@@ -90,6 +91,31 @@ export default function Dashboard() {
     });
   };
 
+  const handleExportExcel = async () => {
+    try {
+      setIsExporting(true);
+      const response = await fetch("/api/export/leads");
+      if (!response.ok) {
+        throw new Error("Erro ao exportar leads");
+      }
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `leads_bluemagnitude_${new Date().toISOString().slice(0, 10)}.xlsx`;
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+      toast.success("Leads exportados com sucesso!");
+    } catch (error) {
+      toast.error("Erro ao exportar leads");
+      console.error("Export error:", error);
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6">
       <div className="max-w-7xl mx-auto space-y-6">
@@ -99,9 +125,28 @@ export default function Dashboard() {
             <h1 className="text-3xl font-bold text-slate-900">Dashboard de Leads</h1>
             <p className="text-slate-600 mt-1">Gerir pedidos de orçamento</p>
           </div>
-          <Button asChild variant="outline">
-            <a href="/">← Voltar ao Site</a>
-          </Button>
+          <div className="flex gap-3">
+            <Button 
+              onClick={handleExportExcel} 
+              disabled={isExporting || !quotes || quotes.length === 0}
+              className="bg-green-600 hover:bg-green-700"
+            >
+              {isExporting ? (
+                <>
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  A exportar...
+                </>
+              ) : (
+                <>
+                  <Download className="w-4 h-4 mr-2" />
+                  Exportar Excel
+                </>
+              )}
+            </Button>
+            <Button asChild variant="outline">
+              <a href="/">← Voltar ao Site</a>
+            </Button>
+          </div>
         </div>
 
         {/* Stats Cards */}

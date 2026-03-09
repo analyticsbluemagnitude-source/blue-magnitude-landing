@@ -317,3 +317,9 @@
 - [x] Atualizar RESEND_API_KEY para nova conta (leads@bluemagnitude.pt)
 - [x] Alterar email de destino para leads@bluemagnitude.pt
 - [x] Testar envio de email
+
+## Exportação de Leads para Excel
+- [ ] Instalar biblioteca xlsx para geração de ficheiros Excel
+- [ ] Criar endpoint de exportação no backend
+- [ ] Adicionar botão "Exportar Excel" no dashboard
+- [ ] Testar download do ficheiro Excel com dados dos leads
