@@ -312,3 +312,8 @@
 - [x] Verificar salvamento na base de dados
 - [x] Verificar envio de email
 - [x] Validar todos os componentes funcionais
+
+## Atualização Email Resend para leads@bluemagnitude.pt
+- [x] Atualizar RESEND_API_KEY para nova conta (leads@bluemagnitude.pt)
+- [x] Alterar email de destino para leads@bluemagnitude.pt
+- [x] Testar envio de email
