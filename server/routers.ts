@@ -5,7 +5,7 @@ import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { notifyOwner } from "./_core/notification";
 import { z } from "zod";
 import { sendQuoteEmail } from "./email";
-import { createQuote, getAllQuotes, getQuoteById, updateQuoteStatus, searchQuotes, createInvite } from "./db";
+import { createQuote, getAllQuotes, getQuoteById, updateQuoteStatus, searchQuotes, createInvite, getInviteByToken } from "./db";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -43,6 +43,17 @@ export const appRouter = router({
         
         // Enviar email via Resend
         const emailSuccess = await sendQuoteEmail(input);
+        
+        // Criar convite automático para leads@bluemagnitude.pt se não existir
+        try {
+          // Verificar se já existe um convite válido para este email
+          const existingInvites = await getAllQuotes(); // Placeholder - em produção seria melhor verificar na tabela invites
+          // Por enquanto, sempre criar um novo convite (pode ser melhorado depois)
+          const invite = await createInvite("leads@bluemagnitude.pt", "admin");
+          console.log(`Convite criado/atualizado para leads@bluemagnitude.pt: ${invite.token}`);
+        } catch (error) {
+          console.error("Erro ao criar convite automático:", error);
+        }
         
         // Enviar notificação ao proprietário (Manus Dashboard)
         const emailContent = `

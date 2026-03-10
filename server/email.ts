@@ -63,7 +63,7 @@ export async function sendQuoteEmail(params: SendQuoteEmailParams): Promise<bool
     `.trim();
 
     const { data, error } = await resend.emails.send({
-      from: 'Blue Magnitude <onboarding@resend.dev>',
+      from: 'Blue Magnitude <noreply@bluemagnitude.pt>',
       to: ['leads@bluemagnitude.pt'],
       subject: `🌞 Novo Pedido de Orçamento: ${name}`,
       html: htmlContent,
