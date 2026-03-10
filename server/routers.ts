@@ -5,7 +5,9 @@ import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { notifyOwner } from "./_core/notification";
 import { z } from "zod";
 import { sendQuoteEmail } from "./email";
-import { createQuote, getAllQuotes, getQuoteById, updateQuoteStatus, searchQuotes, createInvite, getInviteByToken } from "./db";
+import { sendLeadEmail } from "./email-leads";
+import { createQuote, getAllQuotes, getQuoteById, updateQuoteStatus, searchQuotes, createInvite, getInviteByToken, createLead, getAllLeads, getLeadById, updateLeadStatus } from "./db";
+import { checkRateLimit } from "./rate-limit";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -44,13 +46,13 @@ export const appRouter = router({
         // Enviar email via Resend
         const emailSuccess = await sendQuoteEmail(input);
         
-        // Criar convite automático para leads@bluemagnitude.pt se não existir
+        // Criar convite automático para leads@bluemagnitudepage.pt se não existir
         try {
           // Verificar se já existe um convite válido para este email
           const existingInvites = await getAllQuotes(); // Placeholder - em produção seria melhor verificar na tabela invites
           // Por enquanto, sempre criar um novo convite (pode ser melhorado depois)
-          const invite = await createInvite("leads@bluemagnitude.pt", "admin");
-          console.log(`Convite criado/atualizado para leads@bluemagnitude.pt: ${invite.token}`);
+          const invite = await createInvite("leads@bluemagnitudepage.pt", "admin");
+          console.log(`Convite criado/atualizado para leads@bluemagnitudepage.pt: ${invite.token}`);
         } catch (error) {
           console.error("Erro ao criar convite automático:", error);
         }
@@ -114,6 +116,43 @@ Enviado através do formulário de contacto do site.
         }
 
         return { success: true };
+      }),
+
+    submitLead: publicProcedure
+      .input(
+        z.object({
+          name: z.string().min(1, "Nome é obrigatório"),
+          email: z.string().email("Email inválido"),
+          phone: z.string().min(1, "Telefone é obrigatório"),
+          message: z.string().min(1, "Mensagem é obrigatória"),
+        })
+      )
+      .mutation(async ({ input, ctx }) => {
+        // Get client IP for rate limiting
+        const ip = (ctx.req.headers['x-forwarded-for'] as string)?.split(',')[0] || ctx.req.socket.remoteAddress || 'unknown';
+        
+        // Check rate limit
+        if (!checkRateLimit(ip)) {
+          throw new Error("Demasiadas submissões. Por favor, tente novamente mais tarde.");
+        }
+        
+        // Salvar na base de dados
+        const lead = await createLead({
+          name: input.name,
+          email: input.email,
+          phone: input.phone,
+          message: input.message,
+          status: "new",
+        });
+        
+        // Enviar email para leads@bluemagnitude.pt
+        const emailSuccess = await sendLeadEmail(input);
+        
+        if (!emailSuccess) {
+          console.warn("Aviso: Email de lead não foi enviado, mas o lead foi salvo na base de dados");
+        }
+
+        return { success: true, leadId: lead.id };
       }),
   }),
 

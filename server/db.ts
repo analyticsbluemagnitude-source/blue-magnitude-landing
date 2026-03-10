@@ -227,3 +227,48 @@ export async function acceptInvite(token: string): Promise<void> {
 
   await db.update(invites).set({ acceptedAt: new Date() }).where(eq(invites.token, token));
 }
+
+// Leads (Landing Page Contact Form)
+
+import { leads, InsertLead, Lead } from "../drizzle/schema";
+
+export async function createLead(lead: InsertLead): Promise<Lead> {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  const result = await db.insert(leads).values(lead);
+  const insertedId = Number(result[0].insertId);
+  
+  const inserted = await db.select().from(leads).where(eq(leads.id, insertedId)).limit(1);
+  return inserted[0];
+}
+
+export async function getAllLeads(): Promise<Lead[]> {
+  const db = await getDb();
+  if (!db) {
+    return [];
+  }
+
+  return await db.select().from(leads).orderBy(desc(leads.createdAt));
+}
+
+export async function getLeadById(id: number): Promise<Lead | undefined> {
+  const db = await getDb();
+  if (!db) {
+    return undefined;
+  }
+
+  const result = await db.select().from(leads).where(eq(leads.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function updateLeadStatus(id: number, status: Lead["status"]): Promise<void> {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  await db.update(leads).set({ status }).where(eq(leads.id, id));
+}

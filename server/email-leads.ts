@@ -2,16 +2,17 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-interface SendQuoteEmailParams {
+interface SendLeadEmailParams {
   name: string;
   email: string;
   phone: string;
-  city: string;
+  message: string;
 }
 
-export async function sendQuoteEmail(params: SendQuoteEmailParams): Promise<boolean> {
+export async function sendLeadEmail(params: SendLeadEmailParams): Promise<boolean> {
   try {
-    const { name, email, phone, city } = params;
+    const { name, email, phone, message } = params;
+    const timestamp = new Date().toLocaleString('pt-PT', { timeZone: 'Europe/Lisbon' });
 
     const htmlContent = `
 <!DOCTYPE html>
@@ -26,13 +27,14 @@ export async function sendQuoteEmail(params: SendQuoteEmailParams): Promise<bool
     .field { margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #6cca7d; }
     .label { font-weight: bold; color: #243fad; margin-bottom: 5px; }
     .value { color: #333; font-size: 16px; }
+    .message-box { background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #3ac6ff; margin-top: 20px; }
     .footer { text-align: center; margin-top: 20px; color: #666; font-size: 12px; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1 style="margin: 0;">🌞 Novo Pedido de Orçamento</h1>
+      <h1 style="margin: 0;">📧 Novo Lead - Landing Page</h1>
       <p style="margin: 10px 0 0 0;">Blue Magnitude - Energia Solar</p>
     </div>
     <div class="content">
@@ -48,13 +50,13 @@ export async function sendQuoteEmail(params: SendQuoteEmailParams): Promise<bool
         <div class="label">📱 Telefone:</div>
         <div class="value"><a href="tel:${phone}">${phone}</a></div>
       </div>
-      <div class="field">
-        <div class="label">📍 Localidade:</div>
-        <div class="value">${city}</div>
+      <div class="message-box">
+        <div class="label">💬 Mensagem:</div>
+        <div class="value" style="margin-top: 10px; white-space: pre-wrap;">${message}</div>
       </div>
       <div class="footer">
-        <p>Enviado através do formulário de orçamento do site Blue Magnitude</p>
-        <p>${new Date().toLocaleString('pt-PT', { timeZone: 'Europe/Lisbon' })}</p>
+        <p>Enviado através do formulário de contacto da landing page</p>
+        <p>Data: ${timestamp}</p>
       </div>
     </div>
   </div>
@@ -64,20 +66,20 @@ export async function sendQuoteEmail(params: SendQuoteEmailParams): Promise<bool
 
     const { data, error } = await resend.emails.send({
       from: 'Blue Magnitude <noreply@bluemagnitudepage.pt>',
-      to: ['leads@bluemagnitudepage.pt'],
-      subject: `🌞 Novo Pedido de Orçamento: ${name}`,
+      to: ['leads@bluemagnitude.pt'],
+      subject: `Novo Lead - Blue Magnitude Landing Page`,
       html: htmlContent,
     });
 
     if (error) {
-      console.error('Erro ao enviar email:', error);
+      console.error('Erro ao enviar email de lead:', error);
       return false;
     }
 
-    console.log('Email enviado com sucesso:', data);
+    console.log('Email de lead enviado com sucesso:', data);
     return true;
   } catch (error) {
-    console.error('Erro ao enviar email:', error);
+    console.error('Erro ao enviar email de lead:', error);
     return false;
   }
 }

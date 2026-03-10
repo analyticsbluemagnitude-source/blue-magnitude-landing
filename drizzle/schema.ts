@@ -58,3 +58,19 @@ export const invites = mysqlTable("invites", {
 
 export type Invite = typeof invites.$inferSelect;
 export type InsertInvite = typeof invites.$inferInsert;
+/**
+ * Leads table - stores leads from the landing page contact form
+ */
+export const leads = mysqlTable("leads", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 255 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  phone: varchar("phone", { length: 50 }).notNull(),
+  message: text("message").notNull(),
+  status: mysqlEnum("status", ["new", "contacted", "converted", "archived"]).default("new").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Lead = typeof leads.$inferSelect;
+export type InsertLead = typeof leads.$inferInsert;
