@@ -42,3 +42,19 @@ export const quotes = mysqlTable("quotes", {
 
 export type Quote = typeof quotes.$inferSelect;
 export type InsertQuote = typeof quotes.$inferInsert;
+
+/**
+ * Invites table - stores invitation tokens for collaborators
+ */
+export const invites = mysqlTable("invites", {
+  id: int("id").autoincrement().primaryKey(),
+  email: varchar("email", { length: 320 }).notNull().unique(),
+  token: varchar("token", { length: 255 }).notNull().unique(),
+  role: mysqlEnum("role", ["user", "admin"]).default("user").notNull(),
+  expiresAt: timestamp("expiresAt").notNull(),
+  acceptedAt: timestamp("acceptedAt"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type Invite = typeof invites.$inferSelect;
+export type InsertInvite = typeof invites.$inferInsert;

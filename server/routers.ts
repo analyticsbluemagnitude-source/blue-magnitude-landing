@@ -5,7 +5,7 @@ import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { notifyOwner } from "./_core/notification";
 import { z } from "zod";
 import { sendQuoteEmail } from "./email";
-import { createQuote, getAllQuotes, getQuoteById, updateQuoteStatus, searchQuotes } from "./db";
+import { createQuote, getAllQuotes, getQuoteById, updateQuoteStatus, searchQuotes, createInvite } from "./db";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -103,6 +103,29 @@ Enviado através do formulário de contacto do site.
         }
 
         return { success: true };
+      }),
+  }),
+
+  invites: router({
+    create: protectedProcedure
+      .input(
+        z.object({
+          email: z.string().email("Email inválido"),
+          role: z.enum(["user", "admin"]).default("admin"),
+        })
+      )
+      .mutation(async ({ input, ctx }) => {
+        // Only admins can create invites
+        if (ctx.user?.role !== "admin") {
+          throw new Error("Apenas administradores podem criar convites");
+        }
+
+        const invite = await createInvite(input.email, input.role);
+        return {
+          success: true,
+          inviteUrl: `${process.env.VITE_FRONTEND_URL || "http://localhost:3000"}/accept-invite/${invite.token}`,
+          email: invite.email,
+        };
       }),
   }),
 

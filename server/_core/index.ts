@@ -8,7 +8,7 @@ import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 import * as XLSX from "xlsx";
-import { getAllQuotes } from "../db";
+import { getAllQuotes, getInviteByToken, acceptInvite } from "../db";
 import { sdk } from "./sdk";
 
 function isPortAvailable(port: number): Promise<boolean> {
@@ -101,6 +101,50 @@ async function startServer() {
       res.status(500).json({ error: "Erro ao exportar leads" });
     }
   });
+
+  // Verify invite token
+  app.get("/api/verify-invite/:token", async (req, res) => {
+    try {
+      const { token } = req.params;
+      const invite = await getInviteByToken(token);
+      
+      if (!invite) {
+        return res.status(404).json({ error: "Convite inválido ou expirado" });
+      }
+
+      res.json({
+        email: invite.email,
+        role: invite.role,
+      });
+    } catch (error) {
+      console.error("Erro ao verificar convite:", error);
+      res.status(500).json({ error: "Erro ao verificar convite" });
+    }
+  });
+
+  // Accept invite
+  app.post("/api/accept-invite/:token", async (req, res) => {
+    try {
+      const { token } = req.params;
+      const invite = await getInviteByToken(token);
+      
+      if (!invite) {
+        return res.status(404).json({ error: "Convite inválido ou expirado" });
+      }
+
+      // Mark invite as accepted
+      await acceptInvite(token);
+
+      res.json({
+        success: true,
+        message: "Convite aceite com sucesso",
+      });
+    } catch (error) {
+      console.error("Erro ao aceitar convite:", error);
+      res.status(500).json({ error: "Erro ao aceitar convite" });
+    }
+  });
+
   // tRPC API
   app.use(
     "/api/trpc",

@@ -157,3 +157,73 @@ export async function searchQuotes(searchTerm: string): Promise<Quote[]> {
     )
     .orderBy(desc(quotes.createdAt));
 }
+
+// Invites (Collaborator Invitations)
+
+import { invites, InsertInvite, Invite } from "../drizzle/schema";
+import { and } from "drizzle-orm";
+
+export async function createInvite(email: string, role: "user" | "admin" = "admin"): Promise<Invite> {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  // Generate a random token
+  const token = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  
+  // Set expiration to 30 days from now
+  const expiresAt = new Date();
+  expiresAt.setDate(expiresAt.getDate() + 30);
+
+  const invite: InsertInvite = {
+    email,
+    token,
+    role,
+    expiresAt,
+  };
+
+  const result = await db.insert(invites).values(invite);
+  const insertedId = Number(result[0].insertId);
+  
+  const inserted = await db.select().from(invites).where(eq(invites.id, insertedId)).limit(1);
+  return inserted[0];
+}
+
+export async function getInviteByToken(token: string): Promise<Invite | undefined> {
+  const db = await getDb();
+  if (!db) {
+    return undefined;
+  }
+
+  const result = await db
+    .select()
+    .from(invites)
+    .where(eq(invites.token, token))
+    .limit(1);
+
+  if (result.length === 0) return undefined;
+  
+  const invite = result[0];
+  
+  // Check if expired
+  if (invite.expiresAt < new Date()) {
+    return undefined;
+  }
+  
+  // Check if already accepted
+  if (invite.acceptedAt !== null) {
+    return undefined;
+  }
+
+  return invite;
+}
+
+export async function acceptInvite(token: string): Promise<void> {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  await db.update(invites).set({ acceptedAt: new Date() }).where(eq(invites.token, token));
+}
