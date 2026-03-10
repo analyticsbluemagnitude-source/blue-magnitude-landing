@@ -1,0 +1,1 @@
+ALTER TABLE `leads` ADD `district` varchar(100) NOT NULL;

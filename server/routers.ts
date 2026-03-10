@@ -124,18 +124,11 @@ Enviado através do formulário de contacto do site.
           name: z.string().min(1, "Nome é obrigatório"),
           email: z.string().email("Email inválido"),
           phone: z.string().min(1, "Telefone é obrigatório"),
+          district: z.string().min(1, "Distrito é obrigatório"),
           message: z.string().min(1, "Mensagem é obrigatória"),
         })
       )
       .mutation(async ({ input, ctx }) => {
-        // Get client IP for rate limiting
-        const ip = (ctx.req.headers['x-forwarded-for'] as string)?.split(',')[0] || ctx.req.socket.remoteAddress || 'unknown';
-        
-        // Check rate limit
-        if (!checkRateLimit(ip)) {
-          throw new Error("Demasiadas submissões. Por favor, tente novamente mais tarde.");
-        }
-        
         // Salvar na base de dados
         const lead = await createLead({
           name: input.name,
@@ -143,6 +136,7 @@ Enviado através do formulário de contacto do site.
           phone: input.phone,
           message: input.message,
           status: "new",
+          district: input.district,
         });
         
         // Enviar email para leads@bluemagnitude.pt

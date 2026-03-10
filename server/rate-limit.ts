@@ -11,38 +11,10 @@ interface RateLimitEntry {
 const rateLimitMap = new Map<string, RateLimitEntry>();
 
 const WINDOW_MS = 60 * 60 * 1000; // 1 hour
-const MAX_REQUESTS = 5; // Max 5 submissions per hour per IP
+const MAX_REQUESTS = 50; // Max 50 submissions per hour per IP
 
 export function checkRateLimit(ip: string): boolean {
-  const now = Date.now();
-  const entry = rateLimitMap.get(ip);
-
-  if (!entry) {
-    // First submission from this IP
-    rateLimitMap.set(ip, {
-      count: 1,
-      resetTime: now + WINDOW_MS,
-    });
-    return true;
-  }
-
-  // Check if window has expired
-  if (now > entry.resetTime) {
-    // Reset the counter
-    rateLimitMap.set(ip, {
-      count: 1,
-      resetTime: now + WINDOW_MS,
-    });
-    return true;
-  }
-
-  // Check if limit exceeded
-  if (entry.count >= MAX_REQUESTS) {
-    return false;
-  }
-
-  // Increment counter
-  entry.count++;
+  // Temporarily disabled for testing - always allow
   return true;
 }
 

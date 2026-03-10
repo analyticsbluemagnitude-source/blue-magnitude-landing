@@ -7,12 +7,41 @@ import { Card } from "@/components/ui/card";
 import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+const DISTRITOS_PORTUGAL = [
+  "Aveiro",
+  "Beja",
+  "Braga",
+  "Bragança",
+  "Castelo Branco",
+  "Coimbra",
+  "Évora",
+  "Faro",
+  "Guarda",
+  "Leiria",
+  "Lisboa",
+  "Portalegre",
+  "Porto",
+  "Santarém",
+  "Setúbal",
+  "Viana do Castelo",
+  "Vila Real",
+  "Viseu",
+];
 
 export default function LeadForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    district: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -23,6 +52,13 @@ export default function LeadForm() {
     setFormData(prev => ({
       ...prev,
       [name]: value,
+    }));
+  };
+
+  const handleDistrictChange = (value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      district: value,
     }));
   };
 
@@ -42,18 +78,26 @@ export default function LeadForm() {
       toast.error("Por favor, preencha o telefone");
       return;
     }
+    if (!formData.district.trim()) {
+      toast.error("Por favor, selecione um distrito");
+      return;
+    }
     if (!formData.message.trim()) {
       toast.error("Por favor, preencha a mensagem");
       return;
     }
 
     try {
-      await submitLeadMutation.mutateAsync(formData);
+      console.log("[LeadForm] Iniciando submissão com dados:", formData);
+      const result = await submitLeadMutation.mutateAsync(formData);
+      console.log("[LeadForm] Submissão bem-sucedida:", result);
+      toast.success("Obrigado pelo seu contacto. A nossa equipa irá responder brevemente.");
       setSubmitted(true);
       setFormData({
         name: "",
         email: "",
         phone: "",
+        district: "",
         message: "",
       });
 
@@ -62,6 +106,7 @@ export default function LeadForm() {
         setSubmitted(false);
       }, 5000);
     } catch (error: any) {
+      console.error("[LeadForm] Erro na submissão:", error);
       const errorMessage = error?.message || "Erro ao enviar formulário";
       toast.error(errorMessage);
     }
@@ -134,6 +179,22 @@ export default function LeadForm() {
               placeholder="912345678"
               required
             />
+          </div>
+
+          <div>
+            <Label htmlFor="district">Distrito *</Label>
+            <Select value={formData.district} onValueChange={handleDistrictChange}>
+              <SelectTrigger id="district">
+                <SelectValue placeholder="Selecione um distrito" />
+              </SelectTrigger>
+              <SelectContent>
+                {DISTRITOS_PORTUGAL.map((distrito) => (
+                  <SelectItem key={distrito} value={distrito}>
+                    {distrito}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
 
           <div>

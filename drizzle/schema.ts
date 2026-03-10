@@ -66,6 +66,7 @@ export const leads = mysqlTable("leads", {
   name: varchar("name", { length: 255 }).notNull(),
   email: varchar("email", { length: 320 }).notNull(),
   phone: varchar("phone", { length: 50 }).notNull(),
+  district: varchar("district", { length: 100 }).notNull(),
   message: text("message").notNull(),
   status: mysqlEnum("status", ["new", "contacted", "converted", "archived"]).default("new").notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
