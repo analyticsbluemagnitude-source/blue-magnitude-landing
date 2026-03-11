@@ -7,7 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import AcceptInvite from "./pages/AcceptInvite";
-import LeadForm from "./pages/LeadForm";
+import ContactForm from "./pages/ContactForm";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -16,7 +16,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/dashboard"} component={Dashboard} />
       <Route path={"/accept-invite/:token"} component={AcceptInvite} />
-      <Route path={"/contacto"} component={LeadForm} />
+      <Route path={"/contacto"} component={ContactForm} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

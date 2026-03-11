@@ -323,3 +323,12 @@
 - [ ] Criar endpoint de exportação no backend
 - [ ] Adicionar botão "Exportar Excel" no dashboard
 - [ ] Testar download do ficheiro Excel com dados dos leads
+
+## Corrigir Dropdown de Distritos
+- [ ] Corrigir dropdown de distritos para funcionar no Preview do Manus
+- [ ] Usar select HTML nativo em vez de Radix UI Select
+
+- [ ] Corrigir dropdown de distritos no formulário de contacto (não aparece no site publicado)
+- [ ] Remover ficheiro LeadForm.tsx antigo para evitar confusão
+- [ ] Garantir que ContactForm.tsx é o único ficheiro de formulário
+- [ ] Fazer nova publicação após correção

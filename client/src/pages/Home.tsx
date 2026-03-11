@@ -1343,7 +1343,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="space-y-1">
-                    <Label className="text-sm" htmlFor="city">Localidade *</Label>
+                    <Label className="text-sm" htmlFor="city">Distrito*</Label>
                     <Input 
                       id="city"
                       value={formData.city}
