@@ -6,12 +6,13 @@ interface SendLeadEmailParams {
   name: string;
   email: string;
   phone: string;
+  district: string;
   message: string;
 }
 
 export async function sendLeadEmail(params: SendLeadEmailParams): Promise<boolean> {
   try {
-    const { name, email, phone, message } = params;
+    const { name, email, phone, district, message } = params;
     const timestamp = new Date().toLocaleString('pt-PT', { timeZone: 'Europe/Lisbon' });
 
     const htmlContent = `
@@ -49,6 +50,10 @@ export async function sendLeadEmail(params: SendLeadEmailParams): Promise<boolea
       <div class="field">
         <div class="label">📱 Telefone:</div>
         <div class="value"><a href="tel:${phone}">${phone}</a></div>
+      </div>
+      <div class="field">
+        <div class="label">📍 Distrito:</div>
+        <div class="value">${district}</div>
       </div>
       <div class="message-box">
         <div class="label">💬 Mensagem:</div>

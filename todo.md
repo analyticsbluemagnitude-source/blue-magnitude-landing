@@ -331,4 +331,10 @@
 - [ ] Corrigir dropdown de distritos no formulário de contacto (não aparece no site publicado)
 - [ ] Remover ficheiro LeadForm.tsx antigo para evitar confusão
 - [ ] Garantir que ContactForm.tsx é o único ficheiro de formulário
-- [ ] Fazer nova publicação após correção
+- [x] Fazer nova publicação após correção
+
+## Email com Campo de Distrito
+- [x] Adicionar campo de distrito ao email enviado para leads@bluemagnitude.pt
+
+## Google Tag Manager (GTM)
+- [x] Adicionar Google Tag Manager (GTM-N5V2WRN9) ao ficheiro index.html
