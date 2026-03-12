@@ -636,6 +636,81 @@ export default function Home() {
         </button>
       </Carousel>
 
+      {/* Quick Quote Form Section - Logo após hero */}
+      <section className="py-8 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <Card className="p-3 lg:p-4 bg-white/95 backdrop-blur text-foreground">
+              <div className="text-center mb-2 space-y-0.5">
+                <h2 className="text-lg lg:text-xl font-bold">
+                  Receba um Orçamento Gratuito em 2 Minutos
+                </h2>
+                <p className="text-xs text-muted-foreground">
+                  Preencha o formulário abaixo e receba uma proposta personalizada imediatamente.
+                </p>
+              </div>
+              <form onSubmit={handleSubmit} className="space-y-2">
+                <div className="grid md:grid-cols-2 gap-2.5">
+                  <div className="space-y-1">
+                    <Label className="text-sm" htmlFor="name-hero">Nome e Apelido *</Label>
+                    <Input 
+                      id="name-hero"
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      required
+                      placeholder="Nome e apelido completo"
+                      className="h-9 text-sm"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <Label className="text-sm" htmlFor="email-hero">E-mail *</Label>
+                    <Input 
+                      id="email-hero"
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      required
+                      placeholder="o-seu@email.pt"
+                      className="h-9 text-sm"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <Label className="text-sm" htmlFor="phone-hero">Telefone/WhatsApp *</Label>
+                    <Input 
+                      id="phone-hero"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      required
+                      placeholder="+351 938 719 773"
+                      className="h-9 text-sm"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <Label className="text-sm" htmlFor="city-hero">Distrito*</Label>
+                    <Input 
+                      id="city-hero"
+                      value={formData.city}
+                      onChange={(e) => setFormData({...formData, city: e.target.value})}
+                      required
+                      placeholder="Cidade ou vila"
+                      className="h-9 text-sm"
+                    />
+                  </div>
+                </div>
+                <Button type="submit" className="w-full h-9 text-sm font-semibold bg-gradient-to-r from-[#243fad] to-[#3ac6ff] hover:from-[#1a2d7f] hover:to-[#2a9fd4] text-white flex items-center justify-center gap-2 px-6">
+                  <span>Receber Orçamento Gratuito</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+                <p className="text-xs text-center text-muted-foreground">
+                  Ao enviar, concorda em receber contacto da Blue Magnitude sobre a sua solicitação.
+                </p>
+              </form>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="servicos" className="py-6 bg-gradient-to-br from-[#243fad]/5 to-[#3ac6ff]/5">
         <div className="container">

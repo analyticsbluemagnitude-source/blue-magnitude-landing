@@ -338,3 +338,9 @@
 
 ## Google Tag Manager (GTM)
 - [x] Adicionar Google Tag Manager (GTM-N5V2WRN9) ao ficheiro index.html
+
+## Segundo Formulário de Orçamento
+- [x] Adicionar segundo formulário logo abaixo da secção hero
+- [x] Componente reutilizável para formulário de orçamento
+- [x] Testar envio de dados do novo formulário
+- [ ] Publicar nova versão
