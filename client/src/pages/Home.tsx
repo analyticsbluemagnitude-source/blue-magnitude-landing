@@ -530,26 +530,7 @@ export default function Home() {
                   <p className="text-base lg:text-lg leading-relaxed slide-description">
                     Na Blue Magnitude, criamos soluções de energia solar feitas à medida para o teu negócio. Reduz a tua fatura de eletricidade e junta-te às inúmeras empresas que já se conectaram ao sol com as nossas soluções sustentáveis.
                   </p>
-                  <div className="slide-button">
-                    <Button asChild size="lg" className="energy-glow text-white text-base h-12 px-6">
-                      <a 
-                        href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20pedir%20uma%20proposta%20para%20energia%20solar." 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        onClick={() => {
-                          if (typeof window !== 'undefined' && window.gtag) {
-                            window.gtag('event', 'click', {
-                              event_category: 'engagement',
-                              event_label: 'whatsapp_hero_slide',
-                              value: 1
-                            });
-                          }
-                        }}
-                      >
-                        Pedir Proposta
-                      </a>
-                    </Button>
-                  </div>
+
                 </div>
               </div>
             </section>
@@ -577,26 +558,7 @@ export default function Home() {
                   <p className="text-base lg:text-lg leading-relaxed slide-description">
                     Descobre as nossas soluções completas para autoconsumo com painéis solares fotovoltaicos. Reduz a tua conta de eletricidade até 80%. Vamos começar o teu projeto?
                   </p>
-                  <div className="slide-button">
-                    <Button asChild size="lg" className="energy-glow text-white text-base h-12 px-6">
-                      <a 
-                        href="https://wa.me/351938719773?text=Olá!%20Gostaria%20de%20pedir%20uma%20proposta%20para%20energia%20solar." 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        onClick={() => {
-                          if (typeof window !== 'undefined' && window.gtag) {
-                            window.gtag('event', 'click', {
-                              event_category: 'engagement',
-                              event_label: 'whatsapp_hero_slide',
-                              value: 1
-                            });
-                          }
-                        }}
-                      >
-                        Pedir Proposta
-                      </a>
-                    </Button>
-                  </div>
+
                 </div>
               </div>
             </section>
@@ -637,7 +599,7 @@ export default function Home() {
       </Carousel>
 
       {/* Quick Quote Form Section - Logo após hero */}
-      <section className="py-8 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white">
+      <section className="py-4 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <Card className="p-3 lg:p-4 bg-white/95 backdrop-blur text-foreground">

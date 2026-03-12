@@ -344,3 +344,7 @@
 - [x] Componente reutilizável para formulário de orçamento
 - [x] Testar envio de dados do novo formulário
 - [ ] Publicar nova versão
+
+## Ajustes de Layout
+- [x] Remover botão "Pedir Proposta" do carousel hero
+- [x] Mover formulário de orçamento mais para cima (reduzir padding)
