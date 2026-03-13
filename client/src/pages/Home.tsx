@@ -55,11 +55,117 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { toast } from "sonner";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { trpc } from "@/lib/trpc";
 import { FormSuccessDialog } from "@/components/FormSuccessDialog";
+import { Check } from "lucide-react";
+
+const DISTRITOS_PORTUGAL = [
+  "Aveiro",
+  "Beja",
+  "Braga",
+  "Bragança",
+  "Castelo Branco",
+  "Coimbra",
+  "Évora",
+  "Faro",
+  "Guarda",
+  "Leiria",
+  "Lisboa",
+  "Portalegre",
+  "Porto",
+  "Santarém",
+  "Setúbal",
+  "Viana do Castelo",
+  "Vila Real",
+  "Viseu",
+];
+
+function DistrictDropdown({
+  value,
+  onChange,
+}: {
+  value: string;
+  onChange: (val: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Close on Escape
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") setOpen(false);
+    }
+    if (open) {
+      document.addEventListener("keydown", handleKeyDown);
+      return () => document.removeEventListener("keydown", handleKeyDown);
+    }
+  }, [open]);
+
+  return (
+    <div ref={dropdownRef} className="relative" data-testid="district-dropdown">
+      {/* Trigger button */}
+      <div
+        onClick={() => setOpen(!open)}
+        className="flex h-9 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs cursor-pointer transition-colors hover:bg-accent/50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:text-sm"
+        tabIndex={0}
+        role="button"
+        aria-haspopup="listbox"
+        aria-expanded={open}
+      >
+        <span className={value ? "text-foreground" : "text-muted-foreground"}>
+          {value || "Selecione um distrito"}
+        </span>
+        <ChevronDown
+          className={`h-4 w-4 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
+        />
+      </div>
+
+      {/* Dropdown list */}
+      {open && (
+        <div className="absolute z-50 mt-1 w-full max-h-60 overflow-auto rounded-md border border-input bg-white shadow-lg animate-in fade-in-0 zoom-in-95">
+          {DISTRITOS_PORTUGAL.map((distrito) => (
+            <div
+              key={distrito}
+              onClick={() => {
+                onChange(distrito);
+                setOpen(false);
+              }}
+              className={`flex items-center justify-between px-3 py-2 text-sm cursor-pointer transition-colors hover:bg-blue-50 hover:text-blue-700 ${
+                value === distrito
+                  ? "bg-blue-50 text-blue-700 font-medium"
+                  : "text-slate-700"
+              }`}
+              role="option"
+              aria-selected={value === distrito}
+            >
+              {distrito}
+              {value === distrito && (
+                <Check className="h-4 w-4 text-blue-600" />
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Home() {
   // The userAuth hooks provides authentication state
@@ -650,13 +756,9 @@ export default function Home() {
                   </div>
                   <div className="space-y-1">
                     <Label className="text-sm" htmlFor="city-hero">Distrito*</Label>
-                    <Input 
-                      id="city-hero"
+                    <DistrictDropdown
                       value={formData.city}
-                      onChange={(e) => setFormData({...formData, city: e.target.value})}
-                      required
-                      placeholder="Cidade ou vila"
-                      className="h-9 text-sm"
+                      onChange={(val) => setFormData({...formData, city: val})}
                     />
                   </div>
                 </div>

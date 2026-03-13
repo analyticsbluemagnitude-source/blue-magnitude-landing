@@ -348,3 +348,8 @@
 ## Ajustes de Layout
 - [x] Remover botão "Pedir Proposta" do carousel hero
 - [x] Mover formulário de orçamento mais para cima (reduzir padding)
+
+## Dropdown de Distritos no Formulário Rápido
+- [x] Implementar dropdown de distritos no formulário de orçamento rápido
+- [x] Testar funcionalidade do dropdown
+- [ ] Publicar nova versão
