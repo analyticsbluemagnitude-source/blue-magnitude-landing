@@ -51,8 +51,17 @@ export const appRouter = router({
           // Verificar se já existe um convite válido para este email
           const existingInvites = await getAllQuotes(); // Placeholder - em produção seria melhor verificar na tabela invites
           // Por enquanto, sempre criar um novo convite (pode ser melhorado depois)
-          const invite = await createInvite("leads@bluemagnitudepage.pt", "admin");
-          console.log(`Convite criado/atualizado para leads@bluemagnitudepage.pt: ${invite.token}`);
+          try {
+            const invite = await createInvite("leads@bluemagnitudepage.pt", "admin");
+            console.log(`Convite criado/atualizado para leads@bluemagnitudepage.pt: ${invite.token}`);
+          } catch (inviteError: any) {
+            // Ignorar erro de duplicate entry - o convite já existe
+            if (inviteError?.message?.includes("Duplicate")) {
+              console.log("Convite para leads@bluemagnitudepage.pt já existe");
+            } else {
+              throw inviteError;
+            }
+          }
         } catch (error) {
           console.error("Erro ao criar convite automático:", error);
         }

@@ -137,9 +137,9 @@
 - [x] Adicionar pausa ao hover em todos os carrosséis
 - [x] Testar transições automáticas
 
-- [ ] Adicionar CSS para efeito de fade nos carrosséis
-- [ ] Aplicar transição de opacidade suave
-- [ ] Testar fade em hero, testemunhos e projetos
+- [x] Adicionar CSS para efeito de fade nos carrosséis
+- [x] Aplicar transição de opacidade suave
+- [x] Testar fade em hero, testemunhos e projetos
 
 - [x] Transformar cards de serviços em ícones compactos
 - [x] Adicionar tooltips com explicações ao hover
@@ -173,15 +173,15 @@
 - [x] Ajustar altura dos testemunhos escritos para mesma proporção do vídeo
 - [x] Reduzir espaçamento entre testemunhos e FAQ
 
-- [ ] Reduzir altura do card do formulário de orçamento
-- [ ] Compactar espaçamentos internos do formulário
-- [ ] Verificar que não sobrepõe FAQ
+- [x] Reduzir altura do card do formulário de orçamento
+- [x] Compactar espaçamentos internos do formulário
+- [x] Verificar que não sobrepõe FAQ
 
 - [x] Adicionar efeitos glassmorphism nos cards
 - [x] Melhorar sombras e gradientes para visual sofisticado
 - [x] Adicionar animações sutis de hover e transição
-- [ ] Aplicar classes premium nos componentes principais
-- [ ] Testar visual premium em todos os cards e seções
+- [x] Aplicar classes premium nos componentes principais
+- [x] Testar visual premium em todos os cards e seções
 - [x] Mover seção "Solicite Seu Orçamento" para após FAQ (antes de Contacto)
 - [x] Aplicar classe .glass-card no card da calculadora
 - [x] Aplicar classe .glass-card no card do formulário de orçamento
@@ -223,10 +223,10 @@
 - [x] Ajustar backgroundSize dos slides do hero de 120%/130% para cover
 - [x] Ajustar backgroundPosition para center center para mostrar foto completa
 - [x] Garantir que todas as fotos de fundo apareçam completas sem cortes excessivos
-- [ ] Adicionar animação hover scale(1.02) nos cards de benefícios
-- [ ] Adicionar animação hover nos cards de serviços
-- [ ] Adicionar animação hover nos cards de projetos
-- [ ] Implementar transições suaves (200-300ms) e elevação de sombra
+- [x] Adicionar animação hover scale(1.02) nos cards de benefícios
+- [x] Adicionar animação hover nos cards de serviços
+- [x] Adicionar animação hover nos cards de projetos
+- [x] Implementar transições suaves (200-300ms) e elevação de sombra
 - [ ] Configurar botões Pedir Proposta/Solicitar Orçamento para abrir WhatsApp
 - [ ] Criar link WhatsApp com mensagem pré-definida (+351 938 719 773)
 - [x] Ajustar vídeo de depoimento para ocupar espaço de forma mais proeminente sem cortar conteúdo
@@ -353,3 +353,8 @@
 - [x] Implementar dropdown de distritos no formulário de orçamento rápido
 - [x] Testar funcionalidade do dropdown
 - [ ] Publicar nova versão
+
+## Bug: Formulário Rápido Não Envia Dados
+- [ ] Diagnosticar porque os dados do formulário rápido não chegam ao servidor
+- [ ] Corrigir o envio de dados
+- [ ] Testar o formulário completo
