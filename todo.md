@@ -358,3 +358,8 @@
 - [ ] Diagnosticar porque os dados do formulário rápido não chegam ao servidor
 - [ ] Corrigir o envio de dados
 - [ ] Testar o formulário completo
+
+## Alterar Email de Envio
+- [x] Mudar email de leads@bluemagnitudepage.pt para leads@bluemagnitude.pt
+- [x] Testar envio com novo email
+- [ ] Publicar nova versão
