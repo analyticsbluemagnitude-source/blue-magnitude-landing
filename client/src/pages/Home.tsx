@@ -709,14 +709,6 @@ export default function Home() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <Card className="p-3 lg:p-4 bg-white/95 backdrop-blur text-foreground">
-              <div className="text-center mb-2 space-y-0.5">
-                <h2 className="text-lg lg:text-xl font-bold">
-                  Receba um Orçamento Gratuito em 2 Minutos
-                </h2>
-                <p className="text-xs text-muted-foreground">
-                  Preencha o formulário abaixo e receba uma proposta personalizada imediatamente.
-                </p>
-              </div>
               <form onSubmit={handleSubmit} className="space-y-2">
                 <div className="grid md:grid-cols-2 gap-2.5">
                   <div className="space-y-1">

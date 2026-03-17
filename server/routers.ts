@@ -211,6 +211,57 @@ Enviado através do formulário de contacto do site.
       .query(async ({ input }) => {
         return await searchQuotes(input.term);
       }),
+
+    exportToExcel: protectedProcedure.query(async () => {
+      const quotes = await getAllQuotes();
+      return quotes.map(q => ({
+        ID: q.id,
+        Nome: q.name,
+        Email: q.email,
+        Telefone: q.phone,
+        Localidade: q.city,
+        Status: q.status,
+        Notas: q.notes || "",
+        "Data de Criacao": new Date(q.createdAt).toLocaleString('pt-PT'),
+      }));
+    }),
+  }),
+
+  leads: router({
+    list: protectedProcedure.query(async () => {
+      return await getAllLeads();
+    }),
+
+    getById: protectedProcedure
+      .input(z.object({ id: z.number() }))
+      .query(async ({ input }) => {
+        return await getLeadById(input.id);
+      }),
+
+    updateStatus: protectedProcedure
+      .input(
+        z.object({
+          id: z.number(),
+          status: z.enum(["new", "contacted", "converted", "archived"]),
+        })
+      )
+      .mutation(async ({ input }) => {
+        await updateLeadStatus(input.id, input.status);
+        return { success: true };
+      }),
+
+    exportToExcel: protectedProcedure.query(async () => {
+      const leads = await getAllLeads();
+      return leads.map(l => ({
+        ID: l.id,
+        Nome: l.name,
+        Email: l.email,
+        Telefone: l.phone,
+        Distrito: l.district,
+        Status: l.status,
+        "Data de Criacao": new Date(l.createdAt).toLocaleString('pt-PT'),
+      }));
+    }),
   }),
 });
 

@@ -363,3 +363,13 @@
 - [x] Mudar email de leads@bluemagnitudepage.pt para leads@bluemagnitude.pt
 - [x] Testar envio com novo email
 - [ ] Publicar nova versão
+
+## Ajustes de Formulários
+- [x] Remover texto "Receba um Orçamento Gratuito em 2 Minutos" do primeiro formulário
+- [x] Manter o segundo formulário (final da página) igual ao primeiro
+- [x] Testar ambos os formulários
+
+## Exportação em Excel
+- [x] Criar ferramenta de exportação em Excel para dados dos formulários
+- [x] Adicionar página de dashboard com botão de exportação
+- [x] Testar a exportação de dados
