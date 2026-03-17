@@ -373,3 +373,8 @@
 - [x] Criar ferramenta de exportação em Excel para dados dos formulários
 - [x] Adicionar página de dashboard com botão de exportação
 - [x] Testar a exportação de dados
+
+## Ajustes Finais de Formulários
+- [x] Adicionar título "Solicite o Seu Orçamento Gratuito" ao primeiro formulário
+- [x] Adicionar dropdown de distritos ao segundo formulário (final da página)
+- [x] Testar ambos os formulários

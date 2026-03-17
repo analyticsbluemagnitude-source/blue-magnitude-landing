@@ -708,6 +708,10 @@ export default function Home() {
       <section className="py-4 bg-gradient-to-br from-[#243fad] to-[#3ac6ff] text-white">
         <div className="container">
           <div className="max-w-4xl mx-auto">
+            <div className="mb-4">
+              <h2 className="text-2xl lg:text-3xl font-bold text-white mb-1">Solicite o Seu Orçamento Gratuito</h2>
+              <p className="text-white/90 text-sm lg:text-base">Preencha o formulário abaixo e receba um orçamento personalizado em 24 horas</p>
+            </div>
             <Card className="p-3 lg:p-4 bg-white/95 backdrop-blur text-foreground">
               <form onSubmit={handleSubmit} className="space-y-2">
                 <div className="grid md:grid-cols-2 gap-2.5">
@@ -1475,13 +1479,9 @@ export default function Home() {
                   </div>
                   <div className="space-y-1">
                     <Label className="text-sm" htmlFor="city">Distrito*</Label>
-                    <Input 
-                      id="city"
+                    <DistrictDropdown
                       value={formData.city}
-                      onChange={(e) => setFormData({...formData, city: e.target.value})}
-                      required
-                      placeholder="Cidade ou vila"
-                      className="h-9 text-sm"
+                      onChange={(val) => setFormData({...formData, city: val})}
                     />
                   </div>
                 </div>
