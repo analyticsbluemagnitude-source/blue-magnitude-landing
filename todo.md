@@ -378,3 +378,9 @@
 - [x] Adicionar título "Solicite o Seu Orçamento Gratuito" ao primeiro formulário
 - [x] Adicionar dropdown de distritos ao segundo formulário (final da página)
 - [x] Testar ambos os formulários
+
+## Ferramenta de Exportação em Excel
+- [x] Melhorar Dashboard para exportar dados em Excel
+- [x] Testar exportação de orçamentos
+- [x] Testar exportação de leads
+- [ ] Publicar nova versão

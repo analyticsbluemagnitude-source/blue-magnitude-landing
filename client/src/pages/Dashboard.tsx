@@ -1,4 +1,4 @@
-import { useState } from "react";
+"use client";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { trpc } from "@/lib/trpc";
 import { Card } from "@/components/ui/card";
@@ -20,8 +20,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import { Search, Mail, Phone, MapPin, Calendar, TrendingUp, Users, CheckCircle2, Archive, Download, Loader2 } from "lucide-react";
+import { Search, Mail, Phone, MapPin, Calendar, TrendingUp, Users, CheckCircle2, Archive, Download, Loader2, FileSpreadsheet } from "lucide-react";
 import { toast } from "sonner";
+import * as XLSX from "xlsx";
+import { useState } from "react";
 
 export default function Dashboard() {
   const { user } = useAuth();
@@ -93,31 +95,46 @@ export default function Dashboard() {
     });
   };
 
-  const handleExportExcel = async () => {
+  const handleExportExcel = () => {
     try {
       setIsExporting(true);
-      const response = await fetch("/api/export/leads");
-      if (!response.ok) {
-        const errorData = await response.json();
-        if (response.status === 403) {
-          toast.error("Acesso negado. Apenas administradores podem exportar leads.");
-        } else {
-          throw new Error(errorData.error || "Erro ao exportar leads");
-        }
+      if (!quotes || quotes.length === 0) {
+        toast.error("Nenhum orçamento para exportar");
+        setIsExporting(false);
         return;
       }
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `leads_bluemagnitude_${new Date().toISOString().slice(0, 10)}.xlsx`;
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
-      document.body.removeChild(a);
-      toast.success("Leads exportados com sucesso!");
+
+      const quotesData = quotes.map(q => ({
+        ID: q.id,
+        Nome: q.name,
+        Email: q.email,
+        Telefone: q.phone,
+        Distrito: q.city,
+        Status: q.status === 'new' ? 'Novo' : q.status === 'contacted' ? 'Contactado' : q.status === 'converted' ? 'Convertido' : 'Arquivado',
+        Notas: q.notes || "",
+        "Data de Criacao": new Date(q.createdAt).toLocaleString('pt-PT'),
+      }));
+
+      const worksheet = XLSX.utils.json_to_sheet(quotesData);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Orcamentos");
+      
+      const colWidths = [
+        { wch: 8 },
+        { wch: 20 },
+        { wch: 25 },
+        { wch: 15 },
+        { wch: 20 },
+        { wch: 12 },
+        { wch: 30 },
+        { wch: 20 },
+      ];
+      worksheet["!cols"] = colWidths;
+
+      XLSX.writeFile(workbook, `Orcamentos_${new Date().toISOString().split('T')[0]}.xlsx`);
+      toast.success("Orçamentos exportados com sucesso!");
     } catch (error) {
-      toast.error("Erro ao exportar leads");
+      toast.error("Erro ao exportar orçamentos");
       console.error("Export error:", error);
     } finally {
       setIsExporting(false);
@@ -139,7 +156,7 @@ export default function Dashboard() {
                 onClick={handleExportExcel} 
                 disabled={isExporting || !quotes || quotes.length === 0}
                 className="bg-green-600 hover:bg-green-700"
-                title="Apenas administradores podem exportar leads"
+                title="Exportar todos os orçamentos para Excel"
               >
                 {isExporting ? (
                   <>
@@ -148,7 +165,7 @@ export default function Dashboard() {
                   </>
                 ) : (
                   <>
-                    <Download className="w-4 h-4 mr-2" />
+                    <FileSpreadsheet className="w-4 h-4 mr-2" />
                     Exportar Excel
                   </>
                 )}
@@ -203,113 +220,87 @@ export default function Dashboard() {
           </Card>
         </div>
 
-        {/* Filters */}
-        <Card className="p-6">
-          <div className="flex flex-col md:flex-row gap-4">
-            <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-              <Input
-                placeholder="Pesquisar por nome, email, telefone ou cidade..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
-              />
-            </div>
-            <Select value={statusFilter} onValueChange={setStatusFilter}>
-              <SelectTrigger className="w-full md:w-48">
-                <SelectValue placeholder="Filtrar por status" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Todos os Status</SelectItem>
-                <SelectItem value="new">Novos</SelectItem>
-                <SelectItem value="contacted">Contactados</SelectItem>
-                <SelectItem value="converted">Convertidos</SelectItem>
-                <SelectItem value="archived">Arquivados</SelectItem>
-              </SelectContent>
-            </Select>
+        {/* Search and Filter */}
+        <div className="flex gap-4 flex-col sm:flex-row">
+          <div className="flex-1 relative">
+            <Search className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
+            <Input
+              placeholder="Procurar por nome, email, telefone ou localidade..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="pl-10"
+            />
           </div>
-        </Card>
+          <Select value={statusFilter} onValueChange={setStatusFilter}>
+            <SelectTrigger className="w-full sm:w-48">
+              <SelectValue placeholder="Filtrar por status" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">Todos os Status</SelectItem>
+              <SelectItem value="new">Novo</SelectItem>
+              <SelectItem value="contacted">Contactado</SelectItem>
+              <SelectItem value="converted">Convertido</SelectItem>
+              <SelectItem value="archived">Arquivado</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
 
         {/* Table */}
-        <Card className="overflow-hidden">
-          {isLoading ? (
-            <div className="p-12 text-center text-slate-500">A carregar...</div>
-          ) : filteredQuotes && filteredQuotes.length > 0 ? (
+        <Card>
+          <div className="overflow-x-auto">
             <Table>
               <TableHeader>
-                <TableRow className="bg-slate-50">
-                  <TableHead className="font-bold">Nome</TableHead>
-                  <TableHead className="font-bold">Contacto</TableHead>
-                  <TableHead className="font-bold">Localidade</TableHead>
-                  <TableHead className="font-bold">Data</TableHead>
-                  <TableHead className="font-bold">Status</TableHead>
-                  <TableHead className="font-bold">Ações</TableHead>
+                <TableRow>
+                  <TableHead>Nome</TableHead>
+                  <TableHead>Email</TableHead>
+                  <TableHead>Telefone</TableHead>
+                  <TableHead>Localidade</TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead>Data</TableHead>
+                  <TableHead>Ação</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {filteredQuotes.map((quote) => (
-                  <TableRow key={quote.id} className="hover:bg-slate-50">
-                    <TableCell className="font-medium">{quote.name}</TableCell>
-                    <TableCell>
-                      <div className="space-y-1">
-                        <div className="flex items-center gap-2 text-sm">
-                          <Mail className="w-3 h-3 text-slate-400" />
-                          <a href={`mailto:${quote.email}`} className="text-blue-600 hover:underline">
-                            {quote.email}
-                          </a>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm">
-                          <Phone className="w-3 h-3 text-slate-400" />
-                          <a href={`tel:${quote.phone}`} className="text-blue-600 hover:underline">
-                            {quote.phone}
-                          </a>
-                        </div>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4 text-slate-400" />
-                        {quote.city}
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <div className="flex items-center gap-2 text-sm text-slate-600">
-                        <Calendar className="w-4 h-4" />
-                        {formatDate(quote.createdAt)}
-                      </div>
-                    </TableCell>
-                    <TableCell>{getStatusBadge(quote.status)}</TableCell>
-                    <TableCell>
-                      <Select
-                        value={quote.status}
-                        onValueChange={(value) => handleStatusChange(quote.id, value)}
-                      >
-                        <SelectTrigger className="w-40">
-                          <SelectValue />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="new">Novo</SelectItem>
-                          <SelectItem value="contacted">Contactado</SelectItem>
-                          <SelectItem value="converted">Convertido</SelectItem>
-                          <SelectItem value="archived">Arquivado</SelectItem>
-                        </SelectContent>
-                      </Select>
+                {isLoading ? (
+                  <TableRow>
+                    <TableCell colSpan={7} className="text-center py-8">
+                      <Loader2 className="w-6 h-6 animate-spin mx-auto" />
                     </TableCell>
                   </TableRow>
-                ))}
+                ) : filteredQuotes && filteredQuotes.length > 0 ? (
+                  filteredQuotes.map((quote) => (
+                    <TableRow key={quote.id} className="hover:bg-slate-50">
+                      <TableCell className="font-medium">{quote.name}</TableCell>
+                      <TableCell className="text-sm text-slate-600">{quote.email}</TableCell>
+                      <TableCell className="text-sm">{quote.phone}</TableCell>
+                      <TableCell className="text-sm">{quote.city}</TableCell>
+                      <TableCell>{getStatusBadge(quote.status)}</TableCell>
+                      <TableCell className="text-sm text-slate-500">{formatDate(quote.createdAt)}</TableCell>
+                      <TableCell>
+                        <Select value={quote.status} onValueChange={(newStatus) => handleStatusChange(quote.id, newStatus)}>
+                          <SelectTrigger className="w-32">
+                            <SelectValue />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="new">Novo</SelectItem>
+                            <SelectItem value="contacted">Contactado</SelectItem>
+                            <SelectItem value="converted">Convertido</SelectItem>
+                            <SelectItem value="archived">Arquivado</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </TableCell>
+                    </TableRow>
+                  ))
+                ) : (
+                  <TableRow>
+                    <TableCell colSpan={7} className="text-center py-8 text-slate-500">
+                      Nenhum orçamento encontrado
+                    </TableCell>
+                  </TableRow>
+                )}
               </TableBody>
             </Table>
-          ) : (
-            <div className="p-12 text-center">
-              <Archive className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-              <p className="text-slate-500 text-lg font-medium">Nenhum lead encontrado</p>
-              <p className="text-slate-400 text-sm mt-2">
-                {searchTerm || statusFilter !== "all"
-                  ? "Tente ajustar os filtros de pesquisa"
-                  : "Os pedidos de orçamento aparecerão aqui"}
-              </p>
-            </div>
-          )}
+          </div>
         </Card>
       </div>
     </div>
