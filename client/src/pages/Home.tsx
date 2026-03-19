@@ -384,6 +384,24 @@ export default function Home() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validacao obrigatoria do campo Distrito
+    if (!formData.city || formData.city.trim() === "") {
+      toast.error("Campo obrigatorio", {
+        description: "Por favor, selecione um distrito antes de enviar o formulario."
+      });
+      return;
+    }
+    
+    // Validacao de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Email invalido", {
+        description: "Por favor, insira um email valido."
+      });
+      return;
+    }
+    
     submitQuoteMutation.mutate(formData);
   };
 

@@ -384,3 +384,10 @@
 - [x] Testar exportação de orçamentos
 - [x] Testar exportação de leads
 - [ ] Publicar nova versão
+
+## Validação Obrigatória de Distrito
+- [ ] Adicionar validação obrigatória ao campo Distrito no formulário rápido
+- [ ] Adicionar validação obrigatória ao campo Distrito no formulário de contacto
+- [ ] Mostrar mensagem de erro visual quando Distrito não é selecionado
+- [ ] Testar validação em ambos os formulários
+- [ ] Publicar nova versão

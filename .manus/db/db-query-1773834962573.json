@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO invites (email, token, role, expiresAt) VALUES ('analytics.bluemagnitude@gmail.com', 'a9cc7f43ce087f714e9f370148fde70557e4ee4edda278914e0b67f58e4ed892', 'admin', DATE_ADD(NOW(), INTERVAL 7 DAY));",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user gpmhRGKMwreH57Z.root --database RQPQSZhpB9QJSJokwsTpRj --execute INSERT INTO invites (email, token, role, expiresAt) VALUES ('analytics.bluemagnitude@gmail.com', 'a9cc7f43ce087f714e9f370148fde70557e4ee4edda278914e0b67f58e4ed892', 'admin', DATE_ADD(NOW(), INTERVAL 7 DAY));",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 85
+}
