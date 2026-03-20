@@ -227,6 +227,23 @@ Enviado através do formulário de contacto do site.
     }),
   }),
 
+  invites: router({
+    create: protectedProcedure
+      .input(
+        z.object({
+          email: z.string().email("Email inválido"),
+          role: z.enum(["user", "admin"]).default("admin"),
+        })
+      )
+      .mutation(async ({ input, ctx }) => {
+        // Apenas admin pode criar convites
+        if (ctx.user?.role !== "admin") {
+          throw new Error("Apenas administradores podem criar convites");
+        }
+        return await createInvite(input.email, input.role);
+      }),
+  }),
+
   leads: router({
     list: protectedProcedure.query(async () => {
       return await getAllLeads();
