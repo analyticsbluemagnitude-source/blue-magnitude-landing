@@ -211,11 +211,9 @@ export async function getInviteByToken(token: string): Promise<Invite | undefine
     return undefined;
   }
   
-  // Check if already accepted
-  if (invite.acceptedAt !== null) {
-    return undefined;
-  }
-
+  // Allow reusing accepted invites (don't check acceptedAt)
+  // This allows the same invite to be used multiple times
+  
   return invite;
 }
 
